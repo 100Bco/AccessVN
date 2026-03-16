@@ -415,7 +415,7 @@ function ContactSection() {
     <section id="contact" className="py-12 sm:py-16" style={{ backgroundColor: CHARCOAL }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-8">
         <h2 className="text-xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-10">Contacts</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
+        <div className="grid grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
           {contacts.map((c) => (
             <div key={c.name} className="flex flex-col items-center py-6 sm:py-8 px-4 sm:px-6" style={{ backgroundColor: CHARCOAL }}>
               {c.photo ? (
