@@ -307,17 +307,17 @@ function CentralTexasSection() {
           <p className="text-[17px] leading-[1.75] mb-8" style={{ color: "#333" }}>
             In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional "clustering effect," drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 pt-6 border-t border-gray-200">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-6 border-t border-gray-200">
             {[
-              { name: "Taiwan", flag: "🇹🇼" },
-              { name: "Korea", flag: "🇰🇷" },
-              { name: "Japan", flag: "🇯🇵" },
-              { name: "Singapore", flag: "🇸🇬" },
-              { name: "India", flag: "🇮🇳" },
-              { name: "Vietnam", flag: "🇻🇳" },
+              { name: "Taiwan", code: "tw" },
+              { name: "Korea", code: "kr" },
+              { name: "Japan", code: "jp" },
+              { name: "Singapore", code: "sg" },
+              { name: "India", code: "in" },
+              { name: "Vietnam", code: "vn" },
             ].map((c) => (
               <div key={c.name} className="flex flex-col items-center gap-1.5">
-                <span className="text-2xl">{c.flag}</span>
+                <img src={`https://flagcdn.com/w40/${c.code}.png`} srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`} alt={c.name} className="h-6 object-contain rounded-sm shadow-sm" />
                 <span className="text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
               </div>
             ))}
