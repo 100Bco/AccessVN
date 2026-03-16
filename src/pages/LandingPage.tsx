@@ -1,5 +1,7 @@
 import gaaccLogo from "@assets/GAACC-logo-400x400-1-qyhcmbgu36kdcsai231m2gr6xj1pqen1lbcxra8p_1773649259946.webp";
 import logo100b from "@assets/100B_-_TACH_NEN_-2_(1)_1773649286116.png";
+import minhTranPhoto from "@assets/Minh Tran Chairman.jpeg";
+import minhMacPhoto from "@assets/Minh Mac CEO.jpeg";
 import { useEffect, useRef, useState } from "react";
 
 const RED = "#C41230";
@@ -242,7 +244,7 @@ function DelegationSection() {
             <div className="md:col-span-5">
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { name: "Minh Tran", title: "GAACC Chairman", photo: null },
+                  { name: "Minh Tran", title: "GAACC Chairman", photo: minhTranPhoto },
                   { name: "Mark Duval", title: "President & CEO", photo: "https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp" },
                 ].map((p) => (
                   <div key={p.name} className="flex flex-col items-center">
@@ -340,9 +342,6 @@ function GAACCSection() {
           The Greater Austin Asian Chamber of Commerce (GAACC) engages with members of the Central Texas business community, with governmental entities, and with nonprofit organizations to help drive local economic growth for businesses with ties to Asia and Asian Americans. GAACC works to develop Austin's global business and investment connectivity while promoting regional economic equity for all. To learn more, visit{" "}
           <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{ color: RED }}>www.austinasianchamber.org</a>.
         </p>
-        <p className="text-[17px] leading-[1.75] mb-8" style={{ color: GRAY }}>
-          Access Asia is one of many local and international programs, events, workshops and activities presented annually. Over 6,500 attendees joined over 50 GAACC events in 2025 alone.
-        </p>
 
         <div className="inline-flex items-center gap-10 pt-6 border-t border-gray-100">
           <div className="text-center">
@@ -364,7 +363,7 @@ function GAACCSection() {
 function ContactSection() {
   const contacts = [
     { name: "Mark Duval", phone: "+1-737-733-2073", email: "markduval@austinasianchamber.org", photo: "https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp" },
-    { name: "Minh Mac", phone: "+1-757-773-5707", email: "global@100b.co", photo: null },
+    { name: "Minh Mac", phone: "+1-757-773-5707", email: "global@100b.co", photo: minhMacPhoto },
   ];
 
   return (
