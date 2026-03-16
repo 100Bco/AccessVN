@@ -427,7 +427,7 @@ function CentralTexasSection() {
   return (
     <section id="central-texas">
       <div className="relative h-[35vh] sm:h-[50vh]">
-        <img src="https://images.unsplash.com/photo-1625278152200-ae2d1fc87c5f?w=1400&q=80" alt="Austin, Texas" className="w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1625278152200-ae2d1fc87c5f?w=1400&q=80" alt="Austin, Texas" className="w-full h-full object-cover object-[center_30%]" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%)" }} />
         <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-10">
           <p className="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-white/45 mb-1.5 sm:mb-2">Central Texas</p>
