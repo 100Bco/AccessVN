@@ -120,13 +120,13 @@ function Navbar() {
 function Hero() {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/8228852/pexels-photo-8228852.jpeg?auto=compress&cs=tinysrgb&w=1920')" }} />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80')" }} />
       <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(10,10,10,0.75) 0%, rgba(30,30,30,0.60) 100%)" }} />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 sm:px-6 text-center pt-[70px] sm:pt-[80px]">
         <h1 className="text-white text-3xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">ACCESS ASIA</h1>
         <p className="text-2xl sm:text-5xl lg:text-6xl font-bold mt-3 sm:mt-4 mb-3 sm:mb-4" style={{ color: RED }}>Access Vietnam 2026</p>
-        <p className="text-white/50 text-[12px] sm:text-base font-medium tracking-wider mb-6 sm:mb-10">June 7–13, 2026 · Hanoi & Ho Chi Minh City</p>
+        <p className="text-white/50 text-[12px] sm:text-base font-medium tracking-wider mb-6 sm:mb-10">May 30 – June 19, 2026 · Taipei · Hanoi · Ho Chi Minh City · Singapore</p>
         <p className="text-white/60 text-sm sm:text-xl max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-12">
           A historic delegation uniting Austin and Vietnamese business and government leaders to forge lasting economic partnerships between two of the world's most dynamic ecosystems.
         </p>
@@ -148,8 +148,9 @@ function Hero() {
 
 /* ── Intro ── */
 function IntroSection() {
-  const STOPS = ["Austin", "Taipei", "Hanoi", "Ho Chi Minh", "Singapore"];
-  const COUNTRIES = ["Texas, USA", "Taiwan", "Vietnam", "Vietnam", "Singapore"];
+  const STOPS = ["Austin", "Taipei", "Hanoi", "Ho Chi Minh", "Singapore", "Austin"];
+  const COUNTRIES = ["Texas, USA", "Taiwan", "Vietnam", "Vietnam", "Singapore", "Texas, USA"];
+  const DATES = ["5/30", "5/31", "6/6", "6/9", "6/13", "6/19"];
   const [litCount, setLitCount] = useState(1);
   const [planePct, setPlanePct] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -235,9 +236,15 @@ function IntroSection() {
                     >
                       {COUNTRIES[i]}
                     </p>
+                    <p
+                      className="text-[9px] font-bold mt-0.5 transition-colors duration-500"
+                      style={{ color: lit ? RED : "#d1d5db" }}
+                    >
+                      {DATES[i]}
+                    </p>
                   </div>
                   {i < STOPS.length - 1 && (
-                    <div className="flex-1 pb-6 px-1">
+                    <div className="flex-1 pb-10 px-1">
                       <div
                         className="w-full"
                         style={{
@@ -277,7 +284,7 @@ function AboutSection() {
       <div className="grid grid-cols-3 h-[220px] sm:h-[300px] shrink-0">
         {[
           { country: "Taiwan", img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=800&q=80" },
-          { country: "Vietnam", img: "https://images.pexels.com/photos/30103217/pexels-photo-30103217.jpeg?auto=compress&cs=tinysrgb&w=800" },
+          { country: "Vietnam", img: "https://images.pexels.com/photos/20988483/pexels-photo-20988483.jpeg?auto=compress&cs=tinysrgb&w=800" },
           { country: "Singapore", img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" },
         ].map((d) => (
           <div key={d.country} className="relative overflow-hidden">
