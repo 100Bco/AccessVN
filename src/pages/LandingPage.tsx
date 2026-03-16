@@ -168,9 +168,9 @@ function SectionHeader({
 /* ─── What is Access Asia? ─── */
 function AboutSection() {
   const destinations = [
-    { name: "Taiwan", image: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=600&q=80" },
-    { name: "Vietnam", image: "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=600&q=80" },
-    { name: "Singapore", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" },
+    { name: "Taipei", country: "Taiwan", image: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=600&q=80" },
+    { name: "Hanoi", country: "Vietnam", image: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=600&q=80" },
+    { name: "Singapore", country: "Singapore", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" },
   ];
 
   return (
@@ -178,25 +178,49 @@ function AboutSection() {
       <div className="max-w-5xl mx-auto px-6">
         <SectionHeader eyebrow="About the Program" title="What is Access Asia?" />
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mb-16">
           <p className="text-lg leading-relaxed mb-6" style={{ color: DARK_CHARCOAL }}>
             Access Asia is a program dedicated to building strong and seamless economic ties between Austin and Asia. For organizations committed to global growth, Access Asia provides the network, insights, intelligence, matchmaking, and infrastructure required to galvanize business between two of the world's most dynamic, growing, and rapidly converging ecosystems.
           </p>
-          <p className="text-lg leading-relaxed mb-12" style={{ color: DARK_CHARCOAL }}>
+          <p className="text-lg leading-relaxed" style={{ color: DARK_CHARCOAL }}>
             In June 2026, GAACC will be leading an historic 3 week long trip to Taiwan, Vietnam, and Singapore. The delegation will include senior government officials from the City of Austin, and surrounding cities and counties as well as business leaders from the region - including the City of Houston.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6">
-          {destinations.map((dest) => (
-            <div key={dest.name} className="relative h-64 rounded-xl overflow-hidden shadow-lg group">
-              <img src={dest.image} alt={dest.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-5 left-5">
-                <p className="text-white font-bold text-xl">{dest.name}</p>
-              </div>
+        {/* Destination strip — editorial magazine layout */}
+        <div className="grid grid-cols-12 gap-3 h-[420px]">
+          {/* Taiwan — tall left column */}
+          <div className="col-span-4 relative rounded-lg overflow-hidden group">
+            <img src={destinations[0].image} alt={destinations[0].name} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <div className="w-8 h-px mb-3" style={{ backgroundColor: GAACC_RED }} />
+              <p className="text-white font-bold text-2xl leading-tight">{destinations[0].name}</p>
+              <p className="text-white/60 text-xs font-semibold tracking-widest uppercase mt-1">{destinations[0].country}</p>
             </div>
-          ))}
+          </div>
+
+          {/* Vietnam — large center */}
+          <div className="col-span-5 relative rounded-lg overflow-hidden group">
+            <img src={destinations[1].image} alt={destinations[1].name} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/25" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <div className="w-8 h-px mb-3" style={{ backgroundColor: GAACC_RED }} />
+              <p className="text-white font-bold text-2xl leading-tight">{destinations[1].name}</p>
+              <p className="text-white/60 text-xs font-semibold tracking-widest uppercase mt-1">{destinations[1].country}</p>
+            </div>
+          </div>
+
+          {/* Singapore — right column */}
+          <div className="col-span-3 relative rounded-lg overflow-hidden group">
+            <img src={destinations[2].image} alt={destinations[2].name} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <div className="w-8 h-px mb-3" style={{ backgroundColor: GAACC_RED }} />
+              <p className="text-white font-bold text-2xl leading-tight">{destinations[2].name}</p>
+              <p className="text-white/60 text-xs font-semibold tracking-widest uppercase mt-1">{destinations[2].country}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
