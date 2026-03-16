@@ -304,9 +304,9 @@ function AboutSection() {
 /* ── Access Vietnam ── */
 function AccessVietnamSection() {
   const images = [
-    { src: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&q=80", caption: "Hanoi" },
-    { src: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1400&q=80", caption: "Ho Chi Minh City" },
-    { src: "https://images.unsplash.com/photo-1700500790259-a2527558c3f2?w=1400&q=80", caption: "Da Nang" },
+    { src: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1400&q=80", caption: "Hanoi" },
+    { src: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80", caption: "Ho Chi Minh City" },
+    { src: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&q=80", caption: "Da Nang" },
   ];
   const [cur, setCur] = useState(0);
   useEffect(() => {
