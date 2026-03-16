@@ -461,8 +461,8 @@ function CentralTexasSection() {
               { name: "Vietnam", code: "vn" },
             ].map((c) => (
               <div key={c.name} className="flex flex-col items-center gap-2">
-                <img src={`https://flagcdn.com/w80/${c.code}.png`} srcSet={`https://flagcdn.com/w160/${c.code}.png 2x`} alt={c.name} className="w-16 sm:w-20 h-11 sm:h-14 object-cover rounded-md shadow-sm" />
-                <span className="text-[11px] sm:text-[13px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
+                <img src={`https://flagcdn.com/w80/${c.code}.png`} srcSet={`https://flagcdn.com/w160/${c.code}.png 2x`} alt={c.name} className="w-10 sm:w-14 h-7 sm:h-10 object-cover rounded-md shadow-sm" />
+                <span className="text-[9px] sm:text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
               </div>
             ))}
           </div>
