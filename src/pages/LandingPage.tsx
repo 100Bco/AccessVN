@@ -354,7 +354,7 @@ function CentralTexasSection() {
           <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-6 sm:mb-8" style={{ color: "#333" }}>
             In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional "clustering effect," drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-6 border-t border-gray-200">
+          <div className="grid grid-cols-6 items-center justify-items-center gap-y-4 pt-6 border-t border-gray-200">
             {[
               { name: "Taiwan", code: "tw" },
               { name: "Korea", code: "kr" },
@@ -364,8 +364,8 @@ function CentralTexasSection() {
               { name: "Vietnam", code: "vn" },
             ].map((c) => (
               <div key={c.name} className="flex flex-col items-center gap-1.5">
-                <img src={`https://flagcdn.com/w40/${c.code}.png`} srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`} alt={c.name} className="h-6 object-contain rounded-sm shadow-sm" />
-                <span className="text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
+                <img src={`https://flagcdn.com/w40/${c.code}.png`} srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`} alt={c.name} className="h-5 sm:h-6 object-contain rounded-sm shadow-sm" />
+                <span className="text-[9px] sm:text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
               </div>
             ))}
           </div>
@@ -428,7 +428,7 @@ function ContactSection() {
               <h3 className="text-white font-bold text-base sm:text-lg mb-3">{c.name}</h3>
               <div className="space-y-1.5 text-center">
                 <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="block text-white/45 hover:text-white transition-colors text-[12px] sm:text-[13px]">{c.phone}</a>
-                <a href={`mailto:${c.email}`} className="block font-semibold hover:text-white transition-colors text-[12px] sm:text-[13px]" style={{ color: RED }}>{c.email}</a>
+                <a href={`mailto:${c.email}`} className="block font-semibold hover:text-white transition-colors text-[10px] sm:text-[13px] break-all" style={{ color: RED }}>{c.email}</a>
               </div>
             </div>
           ))}
