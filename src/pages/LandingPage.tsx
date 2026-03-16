@@ -381,7 +381,7 @@ function DelegationSection() {
             <h2 className="text-xl sm:text-3xl font-bold text-white leading-tight mb-3 sm:mb-4">The Access Vietnam Delegation</h2>
             <div className="w-8 h-[2px] mx-auto mb-4 sm:mb-6" style={{ backgroundColor: RED }} />
             <p className="text-white/60 text-[14px] sm:text-[17px] leading-[1.75] max-w-3xl mx-auto">
-              The delegation will be led by GAACC President & CEO Mark Duval. Delegation members will include business and government leaders representing the City of Austin, the City of Houston and other Central Texas Cities such as Georgetown, Cedar Park, Round Rock, Taylor and Hutto. A total of at least 10-15 delegates (quite possibly more) are expected to join, with that list to be finalized and confirmed by April 30, 2026.
+              The delegation will be led by GAACC President & CEO Mark Duval (former President of AmCham China). Delegation members will include business and government leaders representing the City of Austin, the City of Houston and other Central Texas Cities such as Georgetown, Cedar Park, Round Rock, Taylor and Hutto. A total of at least 10-15 delegates (quite possibly more) are expected to join, with that list to be finalized and confirmed by April 30, 2026.
             </p>
           </div>
 
@@ -411,7 +411,7 @@ function DelegationSection() {
                 <div className="h-8 w-px bg-white/8" />
                 <div>
                   <div className="text-white font-bold text-[13px] sm:text-sm">April 30, 2026</div>
-                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-0.5 font-semibold">Finalized Date</div>
+                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-0.5 font-semibold">Planning Deadline</div>
                 </div>
               </div>
             </div>
@@ -534,9 +534,9 @@ function Footer() {
     <footer className="py-6 sm:py-8 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center">
         <div className="flex items-center justify-center gap-5 mb-5">
-          <img src={gaaccLogo} alt="GAACC" className="h-8 w-8 object-contain" />
+          <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer"><img src={gaaccLogo} alt="GAACC" className="h-8 w-8 object-contain hover:opacity-80 transition-opacity" /></a>
           <div className="h-5 w-px bg-gray-200" />
-          <img src={logo100b} alt="100B" className="h-5 object-contain" style={{ maxWidth: "72px" }} />
+          <a href="https://100b.co/" target="_blank" rel="noopener noreferrer"><img src={logo100b} alt="100B" className="h-5 object-contain hover:opacity-80 transition-opacity" style={{ maxWidth: "72px" }} /></a>
         </div>
         <p className="text-gray-400 text-[10px] tracking-[0.15em] uppercase mb-0.5">ACCESS ASIA | Access Vietnam 2026</p>
         <p className="text-gray-300 text-[10px] mb-3">A program of the Greater Austin Asian Chamber of Commerce</p>
