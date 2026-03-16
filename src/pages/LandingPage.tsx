@@ -129,10 +129,8 @@ function IntroSection() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="flex items-center justify-center gap-6 mb-10">
-          <img src={gaaccLogo} alt="GAACC" className="h-14 w-14 object-contain" />
-          <div className="h-10 w-px bg-gray-200" />
-          <img src={logo100b} alt="100B" className="h-8 object-contain grayscale opacity-70" style={{ maxWidth: "90px" }} />
+        <div className="flex items-center justify-center mb-10">
+          <img src={gaaccLogo} alt="GAACC" className="h-20 w-20 object-contain" />
         </div>
         <p className="text-lg sm:text-xl leading-relaxed text-center" style={{ color: DARK_CHARCOAL }}>
           The Greater Austin Asian Chamber of Commerce <strong>(GAACC)</strong> is the leading trusted partner for driving local economic growth and opportunity for businesses with ties to Asia and Asian Americans in Central Texas. In partnership with the City of Austin, GAACC created Access Asia, a program that promotes inbound investment into the Greater Austin region and supports the creation of win-win business collaborations in international investment, trade, technology, innovation, startups, manufacturing, and more.
