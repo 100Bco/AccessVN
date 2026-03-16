@@ -284,7 +284,7 @@ function AboutSection() {
       <div className="grid grid-cols-3 h-[220px] sm:h-[300px] shrink-0">
         {[
           { country: "Taiwan", img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=800&q=80" },
-          { country: "Vietnam", img: "https://images.pexels.com/photos/20988483/pexels-photo-20988483.jpeg?auto=compress&cs=tinysrgb&w=800" },
+          { country: "Vietnam", img: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=800&q=80" },
           { country: "Singapore", img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" },
         ].map((d) => (
           <div key={d.country} className="relative overflow-hidden">
@@ -304,7 +304,7 @@ function AboutSection() {
 /* ── Access Vietnam ── */
 function AccessVietnamSection() {
   const images = [
-    { src: "https://images.pexels.com/photos/20988483/pexels-photo-20988483.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Hanoi" },
+    { src: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1400&q=80", caption: "Hanoi" },
     { src: "https://images.pexels.com/photos/31991164/pexels-photo-31991164.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Ho Chi Minh City" },
     { src: "https://images.pexels.com/photos/30234695/pexels-photo-30234695.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Da Nang" },
   ];
