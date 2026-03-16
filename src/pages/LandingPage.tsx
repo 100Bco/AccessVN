@@ -78,7 +78,7 @@ function Hero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 text-center pt-[80px]">
         <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">ACCESS ASIA</h1>
         <p className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 mb-4" style={{ color: RED }}>Access Vietnam 2026</p>
-        <p className="text-white/50 text-[14px] sm:text-[15px] font-medium tracking-wider mb-10">June 7–13, 2026 · Hanoi & Ho Chi Minh City</p>
+        <p className="text-white/50 text-[14px] sm:text-[16px] font-medium tracking-wider mb-10">June 7–13, 2026 · Hanoi & Ho Chi Minh City</p>
         <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
           A historic delegation uniting Austin and Vietnamese business and government leaders to forge lasting economic partnerships between two of the world's most dynamic ecosystems.
         </p>
@@ -103,10 +103,10 @@ function Hero() {
 function IntroSection() {
   return (
     <section className="py-14 bg-white">
-      <div className="max-w-4xl mx-auto px-8 text-center">
+      <div className="max-w-6xl mx-auto px-8 text-center">
         <img src={gaaccLogo} alt="GAACC" className="h-12 w-12 object-contain mx-auto mb-6" />
         <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: RED }} />
-        <p className="text-[15px] leading-[1.8]" style={{ color: "#333" }}>
+        <p className="text-[16px] leading-[1.8]" style={{ color: "#333" }}>
           The Greater Austin Asian Chamber of Commerce <strong>(GAACC)</strong> is the leading trusted partner for driving local economic growth and opportunity for businesses with ties to Asia and Asian Americans in Central Texas. In partnership with the City of Austin, GAACC created Access Asia, a program that promotes inbound investment into the Greater Austin region and supports the creation of win-win business collaborations in international investment, trade, technology, innovation, startups, manufacturing, and more.
         </p>
       </div>
@@ -119,12 +119,12 @@ function AboutSection() {
   return (
     <section id="about">
       <div className="py-14" style={{ backgroundColor: "#f8f8f8" }}>
-        <div className="max-w-4xl mx-auto px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold leading-tight mb-6" style={{ color: CHARCOAL }}>What is Access Asia?</h2>
-          <p className="text-[15px] leading-[1.8] mb-5" style={{ color: "#333" }}>
+        <div className="max-w-6xl mx-auto px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold leading-tight mb-5" style={{ color: CHARCOAL }}>What is Access Asia?</h2>
+          <p className="text-[16px] leading-[1.75] mb-4" style={{ color: "#333" }}>
             Access Asia is a program dedicated to building strong and seamless economic ties between Austin and Asia. For organizations committed to global growth, Access Asia provides the network, insights, intelligence, matchmaking, and infrastructure required to galvanize business between two of the world's most dynamic, growing, and rapidly converging ecosystems.
           </p>
-          <p className="text-[15px] leading-[1.8]" style={{ color: "#333" }}>
+          <p className="text-[16px] leading-[1.75]" style={{ color: "#333" }}>
             In June 2026, GAACC will be leading an historic 3 week long trip to Taiwan, Vietnam, and Singapore. The delegation will include senior government officials from the City of Austin, and surrounding cities and counties as well as business leaders from the region - including the City of Houston.
           </p>
         </div>
@@ -198,8 +198,8 @@ function AccessVietnamSection() {
 
       {/* Content */}
       <div className="py-14 bg-white">
-        <div className="max-w-4xl mx-auto px-8">
-          <p className="text-[15px] leading-[1.8] mb-10" style={{ color: "#333" }}>
+        <div className="max-w-6xl mx-auto px-8">
+          <p className="text-[16px] leading-[1.8] mb-10" style={{ color: "#333" }}>
             The visit to Vietnam is a direct result of the deepening business, community and cultural ties between Austin and Vietnam. In fact the Vietnamese population in Austin is one of the fastest growing Asian communities in Greater Austin so this visit reflects our commitment to building on existing ties, deepening mutual understanding, and fostering meaningful international business collaboration.
           </p>
 
@@ -208,7 +208,7 @@ function AccessVietnamSection() {
             {purposes.map((p, i) => (
               <div key={i} className="flex items-baseline gap-4 py-3" style={{ borderBottom: "1px solid #eee" }}>
                 <span className="text-[12px] font-bold tabular-nums shrink-0" style={{ color: RED }}>0{i + 1}</span>
-                <p className="text-[14px] leading-[1.65]" style={{ color: "#333" }}>{p}</p>
+                <p className="text-[15px] leading-[1.7]" style={{ color: "#333" }}>{p}</p>
               </div>
             ))}
           </div>
@@ -226,12 +226,12 @@ function DelegationSection() {
       <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
 
       <div className="relative z-10 py-16">
-        <div className="max-w-4xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-8">
           {/* Header + text */}
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">The Access Vietnam Delegation</h2>
             <div className="w-8 h-[2px] mx-auto mb-6" style={{ backgroundColor: RED }} />
-            <p className="text-white/60 text-[15px] leading-[1.8] max-w-3xl mx-auto">
+            <p className="text-white/60 text-[16px] leading-[1.8] max-w-3xl mx-auto">
               The delegation will be led by GAACC Chairman Minh Tran and GAACC President & CEO Mark Duval. Delegation members will include business and government leaders representing the City of Austin, the City of Houston and other Central Texas Cities such as Georgetown, Cedar Park, Round Rock, Taylor and Hutto. A total of at least 10-15 delegates (quite possibly more) are expected to join, with that list to be finalized and confirmed by April 30, 2026.
             </p>
           </div>
@@ -300,11 +300,11 @@ function CentralTexasSection() {
       </div>
 
       <div className="py-14" style={{ backgroundColor: "#f8f8f8" }}>
-        <div className="max-w-4xl mx-auto px-8">
-          <p className="text-[15px] leading-[1.8] mb-5" style={{ color: "#333" }}>
+        <div className="max-w-6xl mx-auto px-8">
+          <p className="text-[16px] leading-[1.8] mb-5" style={{ color: "#333" }}>
             Central Texas has solidified its position as a premier destination for Asian capital. Driven by supply chain diversification and geopolitical de-risking as well as a $3-trillion global AI infrastructure supercycle, companies from Taiwan, Korea, Japan, Singapore, India, and Vietnam are aggressively investing in the United States and the region.
           </p>
-          <p className="text-[15px] leading-[1.8] mb-8" style={{ color: "#333" }}>
+          <p className="text-[16px] leading-[1.8] mb-8" style={{ color: "#333" }}>
             In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional "clustering effect," drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-1 text-[13px] pt-6 border-t border-gray-200">
@@ -325,15 +325,15 @@ function CentralTexasSection() {
 function GAACCSection() {
   return (
     <section className="py-14 bg-white">
-      <div className="max-w-4xl mx-auto px-8 text-center">
+      <div className="max-w-6xl mx-auto px-8 text-center">
         <img src={gaaccLogo} alt="GAACC" className="h-10 w-10 object-contain mx-auto mb-5" />
         <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: CHARCOAL }}>Greater Austin Asian Chamber of Commerce</h2>
 
-        <p className="text-[15px] leading-[1.8] mb-4" style={{ color: "#333" }}>
+        <p className="text-[16px] leading-[1.8] mb-4" style={{ color: "#333" }}>
           The Greater Austin Asian Chamber of Commerce (GAACC) engages with members of the Central Texas business community, with governmental entities, and with nonprofit organizations to help drive local economic growth for businesses with ties to Asia and Asian Americans. GAACC works to develop Austin's global business and investment connectivity while promoting regional economic equity for all. To learn more, visit{" "}
           <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{ color: RED }}>www.austinasianchamber.org</a>.
         </p>
-        <p className="text-[15px] leading-[1.8] mb-8" style={{ color: GRAY }}>
+        <p className="text-[16px] leading-[1.8] mb-8" style={{ color: GRAY }}>
           Access Asia is one of many local and international programs, events, workshops and activities presented annually. Over 6,500 attendees joined over 50 GAACC events in 2025 alone.
         </p>
 
