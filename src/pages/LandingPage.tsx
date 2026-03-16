@@ -85,14 +85,13 @@ function Hero() {
           A historic delegation uniting Austin and Vietnamese business and government leaders to forge lasting economic partnerships between two of the world's most dynamic ecosystems.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-          <a href="#access-vietnam" className="text-white font-semibold px-8 py-3.5 text-[13px] tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: RED }}>Learn About the Mission</a>
-          <a href="#contact" className="border border-white/20 hover:border-white/40 text-white/80 hover:text-white font-semibold px-8 py-3.5 text-[13px] tracking-wide transition-all">Get Involved</a>
+          <a href="#contact" className="text-white font-semibold px-8 py-3.5 text-[13px] tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: RED }}>Get Involved</a>
         </div>
         <div className="grid grid-cols-3 max-w-xl mx-auto border-t border-white/10 pt-8 w-full">
           {[{ value: "3", label: "Countries" }, { value: "21", label: "Days" }, { value: "15+", label: "Delegates" }].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-3xl font-bold text-white tracking-tight">{s.value}</div>
-              <div className="text-white/35 text-[11px] mt-1.5 uppercase tracking-[0.2em] font-semibold">{s.label}</div>
+              <div className="text-4xl font-bold text-white tracking-tight">{s.value}</div>
+              <div className="text-white/35 text-[13px] mt-1.5 uppercase tracking-[0.2em] font-semibold">{s.label}</div>
             </div>
           ))}
         </div>
@@ -374,9 +373,9 @@ function ContactSection() {
           {contacts.map((c) => (
             <div key={c.name} className="flex flex-col items-center py-8 px-6" style={{ backgroundColor: CHARCOAL }}>
               {c.photo ? (
-                <img src={c.photo} alt={c.name} className="w-24 h-24 rounded-full object-cover object-top mb-4 border-2 border-white/8" />
+                <img src={c.photo} alt={c.name} className="w-[125px] h-[125px] rounded-full object-cover object-top mb-4 border-2 border-white/8" />
               ) : (
-                <div className="w-24 h-24 rounded-full mb-4 flex items-center justify-center text-white font-bold text-2xl border-2 border-white/8" style={{ backgroundColor: RED }}>
+                <div className="w-[125px] h-[125px] rounded-full mb-4 flex items-center justify-center text-white font-bold text-2xl border-2 border-white/8" style={{ backgroundColor: RED }}>
                   {c.name.split(" ").map((n) => n[0]).join("")}
                 </div>
               )}
