@@ -3,6 +3,7 @@ import logo100b from "@assets/100B_-_TACH_NEN_-2_(1)_1773649286116.png";
 import minhTranPhoto from "@assets/Minh Tran Chairman.jpeg";
 import minhMacPhoto from "@assets/Minh Mac CEO.jpeg";
 import { useEffect, useRef, useState } from "react";
+import { Plane } from "lucide-react";
 
 const RED = "#C41230";
 const CHARCOAL = "#1A1A1A";
@@ -148,14 +149,110 @@ function Hero() {
 
 /* ── Intro ── */
 function IntroSection() {
+  const STOPS = ["Austin", "Taipei", "Hanoi", "Ho Chi Minh", "Singapore"];
+  const COUNTRIES = ["Texas, USA", "Taiwan", "Vietnam", "Vietnam", "Singapore"];
+  const [litCount, setLitCount] = useState(1);
+  const [planePct, setPlanePct] = useState<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const nodeRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const measurePositions = () => {
+    if (!containerRef.current) return [];
+    const cRect = containerRef.current.getBoundingClientRect();
+    return nodeRefs.current.map(el => {
+      if (!el) return 0;
+      const r = el.getBoundingClientRect();
+      return ((r.left + r.width / 2 - cRect.left) / cRect.width) * 100;
+    });
+  };
+
+  useEffect(() => {
+    let cancelled = false;
+    const delay = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
+    const run = async () => {
+      while (!cancelled) {
+        const positions = measurePositions();
+        setLitCount(1);
+        if (positions[0] !== undefined) setPlanePct(positions[0]);
+        await delay(800);
+        for (let i = 1; i < STOPS.length; i++) {
+          if (cancelled) return;
+          const pos = measurePositions();
+          if (pos[i] !== undefined) setPlanePct(pos[i]);
+          await delay(1000);
+          if (cancelled) return;
+          setLitCount(i + 1);
+          await delay(1000);
+        }
+        await delay(1500);
+      }
+    };
+    const t = setTimeout(run, 400);
+    return () => { cancelled = true; clearTimeout(t); };
+  }, []);
+
   return (
     <section className="py-12 sm:py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center">
         <img src={gaaccLogo} alt="GAACC" className="h-12 w-12 sm:h-14 sm:w-14 object-contain mx-auto mb-5 sm:mb-6" />
         <div className="w-8 h-px mx-auto mb-5 sm:mb-6" style={{ backgroundColor: RED }} />
-        <p className="text-base sm:text-lg leading-[1.8]" style={{ color: "#333" }}>
+        <p className="text-base sm:text-lg leading-[1.8] mb-10 sm:mb-12" style={{ color: "#333" }}>
           The Greater Austin Asian Chamber of Commerce <strong>(GAACC)</strong> is the leading trusted partner for driving local economic growth and opportunity for businesses with ties to Asia and Asian Americans in Central Texas. In partnership with the City of Austin, GAACC created Access Asia, a program that promotes inbound investment into the Greater Austin region and supports the creation of win-win business collaborations in international investment, trade, technology, innovation, startups, manufacturing, and more.
         </p>
+
+        {/* Flight route animation */}
+        <div ref={containerRef} className="relative max-w-2xl mx-auto">
+          <div
+            className="absolute z-10 pointer-events-none"
+            style={{
+              left: `${planePct}%`,
+              top: "0px",
+              transform: "translateX(-50%) translateY(-18px)",
+              transition: "left 1000ms cubic-bezier(0.4, 0, 0.2, 1)",
+              color: RED,
+            }}
+          >
+            <Plane size={13} className="rotate-45" />
+          </div>
+          <div className="flex items-end justify-between pt-6">
+            {STOPS.map((city, i) => {
+              const lit = i < litCount;
+              return (
+                <div key={city} className="flex items-center flex-1 last:flex-none">
+                  <div ref={el => { nodeRefs.current[i] = el; }} className="flex flex-col items-center shrink-0">
+                    <div
+                      className="w-2 h-2 rounded-full mb-2 transition-all duration-500"
+                      style={{ backgroundColor: lit ? RED : "#d1d5db" }}
+                    />
+                    <p
+                      className="font-semibold text-[10px] transition-colors duration-500"
+                      style={{ color: lit ? CHARCOAL : "#9ca3af" }}
+                    >
+                      {city}
+                    </p>
+                    <p
+                      className="text-[8px] mt-0.5 transition-colors duration-500"
+                      style={{ color: lit ? GRAY : "#d1d5db" }}
+                    >
+                      {COUNTRIES[i]}
+                    </p>
+                  </div>
+                  {i < STOPS.length - 1 && (
+                    <div className="flex-1 pb-6 px-1">
+                      <div
+                        className="w-full"
+                        style={{
+                          height: "1px",
+                          backgroundImage: "repeating-linear-gradient(90deg, #e5e7eb 0px, #e5e7eb 4px, transparent 4px, transparent 9px)",
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -178,19 +275,18 @@ function AboutSection() {
       </div>
 
       {/* Destination strip */}
-      <div className="grid grid-cols-3 h-[150px] sm:h-[220px] shrink-0">
+      <div className="grid grid-cols-3 h-[220px] sm:h-[300px] shrink-0">
         {[
-          { city: "Taipei", country: "Taiwan", img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=800&q=80" },
-          { city: "Hanoi", country: "Vietnam", img: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=800&q=80" },
-          { city: "Singapore", country: "Singapore", img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" },
+          { country: "Taiwan", img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=800&q=80" },
+          { country: "Vietnam", img: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=800&q=80" },
+          { country: "Singapore", img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" },
         ].map((d) => (
-          <div key={d.city} className="relative overflow-hidden">
-            <img src={d.img} alt={d.city} className="absolute inset-0 w-full h-full object-cover" />
+          <div key={d.country} className="relative overflow-hidden">
+            <img src={d.img} alt={d.country} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.05) 50%)" }} />
             <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-6">
               <div className="w-4 sm:w-5 h-[2px] mb-1.5 sm:mb-2" style={{ backgroundColor: RED }} />
-              <p className="text-white font-bold text-sm sm:text-lg leading-tight">{d.city}</p>
-              <p className="text-white/50 text-[8px] sm:text-[10px] font-semibold tracking-[0.15em] uppercase mt-0.5">{d.country}</p>
+              <p className="text-white font-bold text-sm sm:text-lg leading-tight">{d.country}</p>
             </div>
           </div>
         ))}
@@ -354,7 +450,8 @@ function CentralTexasSection() {
           <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-6 sm:mb-8" style={{ color: "#333" }}>
             In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional "clustering effect," drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.
           </p>
-          <div className="grid grid-cols-6 items-center justify-items-center gap-y-4 pt-6 border-t border-gray-200">
+          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase text-center pt-6 border-t border-gray-200 mb-5" style={{ color: GRAY }}>Investing Nations</p>
+          <div className="grid grid-cols-6 items-center justify-items-center gap-y-4">
             {[
               { name: "Taiwan", code: "tw" },
               { name: "Korea", code: "kr" },
@@ -363,9 +460,9 @@ function CentralTexasSection() {
               { name: "India", code: "in" },
               { name: "Vietnam", code: "vn" },
             ].map((c) => (
-              <div key={c.name} className="flex flex-col items-center gap-1.5">
-                <img src={`https://flagcdn.com/w40/${c.code}.png`} srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`} alt={c.name} className="h-5 sm:h-6 object-contain rounded-sm shadow-sm" />
-                <span className="text-[9px] sm:text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
+              <div key={c.name} className="flex flex-col items-center gap-2">
+                <img src={`https://flagcdn.com/w80/${c.code}.png`} srcSet={`https://flagcdn.com/w160/${c.code}.png 2x`} alt={c.name} className="w-16 sm:w-20 h-11 sm:h-14 object-cover rounded-md shadow-sm" />
+                <span className="text-[11px] sm:text-[13px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
               </div>
             ))}
           </div>
