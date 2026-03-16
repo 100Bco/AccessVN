@@ -170,7 +170,6 @@ function AboutSection() {
       {/* Text portion */}
       <div className="py-24" style={{ backgroundColor: "#f8f8f8" }}>
         <div className="max-w-3xl mx-auto px-8">
-          <p className="text-[11px] font-bold tracking-[0.25em] uppercase mb-4" style={{ color: RED }}>About the Program</p>
           <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-10" style={{ color: CHARCOAL }}>What is Access Asia?</h2>
 
           <p className="text-[17px] leading-[1.85] mb-8" style={{ color: "#333" }}>
@@ -288,7 +287,6 @@ function DelegationSection() {
 
       <div className="relative z-10 py-24">
         <div className="max-w-3xl mx-auto px-8 text-center">
-          <p className="text-[11px] font-bold tracking-[0.25em] uppercase mb-4" style={{ color: RED }}>The Delegation</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">The Access Vietnam Delegation</h2>
           <div className="w-10 h-[2px] mx-auto mb-10" style={{ backgroundColor: RED }} />
 
@@ -358,7 +356,7 @@ function CentralTexasSection() {
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%)" }} />
         <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12">
-          <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-white/50 mb-3">About Central Texas</p>
+          <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-white/50 mb-3">Central Texas</p>
           <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">A Premier Destination<br />for Asian Capital</h2>
         </div>
       </div>
@@ -396,7 +394,6 @@ function GAACCSection() {
     <section className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-8 text-center">
         <img src={gaaccLogo} alt="GAACC" className="h-14 w-14 object-contain mx-auto mb-8" />
-        <p className="text-[11px] font-bold tracking-[0.25em] uppercase mb-4" style={{ color: RED }}>About GAACC</p>
         <h2 className="text-3xl sm:text-4xl font-bold mb-10" style={{ color: CHARCOAL }}>Greater Austin Asian Chamber of Commerce</h2>
 
         <p className="text-[17px] leading-[1.85] mb-6" style={{ color: "#333" }}>
@@ -438,8 +435,7 @@ function ContactSection() {
     <section id="contact" className="py-24" style={{ backgroundColor: CHARCOAL }}>
       <div className="max-w-3xl mx-auto px-8">
         <div className="text-center mb-14">
-          <p className="text-[11px] font-bold tracking-[0.25em] uppercase mb-4" style={{ color: RED }}>Contacts</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">Get in Touch</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">Contacts</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
