@@ -102,7 +102,7 @@ function Hero() {
 /* ── Intro ── */
 function IntroSection() {
   return (
-    <section className="h-screen flex items-center bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-8 text-center">
         <img src={gaaccLogo} alt="GAACC" className="h-14 w-14 object-contain mx-auto mb-6" />
         <div className="w-8 h-px mx-auto mb-6" style={{ backgroundColor: RED }} />
@@ -197,7 +197,7 @@ function AccessVietnamSection() {
       </div>
 
       {/* Content */}
-      <div className="h-screen flex items-center bg-white">
+      <div className="py-14 bg-white">
         <div className="max-w-4xl mx-auto px-8">
           <p className="text-[17px] leading-[1.75] mb-10" style={{ color: "#333" }}>
             The visit to Vietnam is a direct result of the deepening business, community and cultural ties between Austin and Vietnam. In fact the Vietnamese population in Austin is one of the fastest growing Asian communities in Greater Austin so this visit reflects our commitment to building on existing ties, deepening mutual understanding, and fostering meaningful international business collaboration.
@@ -240,16 +240,16 @@ function DelegationSection() {
           <div className="grid md:grid-cols-12 gap-6 items-start">
             {/* Leaders */}
             <div className="md:col-span-5">
-              <div className="grid grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
+              <div className="grid grid-cols-2 gap-6">
                 {[
                   { name: "Minh Tran", title: "GAACC Chairman", photo: null },
                   { name: "Mark Duval", title: "President & CEO", photo: "https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp" },
                 ].map((p) => (
-                  <div key={p.name} className="flex flex-col items-center py-6 px-4" style={{ backgroundColor: "rgba(15,15,15,0.95)" }}>
+                  <div key={p.name} className="flex flex-col items-center">
                     {p.photo ? (
-                      <img src={p.photo} alt={p.name} className="w-16 h-16 rounded-full object-cover object-top mb-3 border-2 border-white/10" />
+                      <img src={p.photo} alt={p.name} className="w-16 h-16 rounded-full object-cover object-top mb-3" />
                     ) : (
-                      <div className="w-16 h-16 rounded-full mb-3 flex items-center justify-center text-white font-bold text-lg border-2 border-white/10" style={{ backgroundColor: RED }}>
+                      <div className="w-16 h-16 rounded-full mb-3 flex items-center justify-center text-white font-bold text-lg" style={{ backgroundColor: RED }}>
                         {p.name.split(" ").map((n) => n[0]).join("")}
                       </div>
                     )}
@@ -262,9 +262,9 @@ function DelegationSection() {
 
             {/* Cities + stats */}
             <div className="md:col-span-7 flex flex-col justify-center">
-              <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-6">
+              <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-6">
                 {["Austin", "Houston", "Georgetown", "Cedar Park", "Round Rock", "Taylor", "Hutto"].map((c) => (
-                  <span key={c} className="text-white/35 text-[13px] font-medium">{c}</span>
+                  <span key={c} className="text-white/50 text-[15px] font-semibold">{c}</span>
                 ))}
               </div>
               <div className="flex items-center gap-8 pt-5 border-t border-white/8">
@@ -274,8 +274,8 @@ function DelegationSection() {
                 </div>
                 <div className="h-8 w-px bg-white/8" />
                 <div>
-                  <div className="text-white/35 text-[12px]">Finalized by</div>
                   <div className="text-white font-bold text-sm">April 30, 2026</div>
+                  <div className="text-white/30 text-[10px] uppercase tracking-[0.15em] mt-0.5 font-semibold">Finalized Date</div>
                 </div>
               </div>
             </div>
@@ -290,7 +290,7 @@ function DelegationSection() {
 function CentralTexasSection() {
   return (
     <section id="central-texas">
-      <div className="relative h-[30vh] sm:h-[35vh]">
+      <div className="relative h-[40vh] sm:h-[50vh]">
         <img src="https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1400&q=80" alt="Austin, Texas" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%)" }} />
         <div className="absolute bottom-6 left-8 sm:bottom-8 sm:left-10">
@@ -299,7 +299,7 @@ function CentralTexasSection() {
         </div>
       </div>
 
-      <div className="h-screen flex items-center" style={{ backgroundColor: "#f8f8f8" }}>
+      <div className="py-14" style={{ backgroundColor: "#f8f8f8" }}>
         <div className="max-w-4xl mx-auto px-8">
           <p className="text-[17px] leading-[1.75] mb-5" style={{ color: "#333" }}>
             Central Texas has solidified its position as a premier destination for Asian capital. Driven by supply chain diversification and geopolitical de-risking as well as a $3-trillion global AI infrastructure supercycle, companies from Taiwan, Korea, Japan, Singapore, India, and Vietnam are aggressively investing in the United States and the region.
@@ -324,9 +324,9 @@ function CentralTexasSection() {
 /* ── GAACC ── */
 function GAACCSection() {
   return (
-    <section className="h-screen flex items-center bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-8 text-center">
-        <img src={gaaccLogo} alt="GAACC" className="h-12 w-12 object-contain mx-auto mb-5" />
+        <img src={gaaccLogo} alt="GAACC" className="h-[72px] w-[72px] object-contain mx-auto mb-5" />
         <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: CHARCOAL }}>Greater Austin Asian Chamber of Commerce</h2>
 
         <p className="text-[17px] leading-[1.75] mb-4" style={{ color: "#333" }}>
