@@ -39,15 +39,15 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-4">
-          <img src={gaaccLogo} alt="GAACC" className="h-9 w-9 object-contain" />
-          <div className="h-6 w-px bg-current opacity-20" />
+          <img src={gaaccLogo} alt="GAACC" className="h-12 w-12 object-contain" />
+          <div className="h-8 w-px bg-current opacity-20" />
           <img
             src={logo100b}
             alt="100B"
-            className="h-6 object-contain hidden sm:block"
+            className="h-8 object-contain hidden sm:block"
             style={{
               filter: scrolled ? "grayscale(100%) brightness(0)" : "grayscale(100%) brightness(10)",
-              maxWidth: "72px",
+              maxWidth: "96px",
               opacity: 0.8,
             }}
           />
@@ -85,35 +85,33 @@ function Navbar() {
 /* ────────────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80')" }}
       />
       <div className="absolute inset-0" style={{ background: `linear-gradient(160deg, rgba(10,10,10,0.75) 0%, rgba(30,30,30,0.60) 100%)` }} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-32">
-        <div className="inline-flex items-center gap-2.5 bg-white/8 border border-white/15 px-5 py-2 mb-10 backdrop-blur-sm">
-          <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: RED }} />
-          <span className="text-white/80 text-[13px] font-medium tracking-wider">June 7–13, 2026 · Hanoi & Ho Chi Minh City</span>
-        </div>
-
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <p className="text-[13px] font-semibold tracking-[0.25em] uppercase mb-5 text-white/50">
           Greater Austin Asian Chamber of Commerce & 100B
         </p>
 
-        <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 tracking-tight">
-          ACCESS Asia
-          <span className="block text-4xl sm:text-5xl lg:text-6xl mt-3" style={{ color: RED }}>
-            Access Vietnam 2026
-          </span>
+        <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+          ACCESS ASIA
         </h1>
+        <p className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-3" style={{ color: RED }}>
+          Access Vietnam 2026
+        </p>
+        <p className="text-white/50 text-[14px] sm:text-[15px] font-medium tracking-wider mb-8">
+          June 7–13, 2026 · Hanoi & Ho Chi Minh City
+        </p>
 
-        <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+        <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
           A historic delegation uniting Austin and Vietnamese business and government leaders to forge lasting economic partnerships between two of the world's most dynamic ecosystems.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
             href="#access-vietnam"
             className="text-white font-semibold px-8 py-3.5 text-[13px] tracking-wide hover:brightness-110 transition-all"
@@ -129,7 +127,7 @@ function Hero() {
           </a>
         </div>
 
-        <div className="grid grid-cols-3 max-w-xl mx-auto border-t border-white/10 pt-10 pb-16">
+        <div className="grid grid-cols-3 max-w-xl mx-auto border-t border-white/10 pt-8">
           {[
             { value: "3", label: "Countries" },
             { value: "21", label: "Days" },
@@ -485,7 +483,7 @@ function Footer() {
             <img src={logo100b} alt="100B" className="h-5 object-contain" style={{ maxWidth: "64px" }} />
           </div>
         </div>
-        <p className="text-white/20 text-[11px] tracking-[0.2em] uppercase mb-1">ACCESS Asia | Access Vietnam 2026</p>
+        <p className="text-white/20 text-[11px] tracking-[0.2em] uppercase mb-1">ACCESS ASIA | Access Vietnam 2026</p>
         <p className="text-white/12 text-[11px] mb-4">A program of the Greater Austin Asian Chamber of Commerce</p>
         <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer" className="text-[13px] hover:text-white transition-colors" style={{ color: RED }}>
           www.austinasianchamber.org
