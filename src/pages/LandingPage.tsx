@@ -53,7 +53,7 @@ function Navbar() {
             <img
               src={logo100b}
               alt="100B"
-              className="h-7 sm:h-8 object-contain hidden sm:block"
+              className="h-7 sm:h-8 object-contain"
               style={{ filter: scrolled ? "grayscale(100%) brightness(0)" : "grayscale(100%) brightness(10)", maxWidth: "96px", opacity: 0.8 }}
             />
           </a>
@@ -451,7 +451,7 @@ function CentralTexasSection() {
             In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional "clustering effect," drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.
           </p>
           <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase text-center pt-6 border-t border-gray-200 mb-5" style={{ color: GRAY }}>Investing Nations</p>
-          <div className="grid grid-cols-6 items-center justify-items-center gap-y-4">
+          <div className="grid grid-cols-3 sm:grid-cols-6 items-center justify-items-center gap-y-4">
             {[
               { name: "Taiwan", code: "tw" },
               { name: "Korea", code: "kr" },
