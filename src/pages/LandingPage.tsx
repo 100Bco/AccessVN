@@ -225,19 +225,19 @@ function IntroSection() {
                       style={{ backgroundColor: lit ? RED : "#d1d5db" }}
                     />
                     <p
-                      className="font-semibold text-[10px] transition-colors duration-500"
+                      className="font-semibold text-[11px] sm:text-[13px] transition-colors duration-500"
                       style={{ color: lit ? CHARCOAL : "#9ca3af" }}
                     >
                       {city}
                     </p>
                     <p
-                      className="text-[8px] mt-0.5 transition-colors duration-500"
+                      className="text-[9px] sm:text-[11px] mt-0.5 transition-colors duration-500"
                       style={{ color: lit ? GRAY : "#d1d5db" }}
                     >
                       {COUNTRIES[i]}
                     </p>
                     <p
-                      className="text-[9px] font-bold mt-0.5 transition-colors duration-500"
+                      className="text-[10px] sm:text-[12px] font-bold mt-0.5 transition-colors duration-500"
                       style={{ color: lit ? RED : "#d1d5db" }}
                     >
                       {DATES[i]}
@@ -284,7 +284,7 @@ function AboutSection() {
       <div className="grid grid-cols-3 h-[220px] sm:h-[300px] shrink-0">
         {[
           { country: "Taiwan", img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=800&q=80" },
-          { country: "Vietnam", img: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=800&q=80" },
+          { country: "Vietnam", img: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" },
           { country: "Singapore", img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" },
         ].map((d) => (
           <div key={d.country} className="relative overflow-hidden">
@@ -304,9 +304,9 @@ function AboutSection() {
 /* ── Access Vietnam ── */
 function AccessVietnamSection() {
   const images = [
-    { src: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1400&q=80", caption: "Hanoi" },
-    { src: "https://images.pexels.com/photos/31991164/pexels-photo-31991164.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Ho Chi Minh City" },
-    { src: "https://images.pexels.com/photos/30234695/pexels-photo-30234695.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Da Nang" },
+    { src: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&q=80", caption: "Hanoi" },
+    { src: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1400&q=80", caption: "Ho Chi Minh City" },
+    { src: "https://images.unsplash.com/photo-1700500790259-a2527558c3f2?w=1400&q=80", caption: "Da Nang" },
   ];
   const [cur, setCur] = useState(0);
   useEffect(() => {
