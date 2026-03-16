@@ -1,6 +1,5 @@
 import gaaccLogo from "@assets/GAACC-logo-400x400-1-qyhcmbgu36kdcsai231m2gr6xj1pqen1lbcxra8p_1773649259946.webp";
 import logo100b from "@assets/100B_-_TACH_NEN_-2_(1)_1773649286116.png";
-import minhTranPhoto from "@assets/Minh Tran Chairman.jpeg";
 import minhMacPhoto from "@assets/Minh Mac CEO.jpeg";
 import { useEffect, useRef, useState } from "react";
 import { Plane } from "lucide-react";
@@ -121,7 +120,7 @@ function Navbar() {
 function Hero() {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80')" }} />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/8228852/pexels-photo-8228852.jpeg?auto=compress&cs=tinysrgb&w=1920')" }} />
       <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(10,10,10,0.75) 0%, rgba(30,30,30,0.60) 100%)" }} />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 sm:px-6 text-center pt-[70px] sm:pt-[80px]">
@@ -278,7 +277,7 @@ function AboutSection() {
       <div className="grid grid-cols-3 h-[220px] sm:h-[300px] shrink-0">
         {[
           { country: "Taiwan", img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=800&q=80" },
-          { country: "Vietnam", img: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=800&q=80" },
+          { country: "Vietnam", img: "https://images.pexels.com/photos/30103217/pexels-photo-30103217.jpeg?auto=compress&cs=tinysrgb&w=800" },
           { country: "Singapore", img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" },
         ].map((d) => (
           <div key={d.country} className="relative overflow-hidden">
@@ -298,9 +297,9 @@ function AboutSection() {
 /* ── Access Vietnam ── */
 function AccessVietnamSection() {
   const images = [
-    { src: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80", caption: "Hanoi" },
-    { src: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1400&q=80", caption: "Ho Chi Minh City" },
-    { src: "https://images.unsplash.com/photo-1528127269322-539801943592?w=1400&q=80", caption: "Vietnamese Heritage" },
+    { src: "https://images.pexels.com/photos/20988483/pexels-photo-20988483.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Hanoi" },
+    { src: "https://images.pexels.com/photos/31991164/pexels-photo-31991164.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Ho Chi Minh City" },
+    { src: "https://images.pexels.com/photos/30234695/pexels-photo-30234695.jpeg?auto=compress&cs=tinysrgb&w=1400", caption: "Da Nang" },
   ];
   const [cur, setCur] = useState(0);
   useEffect(() => {
@@ -375,31 +374,18 @@ function DelegationSection() {
             <h2 className="text-xl sm:text-3xl font-bold text-white leading-tight mb-3 sm:mb-4">The Access Vietnam Delegation</h2>
             <div className="w-8 h-[2px] mx-auto mb-4 sm:mb-6" style={{ backgroundColor: RED }} />
             <p className="text-white/60 text-[14px] sm:text-[17px] leading-[1.75] max-w-3xl mx-auto">
-              The delegation will be led by GAACC Chairman Minh Tran and GAACC President & CEO Mark Duval. Delegation members will include business and government leaders representing the City of Austin, the City of Houston and other Central Texas Cities such as Georgetown, Cedar Park, Round Rock, Taylor and Hutto. A total of at least 10-15 delegates (quite possibly more) are expected to join, with that list to be finalized and confirmed by April 30, 2026.
+              The delegation will be led by GAACC President & CEO Mark Duval. Delegation members will include business and government leaders representing the City of Austin, the City of Houston and other Central Texas Cities such as Georgetown, Cedar Park, Round Rock, Taylor and Hutto. A total of at least 10-15 delegates (quite possibly more) are expected to join, with that list to be finalized and confirmed by April 30, 2026.
             </p>
           </div>
 
           {/* Leaders + cities + stats in a compact row */}
           <div className="grid md:grid-cols-12 gap-6 items-start">
-            {/* Leaders */}
-            <div className="md:col-span-5">
-              <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                {[
-                  { name: "Minh Tran", title: "GAACC Chairman", photo: minhTranPhoto },
-                  { name: "Mark Duval", title: "President & CEO", photo: "https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp" },
-                ].map((p) => (
-                  <div key={p.name} className="flex flex-col items-center">
-                    {p.photo ? (
-                      <img src={p.photo} alt={p.name} className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover object-top mb-2 sm:mb-3" />
-                    ) : (
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-2 sm:mb-3 flex items-center justify-center text-white font-bold text-base sm:text-lg" style={{ backgroundColor: RED }}>
-                        {p.name.split(" ").map((n) => n[0]).join("")}
-                      </div>
-                    )}
-                    <h3 className="text-white font-bold text-[13px] sm:text-sm mb-0.5">{p.name}</h3>
-                    <p className="text-white/40 text-[11px] sm:text-[12px]">{p.title}</p>
-                  </div>
-                ))}
+            {/* Leader */}
+            <div className="md:col-span-5 flex justify-center">
+              <div className="flex flex-col items-center">
+                <img src="https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp" alt="Mark Duval" className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-top mb-3 sm:mb-4" />
+                <h3 className="text-white font-bold text-base sm:text-lg mb-0.5">Mark Duval</h3>
+                <p className="text-white/40 text-[12px] sm:text-[13px]">GAACC President & CEO</p>
               </div>
             </div>
 
