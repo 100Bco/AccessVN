@@ -92,7 +92,7 @@ function Hero() {
       />
       <div className="absolute inset-0" style={{ background: `linear-gradient(160deg, rgba(10,10,10,0.75) 0%, rgba(30,30,30,0.60) 100%)` }} />
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 text-center pt-[60px]">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 text-center pt-[80px]">
         <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
           ACCESS ASIA
         </h1>
