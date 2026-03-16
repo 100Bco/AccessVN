@@ -92,26 +92,26 @@ function Hero() {
       />
       <div className="absolute inset-0" style={{ background: `linear-gradient(160deg, rgba(10,10,10,0.75) 0%, rgba(30,30,30,0.60) 100%)` }} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <p className="text-[13px] font-semibold tracking-[0.25em] uppercase mb-5 text-white/50">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center justify-center h-full">
+        <p className="text-[13px] font-semibold tracking-[0.25em] uppercase mb-6 text-white/50">
           Greater Austin Asian Chamber of Commerce & 100B
         </p>
 
         <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
           ACCESS ASIA
         </h1>
-        <p className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-3" style={{ color: RED }}>
+        <p className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 mb-4" style={{ color: RED }}>
           Access Vietnam 2026
         </p>
-        <p className="text-white/50 text-[14px] sm:text-[15px] font-medium tracking-wider mb-8">
+        <p className="text-white/50 text-[14px] sm:text-[15px] font-medium tracking-wider mb-10">
           June 7–13, 2026 · Hanoi & Ho Chi Minh City
         </p>
 
-        <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+        <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
           A historic delegation uniting Austin and Vietnamese business and government leaders to forge lasting economic partnerships between two of the world's most dynamic ecosystems.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <a
             href="#access-vietnam"
             className="text-white font-semibold px-8 py-3.5 text-[13px] tracking-wide hover:brightness-110 transition-all"
@@ -127,7 +127,7 @@ function Hero() {
           </a>
         </div>
 
-        <div className="grid grid-cols-3 max-w-xl mx-auto border-t border-white/10 pt-8">
+        <div className="grid grid-cols-3 max-w-xl mx-auto border-t border-white/10 pt-8 w-full">
           {[
             { value: "3", label: "Countries" },
             { value: "21", label: "Days" },
