@@ -309,9 +309,9 @@ function DelegationSection() {
 
             {/* Cities + stats */}
             <div className="md:col-span-7 flex flex-col justify-center">
-              <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-5 gap-y-2 mb-6">
+              <div className="flex flex-wrap justify-center gap-2 mb-6">
                 {["Austin", "Houston", "Georgetown", "Cedar Park", "Round Rock", "Taylor", "Hutto"].map((c) => (
-                  <span key={c} className="text-white/50 text-[13px] sm:text-[15px] font-semibold">{c}</span>
+                  <span key={c} className="text-white/70 text-[11px] sm:text-[13px] font-medium px-2.5 py-1 rounded border border-white/10 bg-white/5">{c}</span>
                 ))}
               </div>
               <div className="flex items-center justify-center md:justify-start gap-6 sm:gap-8 pt-5 border-t border-white/8">
@@ -354,7 +354,7 @@ function CentralTexasSection() {
           <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-6 sm:mb-8" style={{ color: "#333" }}>
             In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional "clustering effect," drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-6 border-t border-gray-200">
+          <div className="grid grid-cols-6 items-center justify-items-center gap-y-4 pt-6 border-t border-gray-200">
             {[
               { name: "Taiwan", code: "tw" },
               { name: "Korea", code: "kr" },
@@ -364,8 +364,8 @@ function CentralTexasSection() {
               { name: "Vietnam", code: "vn" },
             ].map((c) => (
               <div key={c.name} className="flex flex-col items-center gap-1.5">
-                <img src={`https://flagcdn.com/w40/${c.code}.png`} srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`} alt={c.name} className="h-6 object-contain rounded-sm shadow-sm" />
-                <span className="text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
+                <img src={`https://flagcdn.com/w40/${c.code}.png`} srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`} alt={c.name} className="h-5 sm:h-6 object-contain rounded-sm shadow-sm" />
+                <span className="text-[9px] sm:text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
               </div>
             ))}
           </div>
@@ -415,9 +415,9 @@ function ContactSection() {
     <section id="contact" className="py-12 sm:py-16" style={{ backgroundColor: CHARCOAL }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-8">
         <h2 className="text-xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-10">Contacts</h2>
-        <div className="grid grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
+        <div className="grid grid-cols-2 gap-4 sm:gap-6">
           {contacts.map((c) => (
-            <div key={c.name} className="flex flex-col items-center py-6 sm:py-8 px-4 sm:px-6" style={{ backgroundColor: CHARCOAL }}>
+            <div key={c.name} className="flex flex-col items-center py-6 sm:py-8 px-3 sm:px-6 rounded-lg border border-white/8 bg-white/[0.03]">
               {c.photo ? (
                 <img src={c.photo} alt={c.name} className="w-[100px] h-[100px] sm:w-[125px] sm:h-[125px] rounded-full object-cover object-top mb-4 border-2 border-white/8" />
               ) : (
@@ -428,7 +428,7 @@ function ContactSection() {
               <h3 className="text-white font-bold text-base sm:text-lg mb-3">{c.name}</h3>
               <div className="space-y-1.5 text-center">
                 <a href={`tel:${c.phone.replace(/\D/g, "")}`} className="block text-white/45 hover:text-white transition-colors text-[12px] sm:text-[13px]">{c.phone}</a>
-                <a href={`mailto:${c.email}`} className="block font-semibold hover:text-white transition-colors text-[12px] sm:text-[13px]" style={{ color: RED }}>{c.email}</a>
+                <a href={`mailto:${c.email}`} className="block font-semibold hover:text-white transition-colors text-[10px] sm:text-[13px] break-all" style={{ color: RED }}>{c.email}</a>
               </div>
             </div>
           ))}
