@@ -307,12 +307,19 @@ function CentralTexasSection() {
           <p className="text-[17px] leading-[1.75] mb-8" style={{ color: "#333" }}>
             In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional "clustering effect," drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-1 text-[13px] pt-6 border-t border-gray-200">
-            {["Taiwan", "Korea", "Japan", "Singapore", "India", "Vietnam"].map((c, i) => (
-              <span key={c}>
-                <span className="font-semibold" style={{ color: CHARCOAL }}>{c}</span>
-                {i < 5 && <span className="mx-2 text-gray-300">·</span>}
-              </span>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 pt-6 border-t border-gray-200">
+            {[
+              { name: "Taiwan", flag: "🇹🇼" },
+              { name: "Korea", flag: "🇰🇷" },
+              { name: "Japan", flag: "🇯🇵" },
+              { name: "Singapore", flag: "🇸🇬" },
+              { name: "India", flag: "🇮🇳" },
+              { name: "Vietnam", flag: "🇻🇳" },
+            ].map((c) => (
+              <div key={c.name} className="flex flex-col items-center gap-1.5">
+                <span className="text-2xl">{c.flag}</span>
+                <span className="text-[11px] font-semibold tracking-wide" style={{ color: CHARCOAL }}>{c.name}</span>
+              </div>
             ))}
           </div>
         </div>
@@ -390,22 +397,20 @@ function ContactSection() {
 /* ── Footer ── */
 function Footer() {
   return (
-    <footer className="py-8" style={{ backgroundColor: "#0a0a0a" }}>
+    <footer className="py-8 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-8 text-center">
         <div className="flex items-center justify-center gap-5 mb-5">
-          <img src={gaaccLogo} alt="GAACC" className="h-8 w-8 object-contain opacity-50" />
-          <div className="h-5 w-px bg-white/10" />
-          <div className="bg-white/90 rounded px-2.5 py-1">
-            <img src={logo100b} alt="100B" className="h-4 object-contain" style={{ maxWidth: "56px" }} />
-          </div>
+          <img src={gaaccLogo} alt="GAACC" className="h-8 w-8 object-contain" />
+          <div className="h-5 w-px bg-gray-200" />
+          <img src={logo100b} alt="100B" className="h-5 object-contain" style={{ maxWidth: "72px" }} />
         </div>
-        <p className="text-white/20 text-[10px] tracking-[0.15em] uppercase mb-0.5">ACCESS ASIA | Access Vietnam 2026</p>
-        <p className="text-white/12 text-[10px] mb-3">A program of the Greater Austin Asian Chamber of Commerce</p>
-        <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:text-white transition-colors" style={{ color: RED }}>
+        <p className="text-gray-400 text-[10px] tracking-[0.15em] uppercase mb-0.5">ACCESS ASIA | Access Vietnam 2026</p>
+        <p className="text-gray-300 text-[10px] mb-3">A program of the Greater Austin Asian Chamber of Commerce</p>
+        <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer" className="text-[12px] hover:opacity-80 transition-colors" style={{ color: RED }}>
           www.austinasianchamber.org
         </a>
-        <div className="mt-5 pt-4 border-t border-white/5">
-          <p className="text-white/10 text-[10px]">© 2026 Greater Austin Asian Chamber of Commerce. All rights reserved.</p>
+        <div className="mt-5 pt-4 border-t border-gray-100">
+          <p className="text-gray-300 text-[10px]">© 2026 Greater Austin Asian Chamber of Commerce. All rights reserved.</p>
         </div>
       </div>
     </footer>
