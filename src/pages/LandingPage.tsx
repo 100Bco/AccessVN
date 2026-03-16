@@ -309,9 +309,9 @@ function DelegationSection() {
 
             {/* Cities + stats */}
             <div className="md:col-span-7 flex flex-col justify-center">
-              <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-5 gap-y-2 mb-6">
+              <div className="flex flex-wrap justify-center gap-2 mb-6">
                 {["Austin", "Houston", "Georgetown", "Cedar Park", "Round Rock", "Taylor", "Hutto"].map((c) => (
-                  <span key={c} className="text-white/50 text-[13px] sm:text-[15px] font-semibold">{c}</span>
+                  <span key={c} className="text-white/70 text-[11px] sm:text-[13px] font-medium px-2.5 py-1 rounded border border-white/10 bg-white/5">{c}</span>
                 ))}
               </div>
               <div className="flex items-center justify-center md:justify-start gap-6 sm:gap-8 pt-5 border-t border-white/8">
@@ -415,9 +415,9 @@ function ContactSection() {
     <section id="contact" className="py-12 sm:py-16" style={{ backgroundColor: CHARCOAL }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-8">
         <h2 className="text-xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-10">Contacts</h2>
-        <div className="grid grid-cols-2 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
+        <div className="grid grid-cols-2 gap-4 sm:gap-6">
           {contacts.map((c) => (
-            <div key={c.name} className="flex flex-col items-center py-6 sm:py-8 px-4 sm:px-6" style={{ backgroundColor: CHARCOAL }}>
+            <div key={c.name} className="flex flex-col items-center py-6 sm:py-8 px-3 sm:px-6 rounded-lg border border-white/8 bg-white/[0.03]">
               {c.photo ? (
                 <img src={c.photo} alt={c.name} className="w-[100px] h-[100px] sm:w-[125px] sm:h-[125px] rounded-full object-cover object-top mb-4 border-2 border-white/8" />
               ) : (
