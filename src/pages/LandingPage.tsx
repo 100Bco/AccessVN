@@ -342,6 +342,18 @@ function GAACCSection() {
           The Greater Austin Asian Chamber of Commerce (GAACC) engages with members of the Central Texas business community, with governmental entities, and with nonprofit organizations to help drive local economic growth for businesses with ties to Asia and Asian Americans. GAACC works to develop Austin's global business and investment connectivity while promoting regional economic equity for all. To learn more, visit{" "}
           <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{ color: RED }}>www.austinasianchamber.org</a>.
         </p>
+
+        <div className="inline-flex items-center gap-10 pt-6 border-t border-gray-100">
+          <div className="text-center">
+            <div className="text-2xl font-bold tracking-tight" style={{ color: CHARCOAL }}>6,500+</div>
+            <div className="text-[10px] font-semibold uppercase tracking-[0.15em] mt-1" style={{ color: GRAY }}>Attendees in 2025</div>
+          </div>
+          <div className="h-8 w-px bg-gray-100" />
+          <div className="text-center">
+            <div className="text-2xl font-bold tracking-tight" style={{ color: CHARCOAL }}>50+</div>
+            <div className="text-[10px] font-semibold uppercase tracking-[0.15em] mt-1" style={{ color: GRAY }}>Events in 2025</div>
+          </div>
+        </div>
       </div>
     </section>
   );
