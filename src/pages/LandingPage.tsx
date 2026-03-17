@@ -545,6 +545,7 @@ function Footer() {
         </a>
         <div className="mt-5 pt-4 border-t border-gray-100">
           <p className="text-gray-300 text-[10px]">© 2026 Greater Austin Asian Chamber of Commerce. All rights reserved.</p>
+          <p className="text-gray-300 text-[10px] mt-1">Powered by <a href="https://www.100bold.co/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: RED }}>100Bold</a></p>
         </div>
       </div>
     </footer>
