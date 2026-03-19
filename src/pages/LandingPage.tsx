@@ -460,14 +460,15 @@ function DelegationSection() {
                   <span key={c} className="text-white/70 text-[11px] sm:text-[13px] font-medium px-2.5 py-1 rounded border border-white/10 bg-white/5">{c}</span>
                 ))}
               </div>
-              <div className="grid grid-cols-2 pt-5 border-t border-white/8">
-                <div className="text-center md:text-left">
-                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight">10–15+</div>
-                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-0.5 font-semibold">{t("delegation_delegates")}</div>
+              <div className="flex items-start gap-6 sm:gap-8 pt-5 border-t border-white/8">
+                <div>
+                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight leading-tight">10–15+</div>
+                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-1 font-semibold">{t("delegation_delegates")}</div>
                 </div>
-                <div className="text-center md:text-left border-l border-white/8 pl-6 sm:pl-8">
-                  <div className="text-white font-bold text-[13px] sm:text-sm">April 30, 2026</div>
-                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-0.5 font-semibold">{t("delegation_deadline")}</div>
+                <div className="h-10 w-px bg-white/8 shrink-0" />
+                <div>
+                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight leading-tight">April 30, 2026</div>
+                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-1 font-semibold">{t("delegation_deadline")}</div>
                 </div>
               </div>
             </div>
