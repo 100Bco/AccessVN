@@ -17,32 +17,53 @@ const NAV_KEYS = [
   { key: "nav_contact" as const, href: "#contact" },
 ];
 
-/* ── Language Switcher ── */
+/* ── Language Switcher (dropdown with flags) ── */
+const LANG_OPTIONS = [
+  { code: "en" as const, label: "EN", flag: "https://flagcdn.com/w40/gb.png", flag2x: "https://flagcdn.com/w80/gb.png" },
+  { code: "vi" as const, label: "VIE", flag: "https://flagcdn.com/w40/vn.png", flag2x: "https://flagcdn.com/w80/vn.png" },
+];
+
 function LangSwitcher({ scrolled }: { scrolled?: boolean }) {
   const { lang, setLang } = useLang();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const current = LANG_OPTIONS.find((o) => o.code === lang)!;
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
   return (
-    <div className="flex items-center gap-0.5 text-[11px] font-semibold tracking-wide">
+    <div ref={ref} className="relative">
       <button
-        onClick={() => setLang("en")}
-        className="px-1.5 py-0.5 rounded transition-all"
-        style={{
-          color: lang === "en" ? RED : scrolled ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.4)",
-          fontWeight: lang === "en" ? 700 : 500,
-        }}
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-2 px-2.5 py-1.5 rounded transition-all text-[13px] font-semibold tracking-wide"
+        style={{ color: scrolled ? CHARCOAL : "white" }}
       >
-        ENG
+        <img src={current.flag} srcSet={`${current.flag2x} 2x`} alt="" className="w-5 h-3.5 object-cover rounded-sm" />
+        <span>{current.label}</span>
+        <svg className="w-2.5 h-2.5 transition-transform" style={{ transform: open ? "rotate(180deg)" : "none", color: RED }} fill="currentColor" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
-      <span style={{ color: scrolled ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.2)" }}>|</span>
-      <button
-        onClick={() => setLang("vi")}
-        className="px-1.5 py-0.5 rounded transition-all"
-        style={{
-          color: lang === "vi" ? RED : scrolled ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.4)",
-          fontWeight: lang === "vi" ? 700 : 500,
-        }}
-      >
-        VIE
-      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full mt-1.5 rounded-lg shadow-xl overflow-hidden z-50 min-w-[120px]" style={{ backgroundColor: CHARCOAL }}>
+          {LANG_OPTIONS.map((opt) => (
+            <button
+              key={opt.code}
+              onClick={() => { setLang(opt.code); setOpen(false); }}
+              className="flex items-center gap-3 w-full px-4 py-3 text-[14px] font-semibold transition-colors hover:bg-white/10"
+              style={{ color: opt.code === lang ? RED : "rgba(255,255,255,0.7)" }}
+            >
+              <img src={opt.flag} srcSet={`${opt.flag2x} 2x`} alt="" className="w-6 h-4 object-cover rounded-sm" />
+              <span>{opt.label}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -101,13 +122,12 @@ function Navbar() {
                 {t(link.key)}
               </a>
             ))}
-            <LangSwitcher scrolled={scrolled} />
           </div>
-          <div className="flex items-center gap-3">
-            <div className="lg:hidden"><LangSwitcher scrolled={scrolled} /></div>
+          <div className="flex items-center gap-2 sm:gap-3">
             <a href="#contact" className="text-white text-[11px] sm:text-[13px] font-semibold px-4 sm:px-5 py-2 transition-all hover:opacity-90" style={{ backgroundColor: RED }}>
               {t("nav_get_involved")}
             </a>
+            <LangSwitcher scrolled={scrolled} />
             {/* Hamburger button - mobile only */}
             <button
               className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
@@ -440,13 +460,12 @@ function DelegationSection() {
                   <span key={c} className="text-white/70 text-[11px] sm:text-[13px] font-medium px-2.5 py-1 rounded border border-white/10 bg-white/5">{c}</span>
                 ))}
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-6 sm:gap-8 pt-5 border-t border-white/8">
-                <div>
+              <div className="grid grid-cols-2 pt-5 border-t border-white/8">
+                <div className="text-center md:text-left">
                   <div className="text-lg sm:text-xl font-bold text-white tracking-tight">10–15+</div>
                   <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-0.5 font-semibold">{t("delegation_delegates")}</div>
                 </div>
-                <div className="h-8 w-px bg-white/8" />
-                <div>
+                <div className="text-center md:text-left border-l border-white/8 pl-6 sm:pl-8">
                   <div className="text-white font-bold text-[13px] sm:text-sm">April 30, 2026</div>
                   <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-0.5 font-semibold">{t("delegation_deadline")}</div>
                 </div>
