@@ -52,7 +52,7 @@ const translations = {
   },
   about_p2: {
     en: "In June 2026, GAACC will be leading an historic 3 week long trip to Taiwan, Vietnam, and Singapore. The delegation will include senior government officials from the City of Austin, and surrounding cities and counties as well as business leaders from the region - including the City of Houston.",
-    vi: "Tháng 6 năm 2026, GAACC sẽ dẫn đầu chuyến hành trình kéo dài 3 tuần đến Taiwan, Việt Nam và Singapore. Phái đoàn quy tụ các lãnh đạo cấp cao từ City of Austin, đại diện các thành phố và quận lân cận, lãnh đạo doanh nghiệp hàng đầu khu vực — bao gồm cả đại diện từ City of Houston.",
+    vi: "Tháng 6 năm 2026, GAACC sẽ có chuyến hành trình kéo dài 3 tuần đến Taiwan, Việt Nam và Singapore. Phái đoàn quy tụ các lãnh đạo cấp cao từ City of Austin, đại diện các thành phố và quận lân cận, lãnh đạo doanh nghiệp hàng đầu khu vực — bao gồm cả đại diện từ City of Houston.",
   },
 
   // Access Vietnam section
@@ -101,7 +101,7 @@ const translations = {
   ct_title_2: { en: "for Asian Capital", vi: "Cho Dòng Vốn Châu Á" },
   ct_p1: {
     en: "Central Texas has solidified its position as a premier destination for Asian capital. Driven by supply chain diversification and geopolitical de-risking as well as a $3-trillion global AI infrastructure supercycle, companies from Taiwan, Korea, Japan, Singapore, India, and Vietnam are aggressively investing in the United States and the region.",
-    vi: "Central Texas đang khẳng định vị thế là điểm đến chiến lược cho dòng vốn châu Á toàn cầu. Động lực tăng trưởng đến từ xu hướng đa dạng hóa chuỗi cung ứng, chiến lược giảm thiểu rủi ro địa chính trị và chu kỳ đầu tư hạ tầng AI toàn cầu trị giá 3.000 tỷ USD — các tập đoàn từ Taiwan, Hàn Quốc, Nhật Bản, Singapore, Ấn Độ và Việt Nam đang tích cực rót vốn vào Hoa Kỳ, đặc biệt tại khu vực này.",
+    vi: "Central Texas đang khẳng định vị thế là điểm đến chiến lược cho dòng vốn châu Á toàn cầu. Động lực tăng trưởng đến từ xu hướng đa dạng hóa chuỗi cung ứng, chiến lược giảm thiểu rủi ro địa chính trị và chu kỳ đầu tư hạ tầng AI toàn cầu trị giá 3.000 tỷ USD — các tập đoàn từ Taiwan, Hàn Quốc, Nhật Bản, Singapore, Ấn Độ và Việt Nam đang tích cực rót vốn vào Hoa Kỳ, đặc biệt tại Central Texas.",
   },
   ct_p2: {
     en: "In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional \"clustering effect,\" drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.",
