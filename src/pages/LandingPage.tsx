@@ -19,7 +19,7 @@ const NAV_KEYS = [
 
 /* ── Language Switcher (dropdown with flags) ── */
 const LANG_OPTIONS = [
-  { code: "en" as const, label: "EN", flag: "https://flagcdn.com/w40/gb.png", flag2x: "https://flagcdn.com/w80/gb.png" },
+  { code: "en" as const, label: "EN", flag: "https://flagcdn.com/w40/us.png", flag2x: "https://flagcdn.com/w80/us.png" },
   { code: "vi" as const, label: "VIE", flag: "https://flagcdn.com/w40/vn.png", flag2x: "https://flagcdn.com/w80/vn.png" },
 ];
 
