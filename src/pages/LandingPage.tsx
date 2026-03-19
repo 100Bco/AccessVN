@@ -161,7 +161,7 @@ function Hero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 sm:px-6 text-center pt-[70px] sm:pt-[80px]">
         <h1 className="text-white text-3xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">ACCESS ASIA</h1>
         <p className="text-2xl sm:text-5xl lg:text-6xl font-bold mt-3 sm:mt-4 mb-3 sm:mb-4" style={{ color: RED }}>Access Vietnam 2026</p>
-        <p className="text-white/50 text-[12px] sm:text-base font-medium tracking-wider mb-6 sm:mb-10">{t("hero_subtitle")}</p>
+        <p className="text-white/50 text-[12px] sm:text-base font-medium tracking-wider mb-6 sm:mb-10">{t("hero_date")}</p>
         <p className="text-white/60 text-sm sm:text-xl max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-12">
           {t("hero_desc")}
         </p>
