@@ -147,7 +147,7 @@ function ItineraryContent() {
       </div>
 
       {/* Tables */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16 space-y-12 sm:space-y-16" style={{ backgroundColor: "#f8f8f8" }}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-16 sm:py-24 space-y-14 sm:space-y-20" style={{ backgroundColor: "#f8f8f8" }}>
         <ItineraryTable
           title="Hanoi City"
           dateRange="June 6 – June 9, 2026"
