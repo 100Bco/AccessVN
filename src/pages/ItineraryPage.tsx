@@ -62,7 +62,10 @@ function ItineraryTable({
           <table className="w-full">
             <thead>
               <tr style={{ backgroundColor: CHARCOAL }}>
-                <th className="text-left px-4 sm:px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/60 w-[220px] sm:w-[280px]">
+                <th className="text-center px-2 sm:px-3 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/60 w-[40px] sm:w-[50px]">
+                  #
+                </th>
+                <th className="text-left px-4 sm:px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/60 w-[200px] sm:w-[260px]">
                   Organization
                 </th>
                 <th className="text-left px-4 sm:px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/60">
@@ -80,6 +83,11 @@ function ItineraryTable({
                     borderTop: "1px solid #f0f0f0",
                   }}
                 >
+                  <td className="text-center px-2 sm:px-3 py-3.5 align-top">
+                    <span className="text-[12px] sm:text-[13px] font-bold tabular-nums" style={{ color: RED }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </td>
                   <td className="px-4 sm:px-6 py-3.5 align-top">
                     <span className="text-[13px] sm:text-[14px] font-semibold" style={{ color: CHARCOAL }}>
                       {row.org}
