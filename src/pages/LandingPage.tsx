@@ -207,7 +207,7 @@ function IntroSection() {
   const t = useT();
   const STOPS = ["Austin", "Taipei", "Hanoi", "HCM City", "Singapore", "Austin"];
   const COUNTRIES = ["Texas, USA", "Taiwan", "Vietnam", "Vietnam", "Singapore", "Texas, USA"];
-  const DATES = ["5/30", "5/31", "6/6", "6/9", "6/13", "6/19"];
+  const DATES = ["5/30", "5/31", "6/6", "6/10", "6/13", "6/19"];
   const [litCount, setLitCount] = useState(1);
   const [planePct, setPlanePct] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
