@@ -5,8 +5,6 @@ import { LangProvider } from "../i18n";
 
 const RED = "#C41230";
 const CHARCOAL = "#1A1A1A";
-const TEAL = "#0D7377";
-const GOLD = "#C9952A";
 
 const hanoiData = [
   { org: "OpenCommerce", desc: "86,700+ sellers, 195 countries, $670M+ GMV; $7M raised; backed by VNG and Do Ventures." },
@@ -41,49 +39,60 @@ const hcmData = [
 function ItineraryTable({
   title,
   dateRange,
-  color,
   data,
 }: {
   title: string;
   dateRange: string;
-  color: string;
   data: { org: string; desc: string }[];
 }) {
   return (
-    <div className="rounded-lg overflow-hidden shadow-lg">
-      <div className="px-6 py-4" style={{ backgroundColor: color }}>
-        <h3 className="text-white text-lg sm:text-xl font-bold">{title}</h3>
-        <p className="text-white/80 text-sm">{dateRange}</p>
+    <div>
+      {/* Section label */}
+      <div className="flex items-center gap-4 mb-5 sm:mb-6">
+        <div className="w-8 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+        <div>
+          <h3 className="text-lg sm:text-2xl font-bold" style={{ color: CHARCOAL }}>{title}</h3>
+          <p className="text-[11px] sm:text-[13px] font-medium tracking-wide mt-0.5" style={{ color: "#999" }}>{dateRange}</p>
+        </div>
       </div>
-      <div className="overflow-x-auto">
-        <table className="w-full">
-          <thead>
-            <tr style={{ backgroundColor: `${color}20` }}>
-              <th className="text-left px-4 sm:px-6 py-3 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider" style={{ color: CHARCOAL }}>
-                Organization
-              </th>
-              <th className="text-left px-4 sm:px-6 py-3 text-[12px] sm:text-[13px] font-bold uppercase tracking-wider" style={{ color: CHARCOAL }}>
-                Description
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((row, i) => (
-              <tr
-                key={i}
-                className="border-t border-gray-100 transition-colors hover:bg-gray-50"
-                style={{ backgroundColor: i % 2 === 0 ? "white" : "#fafafa" }}
-              >
-                <td className="px-4 sm:px-6 py-3.5 text-[13px] sm:text-[14px] font-semibold align-top whitespace-nowrap" style={{ color: CHARCOAL }}>
-                  {row.org}
-                </td>
-                <td className="px-4 sm:px-6 py-3.5 text-[13px] sm:text-[14px] leading-relaxed" style={{ color: "#555" }}>
-                  {row.desc}
-                </td>
+
+      {/* Table */}
+      <div className="bg-white rounded-lg overflow-hidden border border-gray-100">
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr style={{ backgroundColor: CHARCOAL }}>
+                <th className="text-left px-4 sm:px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/60 w-[220px] sm:w-[280px]">
+                  Organization
+                </th>
+                <th className="text-left px-4 sm:px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-white/60">
+                  Description
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.map((row, i) => (
+                <tr
+                  key={i}
+                  className="transition-colors hover:bg-gray-50/80"
+                  style={{
+                    backgroundColor: i % 2 === 0 ? "white" : "#fafafa",
+                    borderTop: "1px solid #f0f0f0",
+                  }}
+                >
+                  <td className="px-4 sm:px-6 py-3.5 align-top">
+                    <span className="text-[13px] sm:text-[14px] font-semibold" style={{ color: CHARCOAL }}>
+                      {row.org}
+                    </span>
+                  </td>
+                  <td className="px-4 sm:px-6 py-3.5 text-[13px] sm:text-[14px] leading-[1.65]" style={{ color: "#555" }}>
+                    {row.desc}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
@@ -91,10 +100,10 @@ function ItineraryTable({
 
 function ItineraryContent() {
   return (
-    <div className="min-h-screen bg-[#f5f5f5] font-sans selection:bg-[#C41230] selection:text-white">
+    <div className="min-h-screen bg-white font-sans selection:bg-[#C41230] selection:text-white">
       {/* Header */}
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
+      <nav className="bg-white border-b border-gray-100 sticky top-0 z-50" style={{ backdropFilter: "blur(20px)" }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 sm:gap-4">
             <img src={gaaccLogo} alt="GAACC" className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
             <div className="h-8 w-px bg-gray-200" />
@@ -107,59 +116,68 @@ function ItineraryContent() {
           </Link>
           <Link
             href="/"
-            className="text-[12px] sm:text-[13px] font-semibold px-4 py-2 rounded transition-colors hover:opacity-90 text-white"
+            className="text-[12px] sm:text-[13px] font-semibold px-4 sm:px-5 py-2 transition-all hover:opacity-90 text-white"
             style={{ backgroundColor: RED }}
           >
             &larr; Home
           </Link>
         </div>
-      </header>
+      </nav>
 
-      {/* Hero */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-14 text-center">
-          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-3" style={{ color: RED }}>
+      {/* Hero banner */}
+      <div className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80')" }}
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.92)" }} />
+        <div className="relative z-10 py-14 sm:py-20 text-center px-4 sm:px-8">
+          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-white/40 mb-4">
             ACCESS ASIA &middot; Access Vietnam 2026
           </p>
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: CHARCOAL }}>
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
             Tentative Itinerary
           </h1>
           <div className="w-10 h-[2px] mx-auto mb-5" style={{ backgroundColor: RED }} />
-          <p className="text-[13px] sm:text-[15px] max-w-2xl mx-auto leading-relaxed" style={{ color: "#888" }}>
-            <span className="font-semibold" style={{ color: "#666" }}>NOTE:</span>{" "}
+          <p className="text-[12px] sm:text-[14px] max-w-xl mx-auto leading-relaxed text-white/45">
+            <span className="font-semibold text-white/60">NOTE:</span>{" "}
             Detailed itinerary in development. All activities subject to confirmation/change.
           </p>
         </div>
       </div>
 
       {/* Tables */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-14 space-y-10 sm:space-y-14">
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16 space-y-12 sm:space-y-16" style={{ backgroundColor: "#f8f8f8" }}>
         <ItineraryTable
           title="Hanoi City"
-          dateRange="June 6 \u2013 June 9, 2026"
-          color={TEAL}
+          dateRange="June 6 – June 9, 2026"
           data={hanoiData}
         />
-
         <ItineraryTable
           title="Ho Chi Minh City"
-          dateRange="June 10 \u2013 June 12, 2026"
-          color={GOLD}
+          dateRange="June 10 – June 12, 2026"
           data={hcmData}
         />
       </div>
 
       {/* Footer */}
       <footer className="py-6 sm:py-8 bg-white border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 text-center">
           <div className="flex items-center justify-center gap-5 mb-4">
-            <img src={gaaccLogo} alt="GAACC" className="h-8 w-8 object-contain" />
+            <a href="https://austinasianchamber.org" target="_blank" rel="noopener noreferrer">
+              <img src={gaaccLogo} alt="GAACC" className="h-8 w-8 object-contain hover:opacity-80 transition-opacity" />
+            </a>
             <div className="h-5 w-px bg-gray-200" />
-            <img src={logo100b} alt="100B" className="h-5 object-contain" style={{ maxWidth: "72px" }} />
+            <a href="https://100b.co/" target="_blank" rel="noopener noreferrer">
+              <img src={logo100b} alt="100B" className="h-5 object-contain hover:opacity-80 transition-opacity" style={{ maxWidth: "72px" }} />
+            </a>
           </div>
           <p className="text-gray-400 text-[10px] tracking-[0.15em] uppercase mb-0.5">ACCESS ASIA | Access Vietnam 2026</p>
           <p className="text-gray-300 text-[10px]">
             &copy; 2026 Greater Austin Asian Chamber of Commerce. All rights reserved.
+          </p>
+          <p className="text-gray-300 text-[10px] mt-1">
+            Powered by <a href="https://www.100bold.co/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: RED }}>100Bold</a>
           </p>
         </div>
       </footer>
