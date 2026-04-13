@@ -23,7 +23,7 @@ const translations = {
   nav_delegation: { en: "Delegation", vi: "Phái đoàn" },
   nav_central_texas: { en: "Central Texas", vi: "Central Texas" },
   nav_contact: { en: "Contact", vi: "Liên hệ" },
-  nav_get_involved: { en: "Get Involved", vi: "Đăng Ký Tham Gia" },
+  nav_get_involved: { en: "Itinerary", vi: "Lịch Trình" },
 
   // Hero
   hero_date: {

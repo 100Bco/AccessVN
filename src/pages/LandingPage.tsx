@@ -3,6 +3,7 @@ import logo100b from "@assets/100B_-_TACH_NEN_-2_(1)_1773649286116.png";
 import minhMacPhoto from "@assets/Minh Mac CEO.jpeg";
 import { useEffect, useRef, useState } from "react";
 import { Plane } from "lucide-react";
+import { Link } from "wouter";
 import { LangProvider, useLang, useT } from "../i18n";
 
 const RED = "#C41230";
@@ -124,9 +125,9 @@ function Navbar() {
             ))}
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
-            <a href="#contact" className="hidden sm:inline-block text-white text-[11px] sm:text-[13px] font-semibold px-4 sm:px-5 py-2 transition-all hover:opacity-90" style={{ backgroundColor: RED }}>
+            <Link href="/itinerary" className="hidden sm:inline-block text-white text-[11px] sm:text-[13px] font-semibold px-4 sm:px-5 py-2 transition-all hover:opacity-90" style={{ backgroundColor: RED }}>
               {t("nav_get_involved")}
-            </a>
+            </Link>
             <LangSwitcher scrolled={scrolled} />
             {/* Hamburger button - mobile only */}
             <button
@@ -186,7 +187,7 @@ function Hero() {
           {t("hero_desc")}
         </p>
         <div className="flex items-center justify-center gap-4 mb-8 sm:mb-14">
-          <a href="#contact" className="text-white font-semibold px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: RED }}>{t("nav_get_involved")}</a>
+          <Link href="/itinerary" className="text-white font-semibold px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: RED }}>{t("nav_get_involved")}</Link>
         </div>
         <div className="grid grid-cols-3 max-w-xs sm:max-w-xl mx-auto border-t border-white/10 pt-6 sm:pt-8 w-full">
           {[{ value: "3", label: t("hero_countries") }, { value: "21", label: t("hero_days") }, { value: "15+", label: t("hero_delegates") }].map((s) => (
