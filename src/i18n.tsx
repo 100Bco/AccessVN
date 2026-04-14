@@ -24,6 +24,7 @@ const translations = {
   nav_central_texas: { en: "Central Texas", vi: "Central Texas" },
   nav_contact: { en: "Contact", vi: "Liên hệ" },
   nav_get_involved: { en: "Itinerary", vi: "Lịch Trình" },
+  nav_why_vietnam: { en: "Why Vietnam", vi: "Tại Sao Việt Nam" },
 
   // Hero
   hero_date: {
