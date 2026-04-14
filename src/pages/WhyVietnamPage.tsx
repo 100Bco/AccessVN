@@ -132,7 +132,7 @@ function SalaryChart() {
 
 function DemographicsSection() {
   const stats = [
-    { value: "33.9 yr", label: "Median Age" },
+    { value: "34.4 yr", label: "Median Age" },
     { value: "69.3%", label: "Working-Age Population" },
     { value: "~690K", label: "STEM Students (+10%/yr)" },
     { value: "1.8M", label: "ICT Workforce" },
@@ -253,7 +253,7 @@ function EconomySection() {
           </p>
         </div>
         <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl mb-10 sm:mb-14" style={{ color: "#555" }}>
-          Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel.
+          Remarkable resilience with $38.42B in FDI disbursed in 2025 (all-time high), attracting global players like Samsung, Lego, and Intel.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5">
@@ -267,7 +267,7 @@ function EconomySection() {
               </div>
               <div className="w-full h-px bg-white/10" />
               <div>
-                <div className="text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>2025 Forecast</div>
+                <div className="text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>2025</div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">$514B</div>
               </div>
               <div className="w-full h-px bg-white/10" />
@@ -280,9 +280,9 @@ function EconomySection() {
 
           {/* Supporting stat cards */}
           {[
-            { value: "8.02%", label: "GDP Growth (2025F)" },
-            { value: "$405B", label: "Exports (2024)" },
-            { value: "$25.35B", label: "FDI Disbursed (All-Time High)" },
+            { value: "8.02%", label: "GDP Growth (2025)" },
+            { value: "$475B", label: "Exports (2025)" },
+            { value: "$38.42B", label: "FDI Disbursed (2025 Record)" },
             { value: "46%", label: "Middle & Affluent Class by 2030" },
           ].map((s, i) => (
             <div key={i} className="rounded-lg bg-white border border-gray-100 p-5 sm:p-6">
@@ -303,12 +303,12 @@ function EconomySection() {
 
 function StartupSection() {
   const stats = [
-    { value: "4,000+", label: "Active Startups", sub: "Ranked #5 in Southeast Asia", accent: false },
-    { value: "7", label: "Unicorns", sub: "MoMo, VNG, VNPAY, Sky Mavis, VNLIFE, Tiki, +1", accent: true },
-    { value: "$2.3B", label: "VC Investment (2024)", sub: "141 deals \u2014 sustained investor confidence", accent: true },
-    { value: "$20.7B", label: "Total Capital Raised", sub: "All-time across all funding rounds", accent: false },
-    { value: "290+", label: "Active VC Firms", sub: "150 investors active in 2024 \u2014 highest since 2021", accent: false },
-    { value: "765", label: "AI/ML Startups", sub: "AI private capital up 8\u00D7 in 2024 to $80M", accent: true },
+    { value: "4,100+", label: "Active Startups", sub: "Ranked #5 in Southeast Asia", accent: false },
+    { value: "4", label: "Unicorns", sub: "MoMo, VNG, VNPAY, Sky Mavis", accent: true },
+    { value: "$494M", label: "Total Funding (2025)", sub: "Across all funding rounds", accent: true },
+    { value: "290+", label: "Active VC Firms", sub: "150+ investors active \u2014 highest since 2021", accent: false },
+    { value: "765", label: "AI/ML Startups", sub: "AI private capital up 8\u00D7 to $80M", accent: true },
+    { value: "3\u20134", label: "New Unicorn Target (2030)", sub: "Focus on AI, semiconductors, and green tech", accent: false },
   ];
 
   return (
@@ -352,7 +352,7 @@ function StartupSection() {
 
 function ReportSection() {
   const highlights = [
-    "Vietnam recorded $2.3B across 141 deals in 2024 \u2014 deal count held steady, signaling sustained investor confidence.",
+    "Vietnam\u2019s total trade exceeded $930B in 2025 (+18.2% YoY), with exports reaching $475B.",
     "Mid-sized PE deals ($100M\u2013$300M) rebounded 2.7\u00D7 YoY to $700M, indicating growing appetite for scalable platforms.",
     "Early-stage VC revival: 57 deals under $0.5M, seeding the next generation of Vietnamese startups.",
     "AgriTech investments jumped 9\u00D7; GreenTech deals more than doubled, backed by strong ESG mandates.",
@@ -473,10 +473,10 @@ function WhyVietnamContent() {
 
             {/* Headline stats */}
             <div className="grid grid-cols-1 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-3 sm:pt-8 gap-y-2 sm:gap-y-5 gap-x-4 w-full">
-              <HeroStat value="$476B" label="GDP (2024)" />
-              <HeroStat value="101M" label="Population" />
-              <HeroStat value="7.09%" label="GDP Growth" />
-              <HeroStat value="$25.35B" label="FDI (Record)" />
+              <HeroStat value="$514B" label="GDP (2025)" />
+              <HeroStat value="102.3M" label="Population" />
+              <HeroStat value="8.02%" label="GDP Growth" />
+              <HeroStat value="$38.42B" label="FDI (Record)" />
             </div>
           </div>
         </div>
