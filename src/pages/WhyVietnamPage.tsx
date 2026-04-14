@@ -158,7 +158,7 @@ function DemographicsSection() {
             </div>
             <div className="grid grid-cols-2 gap-y-7 gap-x-4">
               {stats.map((s, i) => (
-                <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
+                <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: "#e5e5e5" }}>
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
                     {s.value}
                   </div>
