@@ -16,9 +16,10 @@ const IMG = {
   people: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
   digital: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   hcm: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80",
-  hanoi: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1400&q=80",
   startup: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
-  manufacturing: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1400&q=80",
+  ai: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400&q=80",
+  semiconductor: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80",
+  greentech: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1400&q=80",
 };
 
 /* ── Stat helpers ── */
@@ -373,9 +374,9 @@ function WhyVietnamContent() {
       {/* Image strip: Vietnam at a glance */}
       <ImageStrip
         images={[
-          { src: IMG.hanoi, label: "Hanoi" },
-          { src: IMG.hcm, label: "Ho Chi Minh City" },
-          { src: IMG.manufacturing, label: "Manufacturing" },
+          { src: IMG.ai, label: "AI & Technology" },
+          { src: IMG.semiconductor, label: "Semiconductors" },
+          { src: IMG.greentech, label: "Green Tech" },
         ]}
       />
 
