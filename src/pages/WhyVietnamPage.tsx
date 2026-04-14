@@ -137,6 +137,7 @@ function DemographicsSection() {
     { value: "~690K", label: "STEM Students (+10%/yr)" },
     { value: "1.8M", label: "ICT Workforce" },
     { value: "50K", label: "Semiconductor Engineers (2030 Goal)" },
+    { value: "98%", label: "Youth Literacy (15\u201324)" },
   ];
 
   return (
@@ -154,7 +155,7 @@ function DemographicsSection() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <div className="grid grid-cols-2 gap-y-8 gap-x-4">
+          <div className="grid grid-cols-2 gap-y-7 gap-x-4">
             {stats.map((s, i) => (
               <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
