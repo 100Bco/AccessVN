@@ -19,7 +19,7 @@ const IMG = {
   startup: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
   ai: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80",
   semiconductor: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1400&q=80",
-  greentech: "https://images.unsplash.com/photo-1528127269322-539801943592?w=1400&q=80",
+  fintech: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80",
 };
 
 /* ── Stat helpers ── */
@@ -376,7 +376,7 @@ function WhyVietnamContent() {
         images={[
           { src: IMG.ai, label: "AI & Technology" },
           { src: IMG.semiconductor, label: "Semiconductors" },
-          { src: IMG.greentech, label: "Green Tech" },
+          { src: IMG.fintech, label: "Finance & FinTech" },
         ]}
       />
 
