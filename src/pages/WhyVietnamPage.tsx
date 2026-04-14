@@ -143,35 +143,37 @@ function DemographicsSection() {
   return (
     <section className="bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
-        <div className="mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
-            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
-              Demographics & Talent
-            </p>
-          </div>
-          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
-            A young, highly educated, and tech-ready workforce of 101 million &mdash; the 15th largest population in the world with 94.5% overall literacy.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <div className="grid grid-cols-2 gap-y-7 gap-x-4">
-            {stats.map((s, i) => (
-              <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
-                  {s.value}
-                </div>
-                <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
-                  {s.label}
-                </div>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div>
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+                  Demographics & Talent
+                </p>
               </div>
-            ))}
+              <p className="text-[14px] sm:text-[15px] leading-[1.7]" style={{ color: "#555" }}>
+                A young, highly educated, and tech-ready workforce of 101 million &mdash; the 15th largest population in the world with 94.5% overall literacy.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-y-7 gap-x-4">
+              {stats.map((s, i) => (
+                <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
+                    {s.value}
+                  </div>
+                  <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-[9px] mt-6 tracking-wide" style={{ color: "#ccc" }}>
+              Sources: UN World Population Prospects 2024, Worldometer, DataReportal
+            </p>
           </div>
           <SalaryChart />
         </div>
-        <p className="text-[9px] mt-6 tracking-wide" style={{ color: "#ccc" }}>
-          Sources: UN World Population Prospects 2024, Worldometer, DataReportal
-        </p>
       </div>
     </section>
   );
