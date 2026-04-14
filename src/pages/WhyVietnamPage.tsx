@@ -69,7 +69,72 @@ function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
   );
 }
 
-/* ── Sections with side images ── */
+/* ── Salary Chart ── */
+
+const SALARY_DATA = [
+  { country: "Singapore", value: 5056, flag: "🇸🇬" },
+  { country: "Malaysia", value: 679, flag: "🇲🇾" },
+  { country: "Thailand", value: 480, flag: "🇹🇭" },
+  { country: "Vietnam", value: 373, flag: "🇻🇳" },
+  { country: "Indonesia", value: 358, flag: "🇮🇩" },
+  { country: "Cambodia", value: 336, flag: "🇰🇭" },
+  { country: "Philippines", value: 316, flag: "🇵🇭" },
+  { country: "Laos", value: 111, flag: "🇱🇦" },
+];
+
+function SalaryChart() {
+  const max = SALARY_DATA[0].value;
+  return (
+    <div className="bg-white rounded-lg border border-gray-100 p-5 sm:p-8">
+      <h4 className="text-[13px] sm:text-[15px] font-bold mb-1" style={{ color: CHARCOAL }}>
+        Gross Average Monthly Salary of Southeast Asia 2025
+      </h4>
+      <p className="text-[10px] sm:text-[11px] mb-6" style={{ color: "#999" }}>Unit: USD</p>
+      <div className="space-y-3 sm:space-y-3.5">
+        {SALARY_DATA.map((d) => {
+          const isVN = d.country === "Vietnam";
+          const pct = (d.value / max) * 100;
+          return (
+            <div key={d.country} className="flex items-center gap-3">
+              <span
+                className="text-[11px] sm:text-[13px] font-semibold w-[85px] sm:w-[100px] text-right shrink-0"
+                style={{ color: isVN ? RED : CHARCOAL }}
+              >
+                {d.country}
+              </span>
+              <div className="flex-1 h-[22px] sm:h-[26px] rounded-sm overflow-hidden" style={{ backgroundColor: "#f0f0f0" }}>
+                <div
+                  className="h-full rounded-sm flex items-center justify-end pr-2 transition-all"
+                  style={{
+                    width: `${Math.max(pct, 4)}%`,
+                    backgroundColor: isVN ? RED : "#93C47D",
+                  }}
+                >
+                  {pct > 8 && (
+                    <span className="text-white text-[10px] sm:text-[11px] font-bold">
+                      {d.value.toLocaleString()}
+                    </span>
+                  )}
+                </div>
+                {pct <= 8 && (
+                  <span className="text-[10px] sm:text-[11px] font-bold ml-1" style={{ color: "#666" }}>
+                    {d.value.toLocaleString()}
+                  </span>
+                )}
+              </div>
+              <span className="text-[14px] shrink-0">{d.flag}</span>
+            </div>
+          );
+        })}
+      </div>
+      <p className="text-[8px] sm:text-[9px] mt-5 tracking-wide" style={{ color: "#ccc" }}>
+        *Source: Compiled from various sources (MOM.gov; PSA.gov; Vietnam.gov; etc.)
+      </p>
+    </div>
+  );
+}
+
+/* ── Stat sections ── */
 
 function DemographicsSection() {
   const stats = [
@@ -94,7 +159,7 @@ function DemographicsSection() {
             A young, highly educated, and tech-ready workforce of 101 million &mdash; the 15th largest population in the world with 94.5% overall literacy.
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4 mb-10 sm:mb-14">
           {stats.map((s, i) => (
             <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
@@ -106,7 +171,8 @@ function DemographicsSection() {
             </div>
           ))}
         </div>
-        <p className="text-[9px] mt-8 tracking-wide" style={{ color: "#ccc" }}>
+        <SalaryChart />
+        <p className="text-[9px] mt-6 tracking-wide" style={{ color: "#ccc" }}>
           Sources: UN World Population Prospects 2024, Worldometer, DataReportal
         </p>
       </div>
