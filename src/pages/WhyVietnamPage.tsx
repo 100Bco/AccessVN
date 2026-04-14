@@ -362,51 +362,52 @@ function ReportSection() {
   return (
     <section style={{ backgroundColor: CHARCOAL }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center justify-center gap-3 mb-6">
           <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
           <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
             Featured Report
           </p>
         </div>
 
-        <div className="sm:flex sm:items-start sm:gap-10">
-          <div className="flex-1 mb-8 sm:mb-0">
-            <h3 className="text-lg sm:text-2xl font-bold text-white leading-tight mb-2">
-              Vietnam Innovation &<br />Private Capital Report 2025
-            </h3>
-            <p className="text-white/40 text-[13px] sm:text-[14px] leading-relaxed mb-6">
-              Comprehensive analysis of Vietnam&rsquo;s private capital landscape, startup ecosystem, and investment opportunities.
-            </p>
-            <ul className="space-y-3 mb-8">
-              {highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="text-[11px] font-bold mt-0.5 shrink-0" style={{ color: RED }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-white/55 text-[12px] sm:text-[13px] leading-[1.6]">{h}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="text-center mb-8">
+          <h3 className="text-lg sm:text-2xl font-bold text-white leading-tight mb-2">
+            Vietnam Innovation & Private Capital Report 2025
+          </h3>
+          <p className="text-white/40 text-[13px] sm:text-[14px] leading-relaxed max-w-xl mx-auto">
+            Comprehensive analysis of Vietnam&rsquo;s private capital landscape, startup ecosystem, and investment opportunities.
+          </p>
+        </div>
 
-          <div className="sm:w-[240px] shrink-0 flex flex-col items-center sm:items-start">
-            <div className="w-full rounded-lg overflow-hidden border border-white/10 bg-white/5 p-6 sm:p-8 text-center mb-4">
-              <div className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: RED }}>
-                <Download className="w-5 h-5 text-white" />
-              </div>
-              <p className="text-white text-[13px] font-semibold mb-1">Download PDF</p>
-              <p className="text-white/30 text-[10px]">Full Report &middot; 2025 Edition</p>
+        <div className="max-w-2xl mx-auto mb-10">
+          <ul className="space-y-3">
+            {highlights.map((h, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-[11px] font-bold mt-0.5 shrink-0" style={{ color: RED }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-white/55 text-[12px] sm:text-[13px] leading-[1.6]">{h}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex flex-col items-center">
+          <div className="w-[240px] rounded-lg overflow-hidden border border-white/10 bg-white/5 p-6 sm:p-8 text-center mb-4">
+            <div className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: RED }}>
+              <Download className="w-5 h-5 text-white" />
             </div>
-            <a
-              href={REPORT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center text-white text-[12px] sm:text-[13px] font-semibold px-6 py-3 transition-all hover:opacity-90 rounded"
-              style={{ backgroundColor: RED }}
-            >
-              View Report &rarr;
-            </a>
+            <p className="text-white text-[13px] font-semibold mb-1">Download PDF</p>
+            <p className="text-white/30 text-[10px]">Full Report &middot; 2025 Edition</p>
           </div>
+          <a
+            href={REPORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-[240px] text-center text-white text-[12px] sm:text-[13px] font-semibold px-6 py-3 transition-all hover:opacity-90 rounded"
+            style={{ backgroundColor: RED }}
+          >
+            View Report &rarr;
+          </a>
         </div>
       </div>
     </section>
