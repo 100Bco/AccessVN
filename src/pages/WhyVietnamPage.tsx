@@ -17,9 +17,9 @@ const IMG = {
   digital: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   hcm: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80",
   startup: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
-  ai: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400&q=80",
-  semiconductor: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80",
-  greentech: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1400&q=80",
+  ai: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80",
+  semiconductor: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1400&q=80",
+  greentech: "https://images.unsplash.com/photo-1528127269322-539801943592?w=1400&q=80",
 };
 
 /* ── Stat helpers ── */
