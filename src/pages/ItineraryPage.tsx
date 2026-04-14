@@ -171,6 +171,26 @@ function ItineraryContent() {
         />
       </div>
 
+      {/* Why Vietnam CTA */}
+      <div className="bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16 text-center">
+          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase mb-3" style={{ color: RED }}>
+            Discover the Opportunity
+          </p>
+          <h3 className="text-xl sm:text-2xl font-bold mb-3" style={{ color: CHARCOAL }}>Why Vietnam?</h3>
+          <p className="text-[13px] sm:text-[15px] max-w-xl mx-auto leading-relaxed mb-6" style={{ color: "#888" }}>
+            Explore the data behind one of the world&rsquo;s fastest-growing economies.
+          </p>
+          <Link
+            href="/why-vietnam"
+            className="inline-block text-white text-[12px] sm:text-[13px] font-semibold px-6 sm:px-8 py-3 transition-all hover:opacity-90"
+            style={{ backgroundColor: RED }}
+          >
+            View Vietnam Highlights &rarr;
+          </Link>
+        </div>
+      </div>
+
       {/* Footer */}
       <footer className="py-6 sm:py-8 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-8 text-center">
