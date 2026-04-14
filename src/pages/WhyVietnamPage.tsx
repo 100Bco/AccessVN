@@ -179,42 +179,45 @@ function DemographicsSection() {
   );
 }
 
-function DigitalSection() {
-  const stats = [
-    { value: "79.8M", label: "Internet Users (78.8%)" },
-    { value: "84.4%", label: "Smartphone Penetration" },
-    { value: "$36B", label: "Digital Economy (2024)", accent: true },
-    { value: "+61%", label: "Mobile Speed Growth YoY" },
-    { value: "30\u201335%", label: "GDP from Digital (2030 Target)" },
-  ];
+/* ── Digital: Dark cinematic section ── */
 
+function DigitalSection() {
   return (
-    <section style={{ backgroundColor: "#f8f8f8" }}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
-        <div className="mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
-            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
-              Digital Economy
-            </p>
-          </div>
-          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
-            One of Asia&rsquo;s fastest-growing digital economies, with 500,000+ IT workers and strong government support for AI, semiconductors, and digital transformation.
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hcm}')` }} />
+      <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.92)" }} />
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 py-16 sm:py-24">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+            Digital Economy
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: s.accent ? RED : CHARCOAL }}>
-                {s.value}
-              </div>
-              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
-                {s.label}
-              </div>
+        <p className="text-white/50 text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl mb-10 sm:mb-14">
+          One of Asia&rsquo;s fastest-growing digital economies, with 500,000+ IT workers and strong government support for AI, semiconductors, and digital transformation.
+        </p>
+
+        {/* Big hero number */}
+        <div className="text-center mb-10 sm:mb-14">
+          <div className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ color: RED }}>$36B</div>
+          <div className="text-white/30 text-[11px] sm:text-[13px] font-semibold uppercase tracking-[0.2em] mt-2">Digital Economy in 2024</div>
+        </div>
+
+        {/* Supporting stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 border-t border-white/10 pt-8">
+          {[
+            { value: "79.8M", label: "Internet Users (78.8%)" },
+            { value: "84.4%", label: "Smartphone Penetration" },
+            { value: "+61%", label: "Mobile Speed Growth YoY" },
+            { value: "30\u201335%", label: "GDP from Digital (2030)" },
+          ].map((s, i) => (
+            <div key={i} className="text-center">
+              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">{s.value}</div>
+              <div className="text-white/30 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5">{s.label}</div>
             </div>
           ))}
         </div>
-        <p className="text-[9px] mt-8 tracking-wide" style={{ color: "#ccc" }}>
+        <p className="text-[9px] mt-8 tracking-wide text-white/15">
           Sources: DataReportal Digital 2025, World Bank
         </p>
       </div>
@@ -222,38 +225,69 @@ function DigitalSection() {
   );
 }
 
-function EconomySection() {
-  const stats = [
-    { value: "$514B", label: "GDP Forecast (2025)", accent: true },
-    { value: "8.02%", label: "GDP Growth (2025F)" },
-    { value: "$405B", label: "Exports (2024)" },
-    { value: "$1.1T", label: "GDP Forecast (2035)", accent: true },
-    { value: "46%", label: "Middle & Affluent (2030)" },
-  ];
+/* ── Callout quote ── */
 
+function Callout({ text }: { text: string }) {
   return (
-    <section className="bg-white">
+    <div className="bg-white py-10 sm:py-14">
+      <div className="max-w-3xl mx-auto px-4 sm:px-8 text-center">
+        <div className="w-8 h-[2px] mx-auto mb-5" style={{ backgroundColor: RED }} />
+        <p className="text-lg sm:text-2xl lg:text-3xl font-bold leading-[1.4] tracking-tight" style={{ color: CHARCOAL }}>
+          {text}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ── Economy: Dark card + stat cards grid ── */
+
+function EconomySection() {
+  return (
+    <section style={{ backgroundColor: "#f8f8f8" }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
-        <div className="mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
-            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
-              Economy & Investment
-            </p>
-          </div>
-          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
-            Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel. Projected to become a top-25 world economy within the next decade.
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+            Economy & Investment
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: s.accent ? RED : CHARCOAL }}>
-                {s.value}
+        <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl mb-10 sm:mb-14" style={{ color: "#555" }}>
+          Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
+          {/* GDP trajectory card */}
+          <div className="md:row-span-2 rounded-lg p-6 sm:p-8 flex flex-col justify-center" style={{ backgroundColor: CHARCOAL }}>
+            <p className="text-white/40 text-[10px] font-bold tracking-[0.2em] uppercase mb-5">GDP Trajectory</p>
+            <div className="space-y-5">
+              <div>
+                <div className="text-white/40 text-[10px] uppercase tracking-wider mb-1">2024</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">$476B</div>
               </div>
-              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
-                {s.label}
+              <div className="w-full h-px bg-white/10" />
+              <div>
+                <div className="text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>2025 Forecast</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">$514B</div>
               </div>
+              <div className="w-full h-px bg-white/10" />
+              <div>
+                <div className="text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>2035 Forecast</div>
+                <div className="text-3xl sm:text-4xl font-bold" style={{ color: RED }}>$1.1T</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Supporting stat cards */}
+          {[
+            { value: "8.02%", label: "GDP Growth (2025F)" },
+            { value: "$405B", label: "Exports (2024)" },
+            { value: "$25.35B", label: "FDI Disbursed (All-Time High)" },
+            { value: "46%", label: "Middle & Affluent Class by 2030" },
+          ].map((s, i) => (
+            <div key={i} className="rounded-lg bg-white border border-gray-100 p-5 sm:p-6">
+              <div className="text-2xl sm:text-3xl font-bold tracking-tight mb-1" style={{ color: CHARCOAL }}>{s.value}</div>
+              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] leading-snug" style={{ color: "#999" }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -265,37 +299,45 @@ function EconomySection() {
   );
 }
 
+/* ── Startup: Cards with accent tops ── */
+
 function StartupSection() {
   const stats = [
-    { value: "4,000+", label: "Startups (#5 in SEA)" },
-    { value: "7", label: "Unicorns", accent: true },
-    { value: "$2.3B", label: "VC Investment (2024)", accent: true },
-    { value: "$20.7B", label: "Total Raised (All-Time)" },
-    { value: "765", label: "AI/ML Startups (8\u00D7 Growth)" },
+    { value: "4,000+", label: "Active Startups", sub: "Ranked #5 in Southeast Asia", accent: false },
+    { value: "7", label: "Unicorns", sub: "MoMo, VNG, VNPAY, Sky Mavis, VNLIFE, Tiki, +1", accent: true },
+    { value: "$2.3B", label: "VC Investment (2024)", sub: "141 deals \u2014 sustained investor confidence", accent: true },
+    { value: "$20.7B", label: "Total Capital Raised", sub: "All-time across all funding rounds", accent: false },
+    { value: "290+", label: "Active VC Firms", sub: "150 investors active in 2024 \u2014 highest since 2021", accent: false },
+    { value: "765", label: "AI/ML Startups", sub: "AI private capital up 8\u00D7 in 2024 to $80M", accent: true },
   ];
 
   return (
-    <section style={{ backgroundColor: "#f8f8f8" }}>
+    <section className="bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
-        <div className="mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
-            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
-              Startup & Innovation Ecosystem
-            </p>
-          </div>
-          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
-            A vibrant ecosystem with 208 investment funds, 79 incubators, and 35 accelerators. Business automation surged 562% YoY, AI funding rose 8&times;, and nearly 150 VC investors were active in 2024.
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+            Startup & Innovation Ecosystem
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
+        <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl mb-10 sm:mb-14" style={{ color: "#555" }}>
+          A vibrant ecosystem with 208 investment funds, 79 incubators, and 35 accelerators. Business automation surged 562% YoY and nearly 150 VC investors were active in 2024.
+        </p>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {stats.map((s, i) => (
-            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: s.accent ? RED : CHARCOAL }}>
-                {s.value}
-              </div>
-              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
-                {s.label}
+            <div key={i} className="rounded-lg border border-gray-100 overflow-hidden" style={{ backgroundColor: "#fafafa" }}>
+              <div className="h-1" style={{ backgroundColor: s.accent ? RED : "#e5e5e5" }} />
+              <div className="p-5 sm:p-6">
+                <div className="text-2xl sm:text-3xl font-bold tracking-tight mb-1" style={{ color: s.accent ? RED : CHARCOAL }}>
+                  {s.value}
+                </div>
+                <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] mb-2" style={{ color: "#999" }}>
+                  {s.label}
+                </div>
+                <div className="text-[11px] sm:text-[12px] leading-relaxed" style={{ color: "#888" }}>
+                  {s.sub}
+                </div>
               </div>
             </div>
           ))}
@@ -449,6 +491,7 @@ function WhyVietnamContent() {
       {/* Stat sections with side images */}
       <DemographicsSection />
       <DigitalSection />
+      <Callout text="Projected to become a top-25 world economy within the next decade, with GDP forecast to exceed $1.1 trillion by 2035." />
       <EconomySection />
       <StartupSection />
 
