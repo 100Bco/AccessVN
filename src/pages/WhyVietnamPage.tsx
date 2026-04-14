@@ -54,7 +54,7 @@ function StatItem({ value, label, accent }: { value: string; label: string; acce
 
 function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
   return (
-    <div className="h-[180px] sm:h-[200px] lg:h-[220px] shrink-0" style={{ display: "grid", gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
+    <div className="h-[120px] sm:h-[200px] lg:h-[220px] shrink-0" style={{ display: "grid", gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
       {images.map((img) => (
         <div key={img.label} className="relative overflow-hidden">
           <img src={img.src} alt={img.label} className="absolute inset-0 w-full h-full object-cover" />
@@ -90,20 +90,20 @@ function SalaryChart() {
         Gross Average Monthly Salary of Southeast Asia 2025
       </h4>
       <p className="text-[10px] sm:text-[11px] mb-6" style={{ color: "#999" }}>Unit: USD</p>
-      <div className="space-y-3 sm:space-y-3.5">
+      <div className="space-y-2.5 sm:space-y-3.5">
         {SALARY_DATA.map((d) => {
           const isVN = d.country === "Vietnam";
           const pct = (d.value / max) * 100;
           return (
-            <div key={d.country} className="flex items-center gap-3">
+            <div key={d.country} className="flex items-center gap-2 sm:gap-3">
               <span
-                className="text-[11px] sm:text-[13px] font-semibold w-[85px] sm:w-[100px] text-right shrink-0"
+                className="text-[10px] sm:text-[13px] font-semibold w-[65px] sm:w-[100px] text-right shrink-0"
                 style={{ color: isVN ? RED : CHARCOAL }}
               >
                 {d.country}
               </span>
-              <div className="flex-1 flex items-center gap-2">
-                <div className="flex-1 h-[22px] sm:h-[26px] rounded-sm" style={{ backgroundColor: "#f0f0f0" }}>
+              <div className="flex-1 flex items-center gap-1.5 sm:gap-2">
+                <div className="flex-1 h-[18px] sm:h-[26px] rounded-sm" style={{ backgroundColor: "#f0f0f0" }}>
                   <div
                     className="h-full rounded-sm"
                     style={{
@@ -112,11 +112,11 @@ function SalaryChart() {
                     }}
                   />
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-bold shrink-0 w-[36px] sm:w-[40px]" style={{ color: isVN ? RED : "#555" }}>
+                <span className="text-[9px] sm:text-[11px] font-bold shrink-0 w-[32px] sm:w-[40px]" style={{ color: isVN ? RED : "#555" }}>
                   {d.value.toLocaleString()}
                 </span>
               </div>
-              <span className="text-[14px] shrink-0">{d.flag}</span>
+              <span className="text-[12px] sm:text-[14px] shrink-0 hidden sm:block">{d.flag}</span>
             </div>
           );
         })}
@@ -256,9 +256,9 @@ function EconomySection() {
           Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5">
           {/* GDP trajectory card */}
-          <div className="md:row-span-2 rounded-lg p-6 sm:p-8 flex flex-col justify-center" style={{ backgroundColor: CHARCOAL }}>
+          <div className="col-span-2 md:col-span-1 md:row-span-2 rounded-lg p-6 sm:p-8 flex flex-col justify-center" style={{ backgroundColor: CHARCOAL }}>
             <p className="text-white/40 text-[10px] font-bold tracking-[0.2em] uppercase mb-5">GDP Trajectory</p>
             <div className="space-y-5">
               <div>
@@ -451,26 +451,25 @@ function WhyVietnamContent() {
         </div>
       </nav>
 
-      {/* Hero + Image strip = one full screen */}
-      <div className="flex flex-col" style={{ height: "calc(100vh - 60px)" }}>
-        {/* Hero */}
-        <div className="relative overflow-hidden flex-1">
+      {/* Hero + Image strip = one full screen on desktop, natural flow on mobile */}
+      <div className="flex flex-col min-h-[100vh] sm:min-h-0" style={{ height: "auto" }}>
+        <div className="relative overflow-hidden flex-1" style={{ minHeight: "0" }}>
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hero}')` }} />
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
-          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-8">
-            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-white/40 mb-4">
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-8 py-12 sm:py-16 lg:py-20">
+            <p className="text-[9px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white/40 mb-3 sm:mb-4">
               ACCESS ASIA &middot; Access Vietnam 2026
             </p>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-3">
+            <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-2 sm:mb-3">
               Why Vietnam?
             </h1>
-            <div className="w-10 h-[2px] mx-auto mb-5" style={{ backgroundColor: RED }} />
-            <p className="text-[13px] sm:text-[15px] max-w-2xl mx-auto leading-relaxed text-white/45 mb-10 sm:mb-14">
+            <div className="w-8 sm:w-10 h-[2px] mx-auto mb-4 sm:mb-5" style={{ backgroundColor: RED }} />
+            <p className="text-[12px] sm:text-[15px] max-w-2xl mx-auto leading-relaxed text-white/45 mb-8 sm:mb-14">
               One of the world&rsquo;s fastest-growing economies, with a young tech-ready workforce, booming digital ecosystem, and a vibrant startup scene attracting global capital.
             </p>
 
             {/* Headline stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-6 sm:pt-8 gap-y-5 w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-5 sm:pt-8 gap-y-4 sm:gap-y-5 gap-x-4 w-full">
               <HeroStat value="$476B" label="GDP (2024)" />
               <HeroStat value="101M" label="Population" />
               <HeroStat value="7.09%" label="GDP Growth (2024)" />
