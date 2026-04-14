@@ -54,7 +54,7 @@ function StatItem({ value, label, accent }: { value: string; label: string; acce
 
 function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
   return (
-    <div className="h-[250px] sm:h-[350px] lg:h-[420px]" style={{ display: "grid", gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
+    <div className="h-[180px] sm:h-[200px] lg:h-[220px] shrink-0" style={{ display: "grid", gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
       {images.map((img) => (
         <div key={img.label} className="relative overflow-hidden">
           <img src={img.src} alt={img.label} className="absolute inset-0 w-full h-full object-cover" />
@@ -347,40 +347,43 @@ function WhyVietnamContent() {
         </div>
       </nav>
 
-      {/* Hero */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hero}')` }} />
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
-        <div className="relative z-10 pt-14 sm:pt-20 pb-10 sm:pb-14 text-center px-4 sm:px-8">
-          <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-white/40 mb-4">
-            ACCESS ASIA &middot; Access Vietnam 2026
-          </p>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-3">
-            Why Vietnam?
-          </h1>
-          <div className="w-10 h-[2px] mx-auto mb-5" style={{ backgroundColor: RED }} />
-          <p className="text-[13px] sm:text-[15px] max-w-2xl mx-auto leading-relaxed text-white/45 mb-12 sm:mb-16">
-            One of the world&rsquo;s fastest-growing economies, with a young tech-ready workforce, booming digital ecosystem, and a vibrant startup scene attracting global capital.
-          </p>
+      {/* Hero + Image strip = one full screen */}
+      <div className="flex flex-col" style={{ height: "calc(100vh - 60px)" }}>
+        {/* Hero */}
+        <div className="relative overflow-hidden flex-1">
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hero}')` }} />
+          <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
+          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-8">
+            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-white/40 mb-4">
+              ACCESS ASIA &middot; Access Vietnam 2026
+            </p>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-3">
+              Why Vietnam?
+            </h1>
+            <div className="w-10 h-[2px] mx-auto mb-5" style={{ backgroundColor: RED }} />
+            <p className="text-[13px] sm:text-[15px] max-w-2xl mx-auto leading-relaxed text-white/45 mb-10 sm:mb-14">
+              One of the world&rsquo;s fastest-growing economies, with a young tech-ready workforce, booming digital ecosystem, and a vibrant startup scene attracting global capital.
+            </p>
 
-          {/* Headline stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-8 gap-y-6">
-            <HeroStat value="$476B" label="GDP (2024)" />
-            <HeroStat value="101M" label="Population" />
-            <HeroStat value="7.09%" label="GDP Growth (2024)" />
-            <HeroStat value="$25.35B" label="FDI (All-Time High)" />
+            {/* Headline stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-6 sm:pt-8 gap-y-5 w-full">
+              <HeroStat value="$476B" label="GDP (2024)" />
+              <HeroStat value="101M" label="Population" />
+              <HeroStat value="7.09%" label="GDP Growth (2024)" />
+              <HeroStat value="$25.35B" label="FDI (All-Time High)" />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Image strip: Vietnam at a glance */}
-      <ImageStrip
-        images={[
-          { src: IMG.ai, label: "AI & Technology" },
-          { src: IMG.semiconductor, label: "Semiconductors" },
-          { src: IMG.fintech, label: "Finance & FinTech" },
-        ]}
-      />
+        {/* Image strip */}
+        <ImageStrip
+          images={[
+            { src: IMG.ai, label: "AI & Technology" },
+            { src: IMG.semiconductor, label: "Semiconductors" },
+            { src: IMG.fintech, label: "Finance & FinTech" },
+          ]}
+        />
+      </div>
 
       {/* Stat sections with side images */}
       <DemographicsSection />
