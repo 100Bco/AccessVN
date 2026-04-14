@@ -159,19 +159,21 @@ function DemographicsSection() {
             A young, highly educated, and tech-ready workforce of 101 million &mdash; the 15th largest population in the world with 94.5% overall literacy.
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4 mb-10 sm:mb-14">
-          {stats.map((s, i) => (
-            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
-                {s.value}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="grid grid-cols-2 gap-y-8 gap-x-4">
+            {stats.map((s, i) => (
+              <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
+                  {s.value}
+                </div>
+                <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
+                  {s.label}
+                </div>
               </div>
-              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
-                {s.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <SalaryChart />
         </div>
-        <SalaryChart />
         <p className="text-[9px] mt-6 tracking-wide" style={{ color: "#ccc" }}>
           Sources: UN World Population Prospects 2024, Worldometer, DataReportal
         </p>
