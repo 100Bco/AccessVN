@@ -451,12 +451,12 @@ function WhyVietnamContent() {
         </div>
       </nav>
 
-      {/* Hero + Image strip = one full screen on desktop, natural flow on mobile */}
-      <div className="flex flex-col min-h-[100vh] sm:min-h-0" style={{ height: "auto" }}>
-        <div className="relative overflow-hidden flex-1" style={{ minHeight: "0" }}>
+      {/* Hero + Image strip */}
+      <div className="flex flex-col">
+        <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hero}')` }} />
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
-          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-8 py-10 sm:py-16 lg:py-20">
             <p className="text-[9px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white/40 mb-3 sm:mb-4">
               ACCESS ASIA &middot; Access Vietnam 2026
             </p>
