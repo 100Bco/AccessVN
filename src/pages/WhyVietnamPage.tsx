@@ -1,5 +1,7 @@
 import gaaccLogo from "@assets/GAACC-logo-400x400-1-qyhcmbgu36kdcsai231m2gr6xj1pqen1lbcxra8p_1773649259946.webp";
 import logo100b from "@assets/100B_-_TACH_NEN_-2_(1)_1773649286116.png";
+import aiPhoto from "@assets/nvidiachinh-phu-17334469624681083817914.webp";
+import semiPhoto from "@assets/vietnam-flag-microchip-processor-electronic-board-important-component-computer-smartphone-vietnam-become-global-manufacturing-supply-chain-replace-china-due-labor-cost-cheap.jpg";
 import { Link } from "wouter";
 import { LangProvider } from "../i18n";
 import { Download } from "lucide-react";
@@ -17,9 +19,9 @@ const IMG = {
   digital: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   hcm: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80",
   startup: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
-  ai: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400&q=80",
-  semiconductor: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80",
-  greentech: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1400&q=80",
+  ai: aiPhoto,
+  semiconductor: semiPhoto,
+  fintech: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80",
 };
 
 /* ── Stat helpers ── */
@@ -376,7 +378,7 @@ function WhyVietnamContent() {
         images={[
           { src: IMG.ai, label: "AI & Technology" },
           { src: IMG.semiconductor, label: "Semiconductors" },
-          { src: IMG.greentech, label: "Green Tech" },
+          { src: IMG.fintech, label: "Finance & FinTech" },
         ]}
       />
 
