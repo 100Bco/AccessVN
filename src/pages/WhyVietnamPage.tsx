@@ -28,9 +28,9 @@ const IMG = {
 
 function HeroStat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="text-center">
-      <div className="text-lg sm:text-4xl font-bold text-white tracking-tight">{value}</div>
-      <div className="text-white/35 text-[7px] sm:text-[12px] mt-0.5 sm:mt-1.5 uppercase tracking-[0.1em] sm:tracking-[0.15em] font-semibold">
+    <div className="text-center flex items-center justify-center gap-2 sm:block">
+      <div className="text-xl sm:text-4xl font-bold text-white tracking-tight">{value}</div>
+      <div className="text-white/35 text-[9px] sm:text-[12px] sm:mt-1.5 uppercase tracking-[0.1em] sm:tracking-[0.15em] font-semibold">
         {label}
       </div>
     </div>
@@ -469,7 +469,7 @@ function WhyVietnamContent() {
             </p>
 
             {/* Headline stats */}
-            <div className="grid grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-4 sm:pt-8 gap-y-4 gap-x-2 sm:gap-x-4 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-4 sm:pt-8 gap-y-3 sm:gap-y-5 gap-x-4 w-full">
               <HeroStat value="$476B" label="GDP (2024)" />
               <HeroStat value="101M" label="Population" />
               <HeroStat value="7.09%" label="GDP Growth" />
