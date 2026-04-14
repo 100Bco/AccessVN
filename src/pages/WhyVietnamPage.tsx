@@ -157,34 +157,34 @@ function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
 /* ── Sections with side images ── */
 
 const demographicsStats: ChartStat[] = [
-  { value: "33.9 yr", label: "Median Age", chart: { type: "bar", percent: 42 } },
+  { value: "33.9 yr", label: "Median Age" },
   { value: "69.3%", label: "Working-Age Population", chart: { type: "ring", percent: 69.3 } },
   { value: "~690K", label: "STEM Students (+10%/yr)", chart: { type: "trend" } },
-  { value: "1.8M", label: "ICT Workforce", chart: { type: "bar", percent: 72 } },
-  { value: "50K", label: "Semiconductor Engineers (2030 Goal)", chart: { type: "ring", percent: 35 } },
+  { value: "1.8M", label: "ICT Workforce" },
+  { value: "50K", label: "Semiconductor Engineers (2030 Goal)" },
 ];
 
 const digitalStats: ChartStat[] = [
   { value: "79.8M", label: "Internet Users (78.8%)", chart: { type: "ring", percent: 78.8 } },
-  { value: "84.4%", label: "Smartphone Penetration", chart: { type: "ring", percent: 84.4 }, accent: true },
+  { value: "84.4%", label: "Smartphone Penetration", accent: true, chart: { type: "ring", percent: 84.4 } },
   { value: "$36B", label: "Digital Economy (2024)", accent: true, chart: { type: "trend" } },
-  { value: "+61%", label: "Mobile Speed Growth YoY", chart: { type: "trend" } },
-  { value: "30\u201335%", label: "GDP from Digital (2030 Target)", chart: { type: "bar", percent: 32 } },
+  { value: "+61%", label: "Mobile Speed Growth YoY" },
+  { value: "30\u201335%", label: "GDP from Digital (2030 Target)", chart: { type: "ring", percent: 32 } },
 ];
 
 const economyStats: ChartStat[] = [
-  { value: "$514B", label: "GDP Forecast (2025)", accent: true, chart: { type: "bar", percent: 47 } },
+  { value: "$514B", label: "GDP Forecast (2025)", accent: true },
   { value: "8.02%", label: "GDP Growth (2025F)", chart: { type: "trend" } },
-  { value: "$405B", label: "Exports (2024)", chart: { type: "bar", percent: 80 } },
-  { value: "$1.1T", label: "GDP Forecast (2035)", accent: true, chart: { type: "bar", percent: 100 } },
+  { value: "$405B", label: "Exports (2024)" },
+  { value: "$1.1T", label: "GDP Forecast (2035)", accent: true, chart: { type: "trend" } },
   { value: "46%", label: "Middle & Affluent (2030)", chart: { type: "ring", percent: 46 } },
 ];
 
 const startupStats: ChartStat[] = [
-  { value: "4,000+", label: "Startups (#5 in SEA)", chart: { type: "bar", percent: 65 } },
-  { value: "7", label: "Unicorns", accent: true, chart: { type: "ring", percent: 58 } },
+  { value: "4,000+", label: "Startups (#5 in SEA)" },
+  { value: "7", label: "Unicorns", accent: true },
   { value: "$2.3B", label: "VC Investment (2024)", accent: true, chart: { type: "trend" } },
-  { value: "$20.7B", label: "Total Raised (All-Time)", chart: { type: "bar", percent: 90 } },
+  { value: "$20.7B", label: "Total Raised (All-Time)" },
   { value: "765", label: "AI/ML Startups (8\u00D7 Growth)", chart: { type: "trend" } },
 ];
 
