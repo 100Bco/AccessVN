@@ -54,7 +54,7 @@ function StatItem({ value, label, accent }: { value: string; label: string; acce
 
 function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
   return (
-    <div className="h-[160px] sm:h-[220px]" style={{ display: "grid", gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
+    <div className="h-[250px] sm:h-[350px] lg:h-[420px]" style={{ display: "grid", gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
       {images.map((img) => (
         <div key={img.label} className="relative overflow-hidden">
           <img src={img.src} alt={img.label} className="absolute inset-0 w-full h-full object-cover" />
