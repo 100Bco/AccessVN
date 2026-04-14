@@ -21,7 +21,7 @@ const IMG = {
   startup: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
   ai: aiPhoto,
   semiconductor: semiPhoto,
-  fintech: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80",
+  fintech: "https://images.unsplash.com/photo-1559526324-593bc073d938?w=1400&q=80",
 };
 
 /* ── Stat helpers ── */
@@ -54,11 +54,11 @@ function StatItem({ value, label, accent }: { value: string; label: string; acce
 
 function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
   return (
-    <div className={`grid grid-cols-${images.length} h-[160px] sm:h-[220px]`} style={{ gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
+    <div className="h-[250px] sm:h-[350px] lg:h-[420px]" style={{ display: "grid", gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
       {images.map((img) => (
         <div key={img.label} className="relative overflow-hidden">
           <img src={img.src} alt={img.label} className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.05) 50%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 100%)" }} />
           <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-5">
             <div className="w-4 sm:w-5 h-[2px] mb-1 sm:mb-1.5" style={{ backgroundColor: RED }} />
             <p className="text-white font-bold text-[11px] sm:text-sm leading-tight">{img.label}</p>
@@ -381,9 +381,6 @@ function WhyVietnamContent() {
           { src: IMG.fintech, label: "Finance & FinTech" },
         ]}
       />
-
-      {/* Spacer */}
-      <div className="py-6 sm:py-8 bg-white" />
 
       {/* Stat sections with side images */}
       <DemographicsSection />
