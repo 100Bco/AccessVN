@@ -125,6 +125,9 @@ function Navbar() {
             ))}
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
+            <Link href="/why-vietnam" className="hidden sm:inline-block text-[11px] sm:text-[13px] font-semibold px-4 sm:px-5 py-2 transition-all hover:opacity-90" style={{ color: scrolled ? CHARCOAL : "white", border: scrolled ? "1px solid #ddd" : "1px solid rgba(255,255,255,0.3)" }}>
+              {t("nav_why_vietnam")}
+            </Link>
             <Link href="/itinerary" className="hidden sm:inline-block text-white text-[11px] sm:text-[13px] font-semibold px-4 sm:px-5 py-2 transition-all hover:opacity-90" style={{ backgroundColor: RED }}>
               {t("nav_get_involved")}
             </Link>
@@ -163,6 +166,22 @@ function Navbar() {
                   {t(link.key)}
                 </a>
               ))}
+              <Link
+                href="/why-vietnam"
+                className="text-[15px] font-semibold py-2 border-b border-gray-100"
+                style={{ color: RED }}
+                onClick={() => setMenuOpen(false)}
+              >
+                {t("nav_why_vietnam")}
+              </Link>
+              <Link
+                href="/itinerary"
+                className="text-[15px] font-semibold py-2 border-b border-gray-100"
+                style={{ color: RED }}
+                onClick={() => setMenuOpen(false)}
+              >
+                {t("nav_get_involved")}
+              </Link>
             </div>
           </div>
         </div>
