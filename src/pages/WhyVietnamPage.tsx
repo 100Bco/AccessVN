@@ -102,25 +102,19 @@ function SalaryChart() {
               >
                 {d.country}
               </span>
-              <div className="flex-1 h-[22px] sm:h-[26px] rounded-sm overflow-hidden" style={{ backgroundColor: "#f0f0f0" }}>
-                <div
-                  className="h-full rounded-sm flex items-center justify-end pr-2 transition-all"
-                  style={{
-                    width: `${Math.max(pct, 4)}%`,
-                    backgroundColor: isVN ? RED : "#93C47D",
-                  }}
-                >
-                  {pct > 8 && (
-                    <span className="text-white text-[10px] sm:text-[11px] font-bold">
-                      {d.value.toLocaleString()}
-                    </span>
-                  )}
+              <div className="flex-1 flex items-center gap-2">
+                <div className="flex-1 h-[22px] sm:h-[26px] rounded-sm" style={{ backgroundColor: "#f0f0f0" }}>
+                  <div
+                    className="h-full rounded-sm"
+                    style={{
+                      width: `${Math.max(pct, 3)}%`,
+                      backgroundColor: isVN ? RED : "#93C47D",
+                    }}
+                  />
                 </div>
-                {pct <= 8 && (
-                  <span className="text-[10px] sm:text-[11px] font-bold ml-1" style={{ color: "#666" }}>
-                    {d.value.toLocaleString()}
-                  </span>
-                )}
+                <span className="text-[10px] sm:text-[11px] font-bold shrink-0 w-[36px] sm:w-[40px]" style={{ color: isVN ? RED : "#555" }}>
+                  {d.value.toLocaleString()}
+                </span>
               </div>
               <span className="text-[14px] shrink-0">{d.flag}</span>
             </div>
