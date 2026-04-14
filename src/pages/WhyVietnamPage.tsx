@@ -108,7 +108,7 @@ function SalaryChart() {
                     className="h-full rounded-sm"
                     style={{
                       width: `${Math.max(pct, 3)}%`,
-                      backgroundColor: isVN ? RED : "#93C47D",
+                      backgroundColor: isVN ? RED : "#d1d5db",
                     }}
                   />
                 </div>
