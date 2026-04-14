@@ -253,7 +253,7 @@ function EconomySection() {
           </p>
         </div>
         <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl mb-10 sm:mb-14" style={{ color: "#555" }}>
-          Remarkable resilience with $38.42B in FDI disbursed in 2025 (all-time high), attracting global players like Samsung, Lego, and Intel.
+          Remarkable resilience with $38.42B in FDI disbursed in 2025 (all-time high), attracting global players like Nvidia, Apple, Qualcomm, Samsung, and Intel.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5">
