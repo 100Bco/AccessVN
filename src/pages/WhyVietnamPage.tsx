@@ -29,8 +29,8 @@ const IMG = {
 function HeroStat({ value, label }: { value: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="text-xl sm:text-4xl font-bold text-white tracking-tight">{value}</div>
-      <div className="text-white/30 text-[8px] sm:text-[12px] mt-0.5 sm:mt-1.5 uppercase tracking-[0.1em] sm:tracking-[0.15em] font-semibold">
+      <div className="text-2xl sm:text-4xl font-bold text-white tracking-tight">{value}</div>
+      <div className="text-white/30 text-[9px] sm:text-[12px] mt-0.5 sm:mt-1.5 uppercase tracking-[0.1em] sm:tracking-[0.15em] font-semibold">
         {label}
       </div>
     </div>
@@ -457,17 +457,17 @@ function WhyVietnamContent() {
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hero}')` }} />
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-8 py-6 sm:py-16 lg:py-20">
-            <p className="text-[8px] sm:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/40 mb-1.5 sm:mb-4">
+            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/40 mb-1.5 sm:mb-4">
               ACCESS ASIA &middot; Access Vietnam 2026
             </p>
-            <h1 className="text-xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-1.5 sm:mb-3">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-1.5 sm:mb-3">
               Why Vietnam?
             </h1>
-            <div className="w-6 sm:w-10 h-[2px] mx-auto mb-2 sm:mb-5" style={{ backgroundColor: RED }} />
+            <div className="w-8 sm:w-10 h-[2px] mx-auto mb-2.5 sm:mb-5" style={{ backgroundColor: RED }} />
             <p className="hidden sm:block text-[15px] max-w-2xl mx-auto leading-relaxed text-white/45 mb-14">
               One of the world&rsquo;s fastest-growing economies, with a young tech-ready workforce, booming digital ecosystem, and a vibrant startup scene attracting global capital.
             </p>
-            <p className="sm:hidden text-[10px] leading-relaxed text-white/40 mb-3 max-w-[280px]">
+            <p className="sm:hidden text-[12px] leading-relaxed text-white/45 mb-4 max-w-[300px]">
               One of the world&rsquo;s fastest-growing economies with a young tech-ready workforce and vibrant startup scene.
             </p>
 
