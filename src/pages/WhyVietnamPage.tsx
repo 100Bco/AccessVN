@@ -29,8 +29,8 @@ const IMG = {
 function HeroStat({ value, label }: { value: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="text-2xl sm:text-4xl font-bold text-white tracking-tight">{value}</div>
-      <div className="text-white/35 text-[10px] sm:text-[12px] mt-1 sm:mt-1.5 uppercase tracking-[0.15em] font-semibold">
+      <div className="text-lg sm:text-4xl font-bold text-white tracking-tight">{value}</div>
+      <div className="text-white/35 text-[7px] sm:text-[12px] mt-0.5 sm:mt-1.5 uppercase tracking-[0.1em] sm:tracking-[0.15em] font-semibold">
         {label}
       </div>
     </div>
@@ -456,24 +456,24 @@ function WhyVietnamContent() {
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hero}')` }} />
           <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
-          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-8 py-10 sm:py-16 lg:py-20">
-            <p className="text-[9px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white/40 mb-3 sm:mb-4">
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-8 py-8 sm:py-16 lg:py-20">
+            <p className="text-[9px] sm:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white/40 mb-2 sm:mb-4">
               ACCESS ASIA &middot; Access Vietnam 2026
             </p>
             <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-2 sm:mb-3">
               Why Vietnam?
             </h1>
-            <div className="w-8 sm:w-10 h-[2px] mx-auto mb-4 sm:mb-5" style={{ backgroundColor: RED }} />
-            <p className="text-[12px] sm:text-[15px] max-w-2xl mx-auto leading-relaxed text-white/45 mb-8 sm:mb-14">
+            <div className="w-8 sm:w-10 h-[2px] mx-auto mb-3 sm:mb-5" style={{ backgroundColor: RED }} />
+            <p className="text-[11px] sm:text-[15px] max-w-2xl mx-auto leading-relaxed text-white/45 mb-5 sm:mb-14">
               One of the world&rsquo;s fastest-growing economies, with a young tech-ready workforce, booming digital ecosystem, and a vibrant startup scene attracting global capital.
             </p>
 
             {/* Headline stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-5 sm:pt-8 gap-y-4 sm:gap-y-5 gap-x-4 w-full">
+            <div className="grid grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-4 sm:pt-8 gap-y-4 gap-x-2 sm:gap-x-4 w-full">
               <HeroStat value="$476B" label="GDP (2024)" />
               <HeroStat value="101M" label="Population" />
-              <HeroStat value="7.09%" label="GDP Growth (2024)" />
-              <HeroStat value="$25.35B" label="FDI (All-Time High)" />
+              <HeroStat value="7.09%" label="GDP Growth" />
+              <HeroStat value="$25.35B" label="FDI (Record)" />
             </div>
           </div>
         </div>
