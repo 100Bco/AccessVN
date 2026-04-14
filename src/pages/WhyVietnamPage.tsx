@@ -28,12 +28,18 @@ const IMG = {
 
 function HeroStat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="text-center">
-      <div className="text-base sm:text-4xl font-bold text-white tracking-tight">{value}</div>
-      <div className="text-white/35 text-[6px] sm:text-[12px] mt-0.5 sm:mt-1.5 uppercase tracking-[0.08em] sm:tracking-[0.15em] font-semibold">
-        {label}
+    <>
+      {/* Mobile: inline row */}
+      <div className="sm:hidden flex items-baseline justify-between">
+        <span className="text-lg font-bold text-white tracking-tight">{value}</span>
+        <span className="text-white/30 text-[9px] uppercase tracking-[0.1em] font-semibold">{label}</span>
       </div>
-    </div>
+      {/* Desktop: stacked */}
+      <div className="hidden sm:block text-center">
+        <div className="text-4xl font-bold text-white tracking-tight">{value}</div>
+        <div className="text-white/35 text-[12px] mt-1.5 uppercase tracking-[0.15em] font-semibold">{label}</div>
+      </div>
+    </>
   );
 }
 
@@ -471,8 +477,8 @@ function WhyVietnamContent() {
               One of the world&rsquo;s fastest-growing economies with a young tech-ready workforce and vibrant startup scene.
             </p>
 
-            {/* Headline stats — single row on all screens */}
-            <div className="grid grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-3 sm:pt-8 gap-x-2 sm:gap-x-4 w-full">
+            {/* Headline stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-4 max-w-3xl mx-auto border-t border-white/10 pt-2 sm:pt-8 gap-y-1 sm:gap-y-5 gap-x-4 w-full px-2 sm:px-0">
               <HeroStat value="$476B" label="GDP (2024)" />
               <HeroStat value="101M" label="Population" />
               <HeroStat value="7.09%" label="GDP Growth" />
