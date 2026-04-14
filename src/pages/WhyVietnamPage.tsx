@@ -37,105 +37,20 @@ function HeroStat({ value, label }: { value: string; label: string }) {
   );
 }
 
-/* ── Mini chart components ── */
-
-function MiniRing({ percent, color = RED }: { percent: number; color?: string }) {
-  const r = 18;
-  const c = 2 * Math.PI * r;
-  const offset = c - (percent / 100) * c;
+function StatItem({ value, label, accent }: { value: string; label: string; accent?: boolean }) {
   return (
-    <svg width="44" height="44" viewBox="0 0 44 44" className="mb-2">
-      <circle cx="22" cy="22" r={r} fill="none" stroke="#eee" strokeWidth="3.5" />
-      <circle cx="22" cy="22" r={r} fill="none" stroke={color} strokeWidth="3.5"
-        strokeDasharray={c} strokeDashoffset={offset}
-        strokeLinecap="round" transform="rotate(-90 22 22)" />
-    </svg>
-  );
-}
-
-function MiniBar({ percent, color = RED }: { percent: number; color?: string }) {
-  return (
-    <div className="w-full h-[6px] rounded-full bg-gray-100 mb-3 max-w-[80px]">
-      <div className="h-full rounded-full transition-all" style={{ width: `${percent}%`, backgroundColor: color }} />
-    </div>
-  );
-}
-
-function MiniTrend({ color = RED }: { color?: string }) {
-  return (
-    <svg width="56" height="28" viewBox="0 0 56 28" className="mb-2">
-      <polyline points="2,22 14,18 26,12 38,14 54,4" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="54" cy="4" r="2.5" fill={color} />
-    </svg>
-  );
-}
-
-type ChartStat = {
-  value: string;
-  label: string;
-  accent?: boolean;
-  chart?: { type: "ring"; percent: number } | { type: "bar"; percent: number } | { type: "trend" };
-};
-
-function InfographicCard({ stat }: { stat: ChartStat }) {
-  return (
-    <div className="text-center sm:text-left">
-      <div className="flex justify-center sm:justify-start">
-        {stat.chart?.type === "ring" && <MiniRing percent={stat.chart.percent} color={stat.accent ? RED : CHARCOAL} />}
-        {stat.chart?.type === "bar" && <MiniBar percent={stat.chart.percent} color={stat.accent ? RED : CHARCOAL} />}
-        {stat.chart?.type === "trend" && <MiniTrend color={stat.accent ? RED : CHARCOAL} />}
+    <div>
+      <div className="text-xl sm:text-2xl font-bold tracking-tight" style={{ color: accent ? RED : CHARCOAL }}>
+        {value}
       </div>
-      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: stat.accent ? RED : CHARCOAL }}>
-        {stat.value}
-      </div>
-      <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
-        {stat.label}
+      <div className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] mt-1 leading-snug" style={{ color: "#999" }}>
+        {label}
       </div>
     </div>
   );
 }
 
-function InfographicSection({
-  label,
-  description,
-  stats,
-  sources,
-  bg = "white",
-}: {
-  label: string;
-  description: string;
-  stats: ChartStat[];
-  sources: string;
-  bg?: string;
-}) {
-  return (
-    <section style={{ backgroundColor: bg }}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
-        <div className="mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
-            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
-              {label}
-            </p>
-          </div>
-          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
-            {description}
-          </p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-6">
-          {stats.map((s, i) => (
-            <InfographicCard key={i} stat={s} />
-          ))}
-        </div>
-        <p className="text-[9px] mt-8 tracking-wide" style={{ color: "#ccc" }}>
-          Sources: {sources}
-        </p>
-      </div>
-    </section>
-  );
-}
-
-/* ── Image strip ── */
+/* ── Image strip (like About section destination strip) ── */
 
 function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
   return (
@@ -156,37 +71,177 @@ function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
 
 /* ── Sections with side images ── */
 
-const demographicsStats: ChartStat[] = [
-  { value: "33.9 yr", label: "Median Age" },
-  { value: "69.3%", label: "Working-Age Population", chart: { type: "ring", percent: 69.3 } },
-  { value: "~690K", label: "STEM Students (+10%/yr)", chart: { type: "trend" } },
-  { value: "1.8M", label: "ICT Workforce" },
-  { value: "50K", label: "Semiconductor Engineers (2030 Goal)" },
-];
+function DemographicsSection() {
+  const stats = [
+    { value: "33.9 yr", label: "Median Age" },
+    { value: "69.3%", label: "Working-Age Population" },
+    { value: "~690K", label: "STEM Students (+10%/yr)" },
+    { value: "1.8M", label: "ICT Workforce" },
+    { value: "50K", label: "Semiconductor Engineers (2030 Goal)" },
+  ];
 
-const digitalStats: ChartStat[] = [
-  { value: "79.8M", label: "Internet Users (78.8%)", chart: { type: "ring", percent: 78.8 } },
-  { value: "84.4%", label: "Smartphone Penetration", accent: true, chart: { type: "ring", percent: 84.4 } },
-  { value: "$36B", label: "Digital Economy (2024)", accent: true, chart: { type: "trend" } },
-  { value: "+61%", label: "Mobile Speed Growth YoY" },
-  { value: "30\u201335%", label: "GDP from Digital (2030 Target)", chart: { type: "ring", percent: 32 } },
-];
+  return (
+    <section className="bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
+        <div className="mb-8 sm:mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+              Demographics & Talent
+            </p>
+          </div>
+          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
+            A young, highly educated, and tech-ready workforce of 101 million &mdash; the 15th largest population in the world with 94.5% overall literacy.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
+          {stats.map((s, i) => (
+            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: CHARCOAL }}>
+                {s.value}
+              </div>
+              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-[9px] mt-8 tracking-wide" style={{ color: "#ccc" }}>
+          Sources: UN World Population Prospects 2024, Worldometer, DataReportal
+        </p>
+      </div>
+    </section>
+  );
+}
 
-const economyStats: ChartStat[] = [
-  { value: "$514B", label: "GDP Forecast (2025)", accent: true },
-  { value: "8.02%", label: "GDP Growth (2025F)", chart: { type: "trend" } },
-  { value: "$405B", label: "Exports (2024)" },
-  { value: "$1.1T", label: "GDP Forecast (2035)", accent: true, chart: { type: "trend" } },
-  { value: "46%", label: "Middle & Affluent (2030)", chart: { type: "ring", percent: 46 } },
-];
+function DigitalSection() {
+  const stats = [
+    { value: "79.8M", label: "Internet Users (78.8%)" },
+    { value: "84.4%", label: "Smartphone Penetration" },
+    { value: "$36B", label: "Digital Economy (2024)", accent: true },
+    { value: "+61%", label: "Mobile Speed Growth YoY" },
+    { value: "30\u201335%", label: "GDP from Digital (2030 Target)" },
+  ];
 
-const startupStats: ChartStat[] = [
-  { value: "4,000+", label: "Startups (#5 in SEA)" },
-  { value: "7", label: "Unicorns", accent: true },
-  { value: "$2.3B", label: "VC Investment (2024)", accent: true, chart: { type: "trend" } },
-  { value: "$20.7B", label: "Total Raised (All-Time)" },
-  { value: "765", label: "AI/ML Startups (8\u00D7 Growth)", chart: { type: "trend" } },
-];
+  return (
+    <section style={{ backgroundColor: "#f8f8f8" }}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
+        <div className="mb-8 sm:mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+              Digital Economy
+            </p>
+          </div>
+          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
+            One of Asia&rsquo;s fastest-growing digital economies, with 500,000+ IT workers and strong government support for AI, semiconductors, and digital transformation.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
+          {stats.map((s, i) => (
+            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: s.accent ? RED : CHARCOAL }}>
+                {s.value}
+              </div>
+              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-[9px] mt-8 tracking-wide" style={{ color: "#ccc" }}>
+          Sources: DataReportal Digital 2025, World Bank
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function EconomySection() {
+  const stats = [
+    { value: "$514B", label: "GDP Forecast (2025)", accent: true },
+    { value: "8.02%", label: "GDP Growth (2025F)" },
+    { value: "$405B", label: "Exports (2024)" },
+    { value: "$1.1T", label: "GDP Forecast (2035)", accent: true },
+    { value: "46%", label: "Middle & Affluent (2030)" },
+  ];
+
+  return (
+    <section className="bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
+        <div className="mb-8 sm:mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+              Economy & Investment
+            </p>
+          </div>
+          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
+            Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel. Projected to become a top-25 world economy within the next decade.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
+          {stats.map((s, i) => (
+            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: s.accent ? RED : CHARCOAL }}>
+                {s.value}
+              </div>
+              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-[9px] mt-8 tracking-wide" style={{ color: "#ccc" }}>
+          Sources: Vietnam General Statistics Office, World Bank, Vietnam-Briefing
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function StartupSection() {
+  const stats = [
+    { value: "4,000+", label: "Startups (#5 in SEA)" },
+    { value: "7", label: "Unicorns", accent: true },
+    { value: "$2.3B", label: "VC Investment (2024)", accent: true },
+    { value: "$20.7B", label: "Total Raised (All-Time)" },
+    { value: "765", label: "AI/ML Startups (8\u00D7 Growth)" },
+  ];
+
+  return (
+    <section style={{ backgroundColor: "#f8f8f8" }}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
+        <div className="mb-8 sm:mb-10">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+            <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+              Startup & Innovation Ecosystem
+            </p>
+          </div>
+          <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-2xl" style={{ color: "#555" }}>
+            A vibrant ecosystem with 208 investment funds, 79 incubators, and 35 accelerators. Business automation surged 562% YoY, AI funding rose 8&times;, and nearly 150 VC investors were active in 2024.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
+          {stats.map((s, i) => (
+            <div key={i} className="text-center sm:text-left border-l-2 pl-4" style={{ borderColor: i === 0 ? RED : "#e5e5e5" }}>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: s.accent ? RED : CHARCOAL }}>
+                {s.value}
+              </div>
+              <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.12em] mt-1.5 leading-snug" style={{ color: "#999" }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-[9px] mt-8 tracking-wide" style={{ color: "#ccc" }}>
+          Sources: Ministry of Science & Technology / Techfest 2025, NIC, Tracxn, StartupBlink
+        </p>
+      </div>
+    </section>
+  );
+}
 
 function ReportSection() {
   const highlights = [
@@ -326,33 +381,11 @@ function WhyVietnamContent() {
         />
       </div>
 
-      {/* Stat sections */}
-      <InfographicSection
-        label="Demographics & Talent"
-        description="A young, highly educated, and tech-ready workforce of 101 million &mdash; the 15th largest population in the world with 94.5% overall literacy."
-        stats={demographicsStats}
-        sources="UN World Population Prospects 2024, Worldometer, DataReportal"
-      />
-      <InfographicSection
-        label="Digital Economy"
-        description="One of Asia's fastest-growing digital economies, with 500,000+ IT workers and strong government support for AI, semiconductors, and digital transformation."
-        stats={digitalStats}
-        sources="DataReportal Digital 2025, World Bank"
-        bg="#f8f8f8"
-      />
-      <InfographicSection
-        label="Economy & Investment"
-        description="Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel. Projected to become a top-25 world economy within the next decade."
-        stats={economyStats}
-        sources="Vietnam General Statistics Office, World Bank, Vietnam-Briefing"
-      />
-      <InfographicSection
-        label="Startup & Innovation Ecosystem"
-        description="A vibrant ecosystem with 208 investment funds, 79 incubators, and 35 accelerators. Business automation surged 562% YoY, AI funding rose 8&times;, and nearly 150 VC investors were active in 2024."
-        stats={startupStats}
-        sources="Ministry of Science & Technology / Techfest 2025, NIC, Tracxn, StartupBlink"
-        bg="#f8f8f8"
-      />
+      {/* Stat sections with side images */}
+      <DemographicsSection />
+      <DigitalSection />
+      <EconomySection />
+      <StartupSection />
 
       {/* Report */}
       <ReportSection />
