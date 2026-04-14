@@ -10,6 +10,17 @@ const CHARCOAL = "#1A1A1A";
 const REPORT_URL =
   "https://cdn.prod.website-files.com/66de662c48797295a3a9949c/6850ee924f1ce0fd63892808_Eng_Vietnam%20Innovation%20%26%20Private%20Capital%20Report%202025_June%2016_compressed.pdf";
 
+/* ── Images ── */
+const IMG = {
+  hero: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80",
+  people: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+  digital: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+  hcm: "https://images.unsplash.com/photo-1599708153386-62bf3f035c78?w=1400&q=80",
+  hanoi: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1400&q=80",
+  startup: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
+  manufacturing: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1400&q=80",
+};
+
 /* ── Stat helpers ── */
 
 function HeroStat({ value, label }: { value: string; label: string }) {
@@ -23,39 +34,39 @@ function HeroStat({ value, label }: { value: string; label: string }) {
   );
 }
 
-function StatCard({ value, label, accent }: { value: string; label: string; accent?: boolean }) {
+function StatItem({ value, label, accent }: { value: string; label: string; accent?: boolean }) {
   return (
-    <div className="py-5 sm:py-6 text-center">
-      <div
-        className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight"
-        style={{ color: accent ? RED : CHARCOAL }}
-      >
+    <div>
+      <div className="text-xl sm:text-2xl font-bold tracking-tight" style={{ color: accent ? RED : CHARCOAL }}>
         {value}
       </div>
-      <div className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.15em] mt-1.5 leading-snug px-1" style={{ color: "#999" }}>
+      <div className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] mt-1 leading-snug" style={{ color: "#999" }}>
         {label}
       </div>
     </div>
   );
 }
 
-function SectionHeader({ label, description }: { label: string; description: string }) {
+/* ── Image strip (like About section destination strip) ── */
+
+function ImageStrip({ images }: { images: { src: string; label: string }[] }) {
   return (
-    <div className="mb-8 sm:mb-10">
-      <div className="flex items-center gap-3 mb-3">
-        <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
-        <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
-          {label}
-        </p>
-      </div>
-      <p className="text-[14px] sm:text-[16px] leading-[1.7] max-w-3xl" style={{ color: "#555" }}>
-        {description}
-      </p>
+    <div className={`grid grid-cols-${images.length} h-[160px] sm:h-[220px]`} style={{ gridTemplateColumns: `repeat(${images.length}, 1fr)` }}>
+      {images.map((img) => (
+        <div key={img.label} className="relative overflow-hidden">
+          <img src={img.src} alt={img.label} className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.05) 50%)" }} />
+          <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-5">
+            <div className="w-4 sm:w-5 h-[2px] mb-1 sm:mb-1.5" style={{ backgroundColor: RED }} />
+            <p className="text-white font-bold text-[11px] sm:text-sm leading-tight">{img.label}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
 
-/* ── Sections ── */
+/* ── Sections with side images ── */
 
 function DemographicsSection() {
   const stats = [
@@ -70,23 +81,32 @@ function DemographicsSection() {
   return (
     <section className="bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
-        <SectionHeader
-          label="Demographics & Talent"
-          description="A young, highly educated, and tech-ready workforce of 101 million \u2014 the 15th largest population in the world with 94.5% overall literacy."
-        />
-        <div className="grid grid-cols-2 sm:grid-cols-3 border border-gray-100 rounded-lg overflow-hidden bg-white">
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className="border-b border-r border-gray-100 last:border-r-0 sm:[&:nth-child(3n)]:border-r-0 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r"
-            >
-              <StatCard {...s} />
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div>
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+                  Demographics & Talent
+                </p>
+              </div>
+              <p className="text-[14px] sm:text-[15px] leading-[1.7]" style={{ color: "#555" }}>
+                A young, highly educated, and tech-ready workforce of 101 million &mdash; the 15th largest population in the world with 94.5% overall literacy.
+              </p>
             </div>
-          ))}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+              {stats.map((s, i) => (
+                <StatItem key={i} {...s} />
+              ))}
+            </div>
+            <p className="text-[9px] mt-5 tracking-wide" style={{ color: "#ccc" }}>
+              Sources: UN World Population Prospects 2024, Worldometer, DataReportal
+            </p>
+          </div>
+          <div className="rounded-lg overflow-hidden h-[260px] sm:h-[340px] order-first md:order-last">
+            <img src={IMG.people} alt="Vietnamese students" className="w-full h-full object-cover" />
+          </div>
         </div>
-        <p className="text-[10px] mt-4 tracking-wide" style={{ color: "#bbb" }}>
-          Sources: UN World Population Prospects 2024, Worldometer, DataReportal
-        </p>
       </div>
     </section>
   );
@@ -105,23 +125,32 @@ function DigitalSection() {
   return (
     <section style={{ backgroundColor: "#f8f8f8" }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
-        <SectionHeader
-          label="Digital Economy"
-          description="One of Asia\u2019s fastest-growing digital economies, with 500,000+ IT workers and strong government support for AI, semiconductors, and digital transformation."
-        />
-        <div className="grid grid-cols-2 sm:grid-cols-3 border border-gray-200 rounded-lg overflow-hidden bg-white">
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className="border-b border-r border-gray-100 last:border-r-0 sm:[&:nth-child(3n)]:border-r-0 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r"
-            >
-              <StatCard {...s} />
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="rounded-lg overflow-hidden h-[260px] sm:h-[340px]">
+            <img src={IMG.digital} alt="Digital economy" className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+                  Digital Economy
+                </p>
+              </div>
+              <p className="text-[14px] sm:text-[15px] leading-[1.7]" style={{ color: "#555" }}>
+                One of Asia&rsquo;s fastest-growing digital economies, with 500,000+ IT workers and strong government support for AI, semiconductors, and digital transformation.
+              </p>
             </div>
-          ))}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+              {stats.map((s, i) => (
+                <StatItem key={i} {...s} />
+              ))}
+            </div>
+            <p className="text-[9px] mt-5 tracking-wide" style={{ color: "#ccc" }}>
+              Sources: DataReportal Digital 2025, World Bank
+            </p>
+          </div>
         </div>
-        <p className="text-[10px] mt-4 tracking-wide" style={{ color: "#bbb" }}>
-          Sources: DataReportal Digital 2025, World Bank
-        </p>
       </div>
     </section>
   );
@@ -140,23 +169,32 @@ function EconomySection() {
   return (
     <section className="bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
-        <SectionHeader
-          label="Economy & Investment"
-          description="Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel. Vietnam is projected to become a top-25 world economy within the next decade."
-        />
-        <div className="grid grid-cols-2 sm:grid-cols-3 border border-gray-100 rounded-lg overflow-hidden bg-white">
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className="border-b border-r border-gray-100 last:border-r-0 sm:[&:nth-child(3n)]:border-r-0 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r"
-            >
-              <StatCard {...s} />
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div>
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+                  Economy & Investment
+                </p>
+              </div>
+              <p className="text-[14px] sm:text-[15px] leading-[1.7]" style={{ color: "#555" }}>
+                Remarkable resilience with $25.35B in FDI disbursed in 2024 (all-time high, +9.4% YoY), attracting global players like Samsung, Lego, and Intel. Projected to become a top-25 world economy within the next decade.
+              </p>
             </div>
-          ))}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+              {stats.map((s, i) => (
+                <StatItem key={i} {...s} />
+              ))}
+            </div>
+            <p className="text-[9px] mt-5 tracking-wide" style={{ color: "#ccc" }}>
+              Sources: Vietnam General Statistics Office, World Bank, Vietnam-Briefing
+            </p>
+          </div>
+          <div className="rounded-lg overflow-hidden h-[260px] sm:h-[340px] order-first md:order-last">
+            <img src={IMG.hcm} alt="Ho Chi Minh City skyline" className="w-full h-full object-cover" />
+          </div>
         </div>
-        <p className="text-[10px] mt-4 tracking-wide" style={{ color: "#bbb" }}>
-          Sources: Vietnam General Statistics Office, World Bank, Vietnam-Briefing
-        </p>
       </div>
     </section>
   );
@@ -175,23 +213,32 @@ function StartupSection() {
   return (
     <section style={{ backgroundColor: "#f8f8f8" }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
-        <SectionHeader
-          label="Startup & Innovation Ecosystem"
-          description="A vibrant ecosystem with 208 investment funds, 79 incubators, and 35 accelerators. Business automation surged 562% YoY, AI funding rose 8\u00D7, and nearly 150 VC investors were active in 2024 \u2014 the highest since 2021."
-        />
-        <div className="grid grid-cols-2 sm:grid-cols-3 border border-gray-200 rounded-lg overflow-hidden bg-white">
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className="border-b border-r border-gray-100 last:border-r-0 sm:[&:nth-child(3n)]:border-r-0 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r"
-            >
-              <StatCard {...s} />
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="rounded-lg overflow-hidden h-[260px] sm:h-[340px]">
+            <img src={IMG.startup} alt="Startup innovation" className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-[2px] shrink-0" style={{ backgroundColor: RED }} />
+                <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: RED }}>
+                  Startup & Innovation Ecosystem
+                </p>
+              </div>
+              <p className="text-[14px] sm:text-[15px] leading-[1.7]" style={{ color: "#555" }}>
+                A vibrant ecosystem with 208 investment funds, 79 incubators, and 35 accelerators. Business automation surged 562% YoY, AI funding rose 8&times;, and nearly 150 VC investors were active in 2024.
+              </p>
             </div>
-          ))}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+              {stats.map((s, i) => (
+                <StatItem key={i} {...s} />
+              ))}
+            </div>
+            <p className="text-[9px] mt-5 tracking-wide" style={{ color: "#ccc" }}>
+              Sources: Ministry of Science & Technology / Techfest 2025, NIC, Tracxn, StartupBlink
+            </p>
+          </div>
         </div>
-        <p className="text-[10px] mt-4 tracking-wide" style={{ color: "#bbb" }}>
-          Sources: Ministry of Science & Technology / Techfest 2025, NIC, Tracxn, StartupBlink
-        </p>
       </div>
     </section>
   );
@@ -299,10 +346,7 @@ function WhyVietnamContent() {
 
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80')" }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hero}')` }} />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
         <div className="relative z-10 pt-14 sm:pt-20 pb-10 sm:pb-14 text-center px-4 sm:px-8">
           <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-white/40 mb-4">
@@ -326,10 +370,19 @@ function WhyVietnamContent() {
         </div>
       </div>
 
+      {/* Image strip: Vietnam at a glance */}
+      <ImageStrip
+        images={[
+          { src: IMG.hanoi, label: "Hanoi" },
+          { src: IMG.hcm, label: "Ho Chi Minh City" },
+          { src: IMG.manufacturing, label: "Manufacturing" },
+        ]}
+      />
+
       {/* Spacer */}
       <div className="py-6 sm:py-8 bg-white" />
 
-      {/* Stat sections */}
+      {/* Stat sections with side images */}
       <DemographicsSection />
       <DigitalSection />
       <EconomySection />
