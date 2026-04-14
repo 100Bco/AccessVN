@@ -184,7 +184,7 @@ function DemographicsSection() {
 function DigitalSection() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${IMG.hcm}')` }} />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')" }} />
       <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.92)" }} />
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 py-16 sm:py-24">
         <div className="flex items-center gap-3 mb-3">
