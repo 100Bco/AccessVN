@@ -199,8 +199,8 @@ function DigitalSection() {
 
         {/* Big hero number */}
         <div className="text-center mb-10 sm:mb-14">
-          <div className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ color: RED }}>$36B</div>
-          <div className="text-white/30 text-[11px] sm:text-[13px] font-semibold uppercase tracking-[0.2em] mt-2">Digital Economy in 2024</div>
+          <div className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ color: RED }}>$39B</div>
+          <div className="text-white/30 text-[11px] sm:text-[13px] font-semibold uppercase tracking-[0.2em] mt-2">Digital Economy in 2025</div>
         </div>
 
         {/* Supporting stats */}
