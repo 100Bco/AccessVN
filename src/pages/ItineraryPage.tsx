@@ -20,6 +20,8 @@ const hanoiData = [
   { org: "ThinkZone Ventures", desc: "Seed to Series A; largest locally-funded fund ($60M); backed by IPA, Phu Thai Holdings, Stavian Group." },
   { org: "MISA", desc: "Leading SME ERP/accounting software; 250,000+ business customers; bootstrapped." },
   { org: "VinUniversity", desc: "Flagship university \u2013 engineering/science \u2013 industry partnerships." },
+  { org: "AmCham Hanoi", desc: "American Chamber of Commerce in Hanoi; key platform for U.S.\u2013Vietnam business advocacy and networking." },
+  { org: "US Embassy in Hanoi", desc: "Diplomatic mission of the United States; supports trade, investment, and bilateral relations." },
 ];
 
 const hcmData = [
@@ -34,6 +36,8 @@ const hcmData = [
   { org: "Asia Business Builders (ABB)", desc: "Growth equity & M&A; 25+ years; cross-border deals connecting Vietnamese companies to strategic buyers in Japan, Europe, and the US." },
   { org: "Antler Vietnam", desc: "Pre-seed company builder; 21 Vietnam investments in 2024." },
   { org: "Monk\u2019s Hill Ventures", desc: "Series A; $200M Fund III (2023); 50+ portfolio companies across SEA; Temasek-backed." },
+  { org: "AmCham Ho Chi Minh City", desc: "American Chamber of Commerce in HCMC; largest AmCham chapter in Vietnam; 600+ member companies." },
+  { org: "US Consulate in Ho Chi Minh City", desc: "U.S. diplomatic presence in southern Vietnam; supports commercial and consular services." },
 ];
 
 function ItineraryTable({
@@ -141,7 +145,7 @@ function ItineraryContent() {
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.92)" }} />
         <div className="relative z-10 py-14 sm:py-20 text-center px-4 sm:px-8">
           <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-white/40 mb-4">
-            ACCESS ASIA &middot; Access Vietnam 2026
+            ACCESS ASIA &middot; Access Vietnam 2026 &middot; June 6–13
           </p>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
             Tentative Itinerary
