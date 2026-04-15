@@ -28,8 +28,8 @@ const translations = {
 
   // Hero
   hero_date: {
-    en: "June 6 – June 13, 2026",
-    vi: "6 tháng 6 – 13 tháng 6, 2026",
+    en: "June 6 – 13, 2026",
+    vi: "6 – 13 tháng 6, 2026",
   },
   hero_desc: {
     en: "A historic delegation uniting Austin and Vietnamese business and government leaders to forge lasting economic partnerships between two of the world's most dynamic ecosystems.",
