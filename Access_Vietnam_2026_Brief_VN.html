@@ -8,7 +8,7 @@
 <style>
   @page { size: A4; margin: 18mm 16mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; color: #1a1a1a; font-size: 9.5pt; line-height: 1.6; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a1a; font-size: 11pt; line-height: 1.65; }
 
   .page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; }
   .page-break { page-break-before: always; }
@@ -18,55 +18,55 @@
   .header-logos { display: flex; align-items: center; gap: 10px; }
   .header-logos img { height: 32px; object-fit: contain; }
   .header-logos .sep { width: 1px; height: 24px; background: #ddd; }
-  .header-right { text-align: right; font-size: 7.5pt; color: #999; line-height: 1.5; font-weight: 500; }
+  .header-right { text-align: right; font-size: 8.5pt; color: #999; line-height: 1.5; font-weight: 500; }
 
   /* Title block */
-  .title-block { text-align: center; margin-bottom: 22px; }
-  .title-block h1 { font-size: 22pt; font-weight: 800; color: #1a1a1a; letter-spacing: -0.5px; margin-bottom: 5px; }
+  .title-block { text-align: center; margin-bottom: 24px; }
+  .title-block h1 { font-size: 24pt; font-weight: 800; color: #1a1a1a; letter-spacing: -0.5px; margin-bottom: 6px; }
   .title-block h1 span { color: #C41230; }
-  .title-block .subtitle { font-size: 10pt; color: #555; font-weight: 500; margin-bottom: 6px; }
-  .title-block .meta { font-size: 8.5pt; color: #999; letter-spacing: 0.3px; font-weight: 500; }
+  .title-block .subtitle { font-size: 12pt; color: #555; font-weight: 500; margin-bottom: 6px; }
+  .title-block .meta { font-size: 10pt; color: #999; letter-spacing: 0.3px; font-weight: 500; }
   .title-block .meta strong { color: #C41230; font-weight: 700; }
 
   /* Section */
   .section { margin-bottom: 18px; }
-  .section-label { font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C41230; margin-bottom: 7px; display: flex; align-items: center; gap: 8px; }
+  .section-label { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C41230; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
   .section-label::before { content: ''; width: 14px; height: 2px; background: #C41230; }
-  .section p { color: #333; font-size: 9.5pt; line-height: 1.65; }
+  .section p { color: #333; font-size: 11pt; line-height: 1.65; }
 
   /* Info grid */
-  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 16px; }
-  .info-item { display: flex; gap: 6px; font-size: 9pt; line-height: 1.5; }
-  .info-item .label { color: #999; min-width: 80px; font-size: 8pt; font-weight: 500; }
-  .info-item .value { color: #1a1a1a; font-weight: 600; font-size: 9pt; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+  .info-item { display: flex; gap: 6px; font-size: 10.5pt; line-height: 1.5; }
+  .info-item .label { color: #999; min-width: 85px; font-size: 9.5pt; font-weight: 500; }
+  .info-item .value { color: #1a1a1a; font-weight: 600; font-size: 10.5pt; }
 
   /* Stats row — centered block */
   .stats-row { display: flex; justify-content: center; gap: 10px; margin: 14px 0; }
-  .stat-card { text-align: center; padding: 10px 16px; background: #f8f8f8; border-radius: 4px; flex: 1; max-width: 150px; }
-  .stat-card .num { font-size: 15pt; font-weight: 800; color: #1a1a1a; line-height: 1.2; }
+  .stat-card { text-align: center; padding: 12px 16px; background: #f8f8f8; border-radius: 4px; flex: 1; max-width: 150px; }
+  .stat-card .num { font-size: 17pt; font-weight: 800; color: #1a1a1a; line-height: 1.2; }
   .stat-card .num.red { color: #C41230; }
-  .stat-card .desc { font-size: 6.5pt; color: #888; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 2px; font-weight: 600; line-height: 1.35; }
+  .stat-card .desc { font-size: 7.5pt; color: #888; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 3px; font-weight: 600; line-height: 1.35; }
 
   /* Objectives list */
   .obj-list { list-style: none; padding: 0; }
-  .obj-list li { padding: 4px 0; font-size: 9pt; color: #333; display: flex; align-items: baseline; gap: 8px; line-height: 1.55; }
-  .obj-list li .num { color: #C41230; font-weight: 700; font-size: 8pt; flex-shrink: 0; }
+  .obj-list li { padding: 5px 0; font-size: 11pt; color: #333; display: flex; align-items: baseline; gap: 8px; line-height: 1.6; }
+  .obj-list li .num { color: #C41230; font-weight: 700; font-size: 9.5pt; flex-shrink: 0; }
 
   /* Delegate table */
-  .delegate-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
-  .delegate-table thead th { background: #1a1a1a; color: rgba(255,255,255,0.65); font-size: 6.5pt; text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 8px; text-align: left; font-weight: 600; }
-  .delegate-table tbody td { padding: 6px 8px; border-bottom: 1px solid #f0f0f0; vertical-align: top; font-size: 8.5pt; }
+  .delegate-table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+  .delegate-table thead th { background: #1a1a1a; color: rgba(255,255,255,0.65); font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1.2px; padding: 8px 8px; text-align: left; font-weight: 600; }
+  .delegate-table tbody td { padding: 7px 8px; border-bottom: 1px solid #f0f0f0; vertical-align: top; font-size: 10pt; }
   .delegate-table tbody tr:nth-child(even) { background: #fafafa; }
   .delegate-table .name { font-weight: 700; color: #1a1a1a; }
   .delegate-table .role { color: #444; font-weight: 400; }
   .delegate-table .sector { color: #888; font-weight: 500; }
-  .delegate-table .stt { color: #C41230; font-weight: 700; font-size: 8pt; width: 22px; }
+  .delegate-table .stt { color: #C41230; font-weight: 700; font-size: 9pt; width: 22px; }
 
   /* Contact footer — minimal */
   .contact-footer { margin-top: 24px; padding-top: 12px; border-top: 1.5px solid #C41230; text-align: center; }
-  .contact-footer .contact-name { font-weight: 700; font-size: 9pt; color: #1a1a1a; }
-  .contact-footer .contact-detail { font-size: 8pt; color: #888; font-weight: 500; margin-top: 1px; }
-  .contact-footer .contact-web { font-size: 8pt; color: #C41230; font-weight: 600; margin-top: 6px; }
+  .contact-footer .contact-name { font-weight: 700; font-size: 10.5pt; color: #1a1a1a; }
+  .contact-footer .contact-detail { font-size: 9.5pt; color: #888; font-weight: 500; margin-top: 2px; }
+  .contact-footer .contact-web { font-size: 9.5pt; color: #C41230; font-weight: 600; margin-top: 6px; }
 
   /* Print */
   @media print {
