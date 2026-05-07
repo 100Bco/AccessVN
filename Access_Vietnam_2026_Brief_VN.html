@@ -4,72 +4,74 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ACCESS Vietnam 2026 — Hồ Sơ Giới Thiệu Phái Đoàn</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 20mm 18mm; }
+  @page { size: A4; margin: 18mm 16mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; font-size: 10.5pt; line-height: 1.65; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a1a; font-size: 12pt; line-height: 1.65; }
 
-  .page { max-width: 210mm; margin: 0 auto; padding: 20mm 18mm; }
+  .page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; }
   .page-break { page-break-before: always; }
 
   /* Header */
-  .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid #C41230; padding-bottom: 14px; margin-bottom: 20px; }
-  .header-logos { display: flex; align-items: center; gap: 12px; }
-  .header-logos img { height: 36px; object-fit: contain; }
-  .header-logos .sep { width: 1px; height: 28px; background: #ddd; }
-  .header-right { text-align: right; font-size: 8.5pt; color: #888; line-height: 1.5; }
+  .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2.5px solid #C41230; padding-bottom: 12px; margin-bottom: 22px; }
+  .header-logos { display: flex; align-items: center; gap: 10px; }
+  .header-logos img { height: 32px; object-fit: contain; }
+  .header-logos .sep { width: 1px; height: 24px; background: #ddd; }
+  .header-right { text-align: right; font-size: 8.5pt; color: #999; line-height: 1.5; font-weight: 500; }
 
   /* Title block */
   .title-block { text-align: center; margin-bottom: 24px; }
-  .title-block h1 { font-size: 20pt; font-weight: 800; color: #1a1a1a; letter-spacing: -0.5px; margin-bottom: 4px; }
+  .title-block h1 { font-size: 24pt; font-weight: 800; color: #1a1a1a; letter-spacing: -0.5px; margin-bottom: 6px; }
   .title-block h1 span { color: #C41230; }
-  .title-block .subtitle { font-size: 11pt; color: #555; margin-bottom: 8px; }
-  .title-block .meta { font-size: 9pt; color: #999; letter-spacing: 0.5px; }
-  .title-block .meta strong { color: #C41230; }
+  .title-block .subtitle { font-size: 12pt; color: #555; font-weight: 500; margin-bottom: 6px; }
+  .title-block .meta { font-size: 10pt; color: #999; letter-spacing: 0.3px; font-weight: 500; }
+  .title-block .meta strong { color: #C41230; font-weight: 700; }
 
   /* Section */
-  .section { margin-bottom: 20px; }
-  .section-label { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C41230; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-  .section-label::before { content: ''; width: 16px; height: 2px; background: #C41230; }
-  .section p { color: #333; margin-bottom: 6px; }
+  .section { margin-bottom: 18px; }
+  .section-label { font-size: 12pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C41230; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .section-label::before { content: ''; width: 14px; height: 2px; background: #C41230; }
+  .section p { color: #333; font-size: 12pt; line-height: 1.65; }
 
   /* Info grid */
-  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; margin-bottom: 12px; }
-  .info-item { display: flex; gap: 6px; font-size: 10pt; }
-  .info-item .label { color: #999; min-width: 85px; font-size: 9pt; }
-  .info-item .value { color: #1a1a1a; font-weight: 600; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+  .info-item { display: flex; gap: 6px; font-size: 12pt; line-height: 1.5; }
+  .info-item .label { color: #999; min-width: 85px; font-size: 12pt; font-weight: 500; }
+  .info-item .value { color: #1a1a1a; font-weight: 600; font-size: 12pt; }
 
-  /* Stats row */
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
-  .stat-card { text-align: center; padding: 12px 8px; background: #f8f8f8; border-radius: 4px; }
-  .stat-card .num { font-size: 16pt; font-weight: 800; color: #1a1a1a; line-height: 1.2; }
+  /* Stats row — centered block */
+  .stats-row { display: flex; justify-content: center; gap: 10px; margin: 14px 0; }
+  .stat-card { text-align: center; padding: 12px 16px; background: #f8f8f8; border-radius: 4px; flex: 1; max-width: 150px; }
+  .stat-card .num { font-size: 17pt; font-weight: 800; color: #1a1a1a; line-height: 1.2; }
   .stat-card .num.red { color: #C41230; }
-  .stat-card .desc { font-size: 7.5pt; color: #888; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 3px; }
+  .stat-card .desc { font-size: 7.5pt; color: #888; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 3px; font-weight: 600; line-height: 1.35; }
+
+  /* Objectives list */
+  .obj-list { list-style: none; padding: 0; }
+  .obj-list li { padding: 5px 0; font-size: 12pt; color: #333; display: flex; align-items: baseline; gap: 8px; line-height: 1.6; }
+  .obj-list li .num { color: #C41230; font-weight: 700; font-size: 12pt; flex-shrink: 0; }
 
   /* Delegate table */
-  .delegate-table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-  .delegate-table thead th { background: #1a1a1a; color: rgba(255,255,255,0.7); font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1.2px; padding: 8px 10px; text-align: left; font-weight: 600; }
-  .delegate-table tbody td { padding: 7px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+  .delegate-table { width: 100%; border-collapse: collapse; font-size: 12pt; }
+  .delegate-table thead th { background: #1a1a1a; color: rgba(255,255,255,0.65); font-size: 10pt; text-transform: uppercase; letter-spacing: 1.2px; padding: 8px 8px; text-align: left; font-weight: 600; }
+  .delegate-table tbody td { padding: 7px 8px; border-bottom: 1px solid #f0f0f0; vertical-align: top; font-size: 12pt; }
   .delegate-table tbody tr:nth-child(even) { background: #fafafa; }
   .delegate-table .name { font-weight: 700; color: #1a1a1a; }
-  .delegate-table .role { color: #555; }
-  .delegate-table .sector { font-size: 8.5pt; color: #888; }
-  .delegate-table .stt { color: #C41230; font-weight: 700; font-size: 8.5pt; width: 24px; }
+  .delegate-table .role { color: #444; font-weight: 400; }
+  .delegate-table .sector { color: #888; font-weight: 500; }
+  .delegate-table .stt { color: #C41230; font-weight: 700; font-size: 12pt; width: 22px; }
 
-  /* Group header */
-  .group-row td { background: #C41230 !important; color: white !important; font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 5px 10px !important; }
-
-  /* Contact footer */
-  .contact-footer { margin-top: 20px; padding-top: 14px; border-top: 2px solid #C41230; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; font-size: 9pt; }
-  .contact-item .contact-label { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; color: #C41230; font-weight: 700; margin-bottom: 4px; }
-  .contact-item .contact-name { font-weight: 700; color: #1a1a1a; }
-  .contact-item .contact-detail { color: #888; font-size: 8.5pt; }
+  /* Contact footer — minimal */
+  .contact-footer { margin-top: 24px; padding-top: 12px; border-top: 1.5px solid #C41230; text-align: center; }
+  .contact-footer .contact-name { font-weight: 700; font-size: 12pt; color: #1a1a1a; }
+  .contact-footer .contact-detail { font-size: 12pt; color: #888; font-weight: 500; margin-top: 2px; }
+  .contact-footer .contact-web { font-size: 12pt; color: #C41230; font-weight: 600; margin-top: 6px; }
 
   /* Print */
   @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { padding: 0; }
-    .no-print { display: none; }
   }
 
   /* Screen helper */
@@ -83,12 +85,11 @@
 
 <!-- PAGE 1 -->
 <div class="page">
-  <!-- Header -->
   <div class="header">
     <div class="header-logos">
       <img src="https://austinasianchamber.org/wp-content/uploads/2024/01/GAACC-logo-400x400-1.png" alt="GAACC">
       <div class="sep"></div>
-      <img src="https://100b.co/wp-content/uploads/2024/01/100B-Logo-Dark.png" alt="100B" style="height:28px;">
+      <img src="https://100b.co/wp-content/uploads/2024/01/100B-Logo-Dark.png" alt="100B" style="height:24px;">
     </div>
     <div class="header-right">
       Greater Austin Asian Chamber of Commerce<br>
@@ -96,7 +97,6 @@
     </div>
   </div>
 
-  <!-- Title -->
   <div class="title-block">
     <h1>ACCESS <span>Vietnam</span> 2026</h1>
     <div class="subtitle">Đoàn Doanh Nghiệp Austin, Texas Thăm và Làm Việc tại Việt Nam</div>
@@ -105,7 +105,6 @@
     </div>
   </div>
 
-  <!-- Giới thiệu -->
   <div class="section">
     <div class="section-label">Giới thiệu chương trình</div>
     <p>
@@ -117,24 +116,22 @@
     </p>
   </div>
 
-  <!-- Thông tin tổng quan -->
   <div class="section">
     <div class="section-label">Thông tin tổng quan</div>
     <div class="info-grid">
       <div class="info-item"><span class="label">Mục đích:</span><span class="value">Kết nối doanh nghiệp Mỹ với đối tác Việt Nam, thúc đẩy hợp tác thương mại & đầu tư</span></div>
       <div class="info-item"><span class="label">Quy mô:</span><span class="value">16–18 doanh nhân từ Texas</span></div>
       <div class="info-item"><span class="label">Đơn vị tổ chức:</span><span class="value">GAACC, 100B Holdings, LT Commercial Group</span></div>
-      <div class="info-item"><span class="label">Lĩnh vực:</span><span class="value">Bất động sản, Công nghệ, Xuất nhập khẩu, Pháp lý, Y tế, Giáo dục</span></div>
+      <div class="info-item"><span class="label">Lĩnh vực:</span><span class="value">Bất động sản, Công nghệ, XNK, Pháp lý, Y tế, Giáo dục</span></div>
     </div>
   </div>
 
-  <!-- Central Texas -->
   <div class="section">
     <div class="section-label">Tiềm năng kinh tế Central Texas</div>
-    <p style="margin-bottom: 10px;">
+    <p style="margin-bottom: 8px;">
       Bang Texas sở hữu nền kinh tế lớn thứ 8 thế giới nếu là quốc gia độc lập.
-      Austin — thủ phủ bang Texas — là trung tâm công nghệ và khởi nghiệp hàng đầu Hoa Kỳ,
-      được mệnh danh "Silicon Hills" với sự hiện diện của Tesla, Samsung, Apple, Oracle, Google và SpaceX.
+      Austin — thủ phủ bang Texas — là trung tâm công nghệ hàng đầu Hoa Kỳ,
+      được mệnh danh "Silicon Hills" với sự hiện diện của Tesla, Samsung, Apple, Oracle và SpaceX.
     </p>
     <div class="stats-row">
       <div class="stat-card">
@@ -156,26 +153,24 @@
     </div>
   </div>
 
-  <!-- Mục tiêu -->
   <div class="section">
     <div class="section-label">Mục tiêu chuyến thăm</div>
-    <p>
-      ① Củng cố quan hệ ngoại giao kinh tế giữa Việt Nam và thành phố Austin &nbsp;
-      ② Gặp gỡ, trao đổi trực tiếp với các cơ quan quản lý nhà nước và tổ chức kinh tế trọng yếu &nbsp;
-      ③ Khám phá các hướng đi mới trong hợp tác thương mại, đầu tư trực tiếp và giao lưu văn hóa &nbsp;
-      ④ Đặt nền móng cho các quan hệ đối tác dài hạn trong lĩnh vực công nghệ, sản xuất tiên tiến và hệ sinh thái khởi nghiệp
-    </p>
+    <ol class="obj-list">
+      <li><span class="num">01</span>Củng cố quan hệ ngoại giao kinh tế giữa Việt Nam và thành phố Austin</li>
+      <li><span class="num">02</span>Gặp gỡ, trao đổi trực tiếp với các cơ quan quản lý nhà nước và tổ chức kinh tế trọng yếu</li>
+      <li><span class="num">03</span>Khám phá các hướng đi mới trong hợp tác thương mại, đầu tư trực tiếp và giao lưu văn hóa</li>
+      <li><span class="num">04</span>Đặt nền móng cho các quan hệ đối tác dài hạn trong lĩnh vực công nghệ, sản xuất tiên tiến và hệ sinh thái khởi nghiệp</li>
+    </ol>
   </div>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page page-break">
-  <!-- Header repeat -->
   <div class="header">
     <div class="header-logos">
       <img src="https://austinasianchamber.org/wp-content/uploads/2024/01/GAACC-logo-400x400-1.png" alt="GAACC">
       <div class="sep"></div>
-      <img src="https://100b.co/wp-content/uploads/2024/01/100B-Logo-Dark.png" alt="100B" style="height:28px;">
+      <img src="https://100b.co/wp-content/uploads/2024/01/100B-Logo-Dark.png" alt="100B" style="height:24px;">
     </div>
     <div class="header-right">
       ACCESS Vietnam 2026<br>
@@ -183,169 +178,47 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" style="margin-bottom: 12px;">
     <div class="section-label">Danh sách đại biểu chính thức</div>
   </div>
 
   <table class="delegate-table">
     <thead>
       <tr>
-        <th style="width:24px">#</th>
+        <th style="width:22px">#</th>
         <th>Họ và Tên</th>
-        <th>Chức vụ & Đơn vị</th>
+        <th>Chức vụ & Đơn vị công tác</th>
         <th>Lĩnh vực</th>
-        <th>TP</th>
+        <th>Thành phố</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="stt">01</td>
-        <td class="name">Mark Duval</td>
-        <td class="role">Chủ tịch & CEO, Greater Austin Asian Chamber of Commerce</td>
-        <td class="sector">Hiệp hội TM</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">02</td>
-        <td class="name">Minh Mac</td>
-        <td class="role">Founder, 100B Holdings</td>
-        <td class="sector">Đầu tư & CN</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">03</td>
-        <td class="name">Lezlie Tram</td>
-        <td class="role">Founder & CEO, LT Commercial Group</td>
-        <td class="sector">Bất động sản</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">04</td>
-        <td class="name">Ahmed Moledina</td>
-        <td class="role">President & CEO, SOAL Technologies</td>
-        <td class="sector">Công nghệ</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">05</td>
-        <td class="name">Barbara Joe</td>
-        <td class="role">Director, Asian Chamber of Commerce Houston</td>
-        <td class="sector">Hiệp hội TM</td>
-        <td>Houston</td>
-      </tr>
-      <tr>
-        <td class="stt">06</td>
-        <td class="name">David Teo</td>
-        <td class="role">Chair Elect, GAACC. Founder & CEO, Centauri Capital Group</td>
-        <td class="sector">Tài chính & BĐS</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">07</td>
-        <td class="name">Fan Chen</td>
-        <td class="role">Managing Partner, MOSAIC Paradigm Law Group</td>
-        <td class="sector">Pháp lý</td>
-        <td>Houston</td>
-      </tr>
-      <tr>
-        <td class="stt">08</td>
-        <td class="name">Hector Quintanar</td>
-        <td class="role">Managing Partner, Trade Management Solutions</td>
-        <td class="sector">Thương mại</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">09</td>
-        <td class="name">Jason Fuller</td>
-        <td class="role">Managing Director, Global Development Straife</td>
-        <td class="sector">Phát triển DA</td>
-        <td>Houston</td>
-      </tr>
-      <tr>
-        <td class="stt">10</td>
-        <td class="name">Jay Choi</td>
-        <td class="role">Advisor, International Accelerator</td>
-        <td class="sector">Khởi nghiệp</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">11</td>
-        <td class="name">MeiMei Li</td>
-        <td class="role">Đại biểu doanh nghiệp độc lập</td>
-        <td class="sector">—</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td class="stt">12</td>
-        <td class="name">Michelle Zhang</td>
-        <td class="role">Managing Partner, Melsen & Company</td>
-        <td class="sector">Tài chính</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td class="stt">13</td>
-        <td class="name">Mick Hawton</td>
-        <td class="role">Partner & Chief Strategy Officer, Headwater</td>
-        <td class="sector">Bất động sản</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">14</td>
-        <td class="name">Minh Tran</td>
-        <td class="role">Chairman, GAACC. Chairman & CEO, EmmyEvan</td>
-        <td class="sector">Sản xuất</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">15</td>
-        <td class="name">Rima Adil</td>
-        <td class="role">Vice Chancellor, Houston City College</td>
-        <td class="sector">Giáo dục ĐH</td>
-        <td>Houston</td>
-      </tr>
-      <tr>
-        <td class="stt">16</td>
-        <td class="name">Robert Lee</td>
-        <td class="role">Nhà đầu tư tư nhân</td>
-        <td class="sector">Đầu tư BĐS</td>
-        <td>Austin</td>
-      </tr>
-      <tr>
-        <td class="stt">17</td>
-        <td class="name">Sam Chang</td>
-        <td class="role">Managing Partner, Henry S Miller Brokerage</td>
-        <td class="sector">BĐS</td>
-        <td>Houston</td>
-      </tr>
-      <tr>
-        <td class="stt">18</td>
-        <td class="name">Ethan Tran</td>
-        <td class="role">Founder, Frontline ER</td>
-        <td class="sector">Y tế</td>
-        <td>Houston</td>
-      </tr>
+      <tr><td class="stt">01</td><td class="name">Mark Duval</td><td class="role">Chủ tịch & CEO, Greater Austin Asian Chamber of Commerce</td><td class="sector">Hiệp hội TM</td><td>Austin</td></tr>
+      <tr><td class="stt">02</td><td class="name">Minh Mac</td><td class="role">Founder, 100B Holdings</td><td class="sector">Đầu tư & CN</td><td>Austin</td></tr>
+      <tr><td class="stt">03</td><td class="name">Lezlie Tram</td><td class="role">Founder & CEO, LT Commercial Group</td><td class="sector">Bất động sản</td><td>Austin</td></tr>
+      <tr><td class="stt">04</td><td class="name">Ahmed Moledina</td><td class="role">President & CEO, SOAL Technologies</td><td class="sector">Công nghệ</td><td>Austin</td></tr>
+      <tr><td class="stt">05</td><td class="name">Barbara Joe</td><td class="role">Director, Asian Chamber of Commerce Houston</td><td class="sector">Hiệp hội TM</td><td>Houston</td></tr>
+      <tr><td class="stt">06</td><td class="name">David Teo</td><td class="role">Chair Elect, GAACC. Founder & CEO, Centauri Capital Group</td><td class="sector">Tài chính & BĐS</td><td>Austin</td></tr>
+      <tr><td class="stt">07</td><td class="name">Fan Chen</td><td class="role">Managing Partner, MOSAIC Paradigm Law Group</td><td class="sector">Pháp lý</td><td>Houston</td></tr>
+      <tr><td class="stt">08</td><td class="name">Hector Quintanar</td><td class="role">Managing Partner, Trade Management Solutions</td><td class="sector">Thương mại</td><td>Austin</td></tr>
+      <tr><td class="stt">09</td><td class="name">Jason Fuller</td><td class="role">Managing Director, Global Development Straife</td><td class="sector">Phát triển DA</td><td>Houston</td></tr>
+      <tr><td class="stt">10</td><td class="name">Jay Choi</td><td class="role">Advisor, International Accelerator</td><td class="sector">Khởi nghiệp</td><td>Austin</td></tr>
+      <tr><td class="stt">11</td><td class="name">MeiMei Li</td><td class="role">Đại biểu doanh nghiệp độc lập</td><td class="sector">—</td><td>—</td></tr>
+      <tr><td class="stt">12</td><td class="name">Michelle Zhang</td><td class="role">Managing Partner, Melsen & Company</td><td class="sector">Tài chính</td><td>—</td></tr>
+      <tr><td class="stt">13</td><td class="name">Mick Hawton</td><td class="role">Partner & Chief Strategy Officer, Headwater</td><td class="sector">Bất động sản</td><td>Austin</td></tr>
+      <tr><td class="stt">14</td><td class="name">Minh Tran</td><td class="role">Chairman, GAACC. Chairman & CEO, EmmyEvan</td><td class="sector">Sản xuất</td><td>Austin</td></tr>
+      <tr><td class="stt">15</td><td class="name">Rima Adil</td><td class="role">Vice Chancellor, Houston City College</td><td class="sector">Giáo dục ĐH</td><td>Houston</td></tr>
+      <tr><td class="stt">16</td><td class="name">Robert Lee</td><td class="role">Nhà đầu tư tư nhân</td><td class="sector">Đầu tư BĐS</td><td>Austin</td></tr>
+      <tr><td class="stt">17</td><td class="name">Sam Chang</td><td class="role">Managing Partner, Henry S Miller Brokerage</td><td class="sector">BĐS</td><td>Houston</td></tr>
+      <tr><td class="stt">18</td><td class="name">Ethan Tran</td><td class="role">Founder, Frontline ER</td><td class="sector">Y tế</td><td>Houston</td></tr>
     </tbody>
   </table>
 
-  <!-- Contact -->
+  <!-- Contact — clean minimal -->
   <div class="contact-footer">
-    <div class="contact-item">
-      <div class="contact-label">Đầu mối phía Hoa Kỳ</div>
-      <div class="contact-name">Mark Duval</div>
-      <div class="contact-detail">President & CEO, GAACC</div>
-      <div class="contact-detail">markduval@austinasianchamber.org</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Đầu mối điều phối</div>
-      <div class="contact-name">Minh Mac</div>
-      <div class="contact-detail">Founder, 100B Holdings</div>
-      <div class="contact-detail">global@100b.co</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Website</div>
-      <div class="contact-name">austin2vietnam.100b.co</div>
-      <div class="contact-detail">austinasianchamber.org</div>
-    </div>
+    <div class="contact-name">Minh Mac &nbsp;&middot;&nbsp; Founder, 100B Holdings</div>
+    <div class="contact-detail">global@100b.co &nbsp;&nbsp;|&nbsp;&nbsp; +1-757-773-5707</div>
+    <div class="contact-web">austin2vietnam.100b.co</div>
   </div>
 </div>
 
