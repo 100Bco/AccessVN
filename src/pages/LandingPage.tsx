@@ -1,6 +1,7 @@
 import gaaccLogo from "@assets/GAACC-logo-400x400-1-qyhcmbgu36kdcsai231m2gr6xj1pqen1lbcxra8p_1773649259946.webp";
 import logo100b from "@assets/100B_-_TACH_NEN_-2_(1)_1773649286116.png";
 import minhMacPhoto from "@assets/Minh Mac CEO.jpeg";
+import markDuvalPhoto from "@assets/mark_duval.avif";
 import { useEffect, useRef, useState } from "react";
 import { Plane } from "lucide-react";
 import { Link } from "wouter";
@@ -210,7 +211,7 @@ function Hero() {
           <Link href="/itinerary" className="text-white font-semibold px-6 sm:px-8 py-3 sm:py-3.5 text-[12px] sm:text-[13px] tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: RED }}>{t("nav_get_involved")}</Link>
         </div>
         <div className="grid grid-cols-3 max-w-xs sm:max-w-xl mx-auto border-t border-white/10 pt-6 sm:pt-8 w-full">
-          {[{ value: "3", label: t("hero_countries") }, { value: "21", label: t("hero_days") }, { value: "15+", label: t("hero_delegates") }].map((s) => (
+          {[{ value: "3", label: t("hero_countries") }, { value: "21", label: t("hero_days") }, { value: "18", label: t("hero_delegates") }].map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-2xl sm:text-4xl font-bold text-white tracking-tight">{s.value}</div>
               <div className="text-white/35 text-[10px] sm:text-[13px] mt-1 sm:mt-1.5 uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold">{s.label}</div>
@@ -444,55 +445,68 @@ function AccessVietnamSection() {
   );
 }
 
+const DELEGATES = [
+  { name: "Minh Mac", role: "Founder, 100B", location: "Austin", industry: "Venture Studio" },
+  { name: "Lezlie Tram", role: "Founder & CEO, LT Commercial Group", location: "Austin", industry: "Real Estate Development" },
+  { name: "Ahmed Moledina", role: "President & CEO, SOAL Technologies", location: "Austin", industry: "Tech" },
+  { name: "Barbara Joe", role: "Director, Asian Chamber of Commerce Houston", location: "Houston", industry: "Chamber of Commerce" },
+  { name: "David Teo", role: "Chair Elect, GAACC. Founder & CEO, Centauri Capital Group", location: "Austin", industry: "Real Estate Development" },
+  { name: "Fan Chen", role: "Managing Partner, MOSAIC Paradigm Law Group", location: "Houston", industry: "Law Firm" },
+  { name: "Hector Quintanar", role: "Managing Partner, Trade Management Solutions", location: "Austin", industry: "Trading" },
+  { name: "Jason Fuller", role: "Managing Director, Global Development Straife", location: "Houston", industry: "RE Development" },
+  { name: "Jay Choi", role: "Advisor, International Accelerator", location: "Austin", industry: "Incubator" },
+  { name: "Mark Duval", role: "President & CEO, Greater Austin Asian Chamber of Commerce", location: "Austin", industry: "Chamber of Commerce" },
+  { name: "MeiMei Li", role: "Individual", location: "", industry: "" },
+  { name: "Michelle Zhang", role: "Managing Partner, Melsen & Company", location: "?", industry: "Finance and Property" },
+  { name: "Mick Hawton", role: "Partner and Chief Strategy Officer, Headwater", location: "Austin", industry: "Real Estate Development" },
+  { name: "Minh Tran", role: "Chairman, GAACC. Chairman & CEO EmmyEvan", location: "Austin", industry: "Apparel" },
+  { name: "Rima Adil", role: "Vice Chancellor, Houston City College", location: "Houston", industry: "Higher Education" },
+  { name: "Robert Lee", role: "Private Investor", location: "Austin", industry: "Real Estate Development" },
+  { name: "Sam Chang", role: "Managing Partner, Henry S Miller Brokerage", location: "Houston", industry: "Real Estate Brokerage" },
+  { name: "Ethan Tran", role: "Founder, Frontline ER", location: "Houston", industry: "Healthcare" },
+];
+
 /* ── Delegation ── */
 function DelegationSection() {
   const t = useT();
   return (
-    <section id="delegation" className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560439513-74b037a25d84?w=1400&q=80')" }} />
-      <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
-
-      <div className="relative z-10 min-h-screen flex items-center py-20 sm:py-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-8 w-full">
-          {/* Header + text */}
-          <div className="text-center mb-8 sm:mb-10">
-            <h2 className="text-xl sm:text-3xl font-bold text-white leading-tight mb-3 sm:mb-4">{t("delegation_title")}</h2>
-            <div className="w-8 h-[2px] mx-auto mb-4 sm:mb-6" style={{ backgroundColor: RED }} />
-            <p className="text-white/60 text-[14px] sm:text-[17px] leading-[1.75] max-w-3xl mx-auto">
+    <section id="delegation" className="relative overflow-hidden" style={{ backgroundColor: "#0A0A0A" }}>
+      
+      <div className="relative z-10 py-20 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 w-full">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-2xl sm:text-4xl font-bold text-white leading-tight mb-4">{t("delegation_title")}</h2>
+            <div className="w-12 h-[3px] mx-auto mb-6" style={{ backgroundColor: RED }} />
+            <p className="text-white/60 text-[15px] sm:text-[18px] leading-[1.8] max-w-3xl mx-auto">
               {t("delegation_desc")}
             </p>
           </div>
 
-          {/* Leaders + cities + stats in a compact row */}
-          <div className="grid md:grid-cols-12 gap-6 items-start">
-            {/* Leader */}
-            <div className="md:col-span-5 flex justify-center">
-              <div className="flex flex-col items-center">
-                <img src="https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp" alt="Mark Duval" className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-top mb-3 sm:mb-4" />
-                <h3 className="text-white font-bold text-base sm:text-lg mb-0.5">Mark Duval</h3>
-                <p className="text-white/40 text-[12px] sm:text-[13px]">{t("delegation_leader_title")}</p>
-              </div>
-            </div>
-
-            {/* Cities + stats */}
-            <div className="md:col-span-7 flex flex-col justify-center">
-              <div className="flex flex-wrap justify-center gap-2 mb-6">
-                {["Austin", "Houston", "Georgetown", "Cedar Park", "Round Rock", "Taylor", "Hutto"].map((c) => (
-                  <span key={c} className="text-white/70 text-[11px] sm:text-[13px] font-medium px-2.5 py-1 rounded border border-white/10 bg-white/5">{c}</span>
-                ))}
-              </div>
-              <div className="flex items-start justify-center gap-6 sm:gap-8 pt-5 border-t border-white/8">
+          {/* Delegate Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {DELEGATES.map((d, i) => (
+              <div 
+                key={d.name} 
+                className="group p-5 sm:p-6 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] transition-all duration-300 flex flex-col justify-between"
+              >
                 <div>
-                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight leading-tight">10–15+</div>
-                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-1 font-semibold">{t("delegation_delegates")}</div>
+                  <h3 className="text-white font-bold text-lg mb-1 group-hover:text-[#C41230] transition-colors">{d.name}</h3>
+                  <p className="text-white/80 text-[14px] leading-snug mb-3">{d.role}</p>
                 </div>
-                <div className="h-10 w-px bg-white/8 shrink-0" />
-                <div>
-                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight leading-tight">April 30, 2026</div>
-                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-1 font-semibold">{t("delegation_deadline")}</div>
+                <div className="flex items-center gap-3 pt-3 border-t border-white/5 mt-auto">
+                  {d.location && (
+                    <span className="text-white/40 text-[11px] font-bold tracking-wider uppercase">{d.location}</span>
+                  )}
+                  {d.location && d.industry && (
+                    <span className="w-1 h-1 rounded-full bg-white/20" />
+                  )}
+                  {d.industry && (
+                    <span className="text-[#C41230]/70 text-[11px] font-bold tracking-wider uppercase">{d.industry}</span>
+                  )}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -577,7 +591,7 @@ function GAACCSection() {
 /* ── Contacts ── */
 function ContactSection() {
   const contacts = [
-    { name: "Mark Duval", phone: "+1-737-733-2073", email: "markduval@austinasianchamber.org", photo: "https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp", linkedin: "https://www.linkedin.com/in/markduval/" },
+    { name: "Mark Duval", phone: "+1-737-733-2073", email: "markduval@austinasianchamber.org", photo: markDuvalPhoto, linkedin: "https://www.linkedin.com/in/markduval/" },
     { name: "Minh Mac", phone: "+1-757-773-5707", email: "global@100b.co", photo: minhMacPhoto, linkedin: "https://www.linkedin.com/in/minhlaunch/" },
   ];
 
