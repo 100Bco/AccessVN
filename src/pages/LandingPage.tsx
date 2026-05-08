@@ -446,7 +446,7 @@ function AccessVietnamSection() {
 }
 
 const DELEGATES = [
-  { name: "Minh Mac", role: "Founder, 100B", location: "Austin", industry: "Venture Studio" },
+  { name: "Minh Mac", role: "Founder, 100B", location: "Austin", industry: "Investment & Advisory" },
   { name: "Lezlie Tram", role: "Founder & CEO, LT Commercial Group", location: "Austin", industry: "Real Estate Development" },
   { name: "Ahmed Moledina", role: "President & CEO, SOAL Technologies", location: "Austin", industry: "Tech" },
   { name: "Barbara Joe", role: "Director, Asian Chamber of Commerce Houston", location: "Houston", industry: "Chamber of Commerce" },
@@ -457,7 +457,7 @@ const DELEGATES = [
   { name: "Jay Choi", role: "Advisor, International Accelerator", location: "Austin", industry: "Incubator" },
   { name: "Mark Duval", role: "President & CEO, Greater Austin Asian Chamber of Commerce", location: "Austin", industry: "Chamber of Commerce" },
   { name: "MeiMei Li", role: "Individual", location: "", industry: "" },
-  { name: "Michelle Zhang", role: "Managing Partner, Melsen & Company", location: "?", industry: "Finance and Property" },
+  { name: "Michelle Zhang", role: "Managing Partner, Melsen & Company", location: "", industry: "Finance and Property" },
   { name: "Mick Hawton", role: "Partner and Chief Strategy Officer, Headwater", location: "Austin", industry: "Real Estate Development" },
   { name: "Minh Tran", role: "Chairman, GAACC. Chairman & CEO EmmyEvan", location: "Austin", industry: "Apparel" },
   { name: "Rima Adil", role: "Vice Chancellor, Houston City College", location: "Houston", industry: "Higher Education" },
