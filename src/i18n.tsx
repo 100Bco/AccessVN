@@ -108,6 +108,10 @@ const translations = {
     en: "In Greater Austin this shift is anchored by the $37B Samsung Taylor expansion, which has catalyzed a regional \"clustering effect,\" drawing in hundreds of Tier-1 and 2 Samsung suppliers to the Austin-San Antonio corridor. Recent major investments from Korea's LS Electric in Bastrop (near Tesla Gigafactory) and Taiwanese giants Pegatron and Compal in Georgetown and Taylor further signal growing Asian confidence in the region.",
     vi: "Tại Greater Austin, làn sóng đầu tư ấy được dẫn dắt bởi dự án mở rộng Samsung Taylor trị giá 37 tỷ USD, tạo hiệu ứng lan toả mạnh mẽ, kéo theo hàng trăm nhà cung cấp cấp 1 và cấp 2 đổ về hành lang Austin–San Antonio. Các khoản đầu tư tiếp theo từ LS Electric (Hàn Quốc) tại Bastrop, cùng hai tập đoàn hàng đầu Taiwan là Pegatron và Compal tại Georgetown và Taylor, càng củng cố niềm tin của châu Á vào tiềm năng của vùng đất này.",
   },
+  ct_p3: {
+    en: "Texas is the 8th largest economy in the world — if it were an independent country. Austin, the state capital, is America's leading technology hub, home to Tesla, Samsung, Apple, Oracle, and SpaceX. Most recently, SpaceX proposed a $55 billion investment to build a semiconductor manufacturing facility in Texas — a clear signal of the state's growing importance in the global technology supply chain.",
+    vi: "Bang Texas là nền kinh tế lớn thứ 8 thế giới — nếu là quốc gia độc lập. Austin, thủ phủ bang Texas, là trung tâm công nghệ hàng đầu nước Mỹ với sự hiện diện của Tesla, Samsung, Apple, Oracle và SpaceX. Mới đây, SpaceX đề xuất đầu tư 55 tỷ USD xây dựng nhà máy sản xuất bán dẫn tại Texas — tín hiệu rõ ràng về vị thế ngày càng quan trọng của bang trong chuỗi cung ứng công nghệ toàn cầu.",
+  },
   ct_investing_nations: { en: "Investing Nations", vi: "Các quốc gia đầu tư" },
 
   // GAACC section

@@ -447,52 +447,51 @@ function AccessVietnamSection() {
 /* ── Delegation ── */
 function DelegationSection() {
   const t = useT();
+  const delegates = [
+    { name: "Mark Duval", role: "President & CEO, Greater Austin Asian Chamber of Commerce", city: "Austin", sector: "Chamber of Commerce" },
+    { name: "Minh Mac", role: "Founder, 100B", city: "Austin", sector: "Investment & Advisory" },
+    { name: "Ahmed Moledina", role: "President & CEO, SOAL Technologies", city: "Austin", sector: "Tech" },
+    { name: "Barbara Joe", role: "Director, Asian Chamber of Commerce Houston", city: "Houston", sector: "Chamber of Commerce" },
+    { name: "David Teo", role: "Chair Elect, GAACC. Founder & CEO, Centauri Capital Group", city: "Austin", sector: "Development" },
+    { name: "Lezlie Tram", role: "Founder & CEO, LT Commercial Group", city: "Austin", sector: "Development" },
+    { name: "Fan Chen", role: "Managing Partner, MOSAIC Paradigm Law Group", city: "Houston", sector: "Law Firm" },
+    { name: "Hector Quintanar", role: "Managing Partner, Trade Management Solutions", city: "Austin", sector: "International Trade" },
+    { name: "Jason Fuller", role: "Managing Director, Global Development Straife", city: "Houston", sector: "Development" },
+    { name: "Jay Choi", role: "Advisor, International Accelerator", city: "Austin", sector: "Incubator" },
+    { name: "MeiMei Li", role: "Private Investor", city: "", sector: "Investor" },
+    { name: "Michelle Zhang", role: "Managing Partner, Melsen & Company", city: "", sector: "Finance and Property" },
+    { name: "Mick Hawton", role: "Partner and Chief Strategy Officer, Headwater", city: "Austin", sector: "Development" },
+    { name: "Minh Tran", role: "Chairman, GAACC. Chairman & CEO EmmyEvan", city: "Austin", sector: "Apparel" },
+    { name: "Rima Adil", role: "Vice Chancellor, Houston City College", city: "Houston", sector: "Higher Education" },
+    { name: "Robert Lee", role: "Private Investor", city: "Austin", sector: "Investor" },
+    { name: "Sam Chang", role: "Managing Partner, Henry S Miller Brokerage", city: "Houston", sector: "Real Estate Brokerage" },
+    { name: "Ethan Tran", role: "Founder, Frontline ER", city: "Houston", sector: "Healthcare" },
+  ];
+
   return (
     <section id="delegation" className="relative overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560439513-74b037a25d84?w=1400&q=80')" }} />
       <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,15,15,0.93)" }} />
 
-      <div className="relative z-10 min-h-screen flex items-center py-20 sm:py-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-8 w-full">
-          {/* Header + text */}
-          <div className="text-center mb-8 sm:mb-10">
+      <div className="relative z-10 py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 w-full">
+          <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-xl sm:text-3xl font-bold text-white leading-tight mb-3 sm:mb-4">{t("delegation_title")}</h2>
-            <div className="w-8 h-[2px] mx-auto mb-4 sm:mb-6" style={{ backgroundColor: RED }} />
-            <p className="text-white/60 text-[14px] sm:text-[17px] leading-[1.75] max-w-3xl mx-auto">
-              {t("delegation_desc")}
-            </p>
+            <div className="w-8 h-[2px] mx-auto mb-4" style={{ backgroundColor: RED }} />
           </div>
 
-          {/* Leaders + cities + stats in a compact row */}
-          <div className="grid md:grid-cols-12 gap-6 items-start">
-            {/* Leader */}
-            <div className="md:col-span-5 flex justify-center">
-              <div className="flex flex-col items-center">
-                <img src="https://austinasianchamber.org/wp-content/uploads/2025/02/Mark-Duval.webp" alt="Mark Duval" className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover object-top mb-3 sm:mb-4" />
-                <h3 className="text-white font-bold text-base sm:text-lg mb-0.5">Mark Duval</h3>
-                <p className="text-white/40 text-[12px] sm:text-[13px]">{t("delegation_leader_title")}</p>
-              </div>
-            </div>
-
-            {/* Cities + stats */}
-            <div className="md:col-span-7 flex flex-col justify-center">
-              <div className="flex flex-wrap justify-center gap-2 mb-6">
-                {["Austin", "Houston", "Georgetown", "Cedar Park", "Round Rock", "Taylor", "Hutto"].map((c) => (
-                  <span key={c} className="text-white/70 text-[11px] sm:text-[13px] font-medium px-2.5 py-1 rounded border border-white/10 bg-white/5">{c}</span>
-                ))}
-              </div>
-              <div className="flex items-start justify-center gap-6 sm:gap-8 pt-5 border-t border-white/8">
-                <div>
-                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight leading-tight">10–15+</div>
-                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-1 font-semibold">{t("delegation_delegates")}</div>
-                </div>
-                <div className="h-10 w-px bg-white/8 shrink-0" />
-                <div>
-                  <div className="text-lg sm:text-xl font-bold text-white tracking-tight leading-tight">April 30, 2026</div>
-                  <div className="text-white/30 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] mt-1 font-semibold">{t("delegation_deadline")}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {delegates.map((d) => (
+              <div key={d.name} className="rounded-lg border border-white/8 bg-white/[0.03] p-4 sm:p-5">
+                <h3 className="text-white font-bold text-[14px] sm:text-[15px] mb-1">{d.name}</h3>
+                <p className="text-white/50 text-[11px] sm:text-[12px] leading-snug mb-3">{d.role}</p>
+                <div className="flex items-center gap-2 text-[9px] sm:text-[10px] uppercase tracking-wider">
+                  {d.city && <span className="text-white/30 font-semibold">{d.city}</span>}
+                  {d.city && <span className="text-white/15">&bull;</span>}
+                  <span className="font-semibold" style={{ color: RED }}>{d.sector}</span>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -519,8 +518,11 @@ function CentralTexasSection() {
           <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-5" style={{ color: "#333" }}>
             {t("ct_p1")}
           </p>
-          <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-6 sm:mb-8" style={{ color: "#333" }}>
+          <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-5" style={{ color: "#333" }}>
             {t("ct_p2")}
+          </p>
+          <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-6 sm:mb-8" style={{ color: "#333" }}>
+            {t("ct_p3")}
           </p>
           <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase text-center pt-6 border-t border-gray-200 mb-5" style={{ color: GRAY }}>{t("ct_investing_nations")}</p>
           <div className="grid grid-cols-3 sm:grid-cols-6 items-center justify-items-center gap-y-4">
