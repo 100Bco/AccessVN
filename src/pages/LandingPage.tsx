@@ -344,8 +344,8 @@ function IntroSection() {
 function AboutSection() {
   const t = useT();
   return (
-    <section id="about" className="min-h-screen flex flex-col">
-      <div className="flex-1 flex items-center py-12 sm:py-0" style={{ backgroundColor: "#f8f8f8" }}>
+    <section id="about" className="flex flex-col">
+      <div className="flex-1 flex items-center py-16 sm:py-20" style={{ backgroundColor: "#f8f8f8" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <h2 className="text-xl sm:text-3xl font-bold leading-tight mb-4 sm:mb-5" style={{ color: CHARCOAL }}>{t("about_title")}</h2>
           <p className="text-[15px] sm:text-[17px] leading-[1.75] mb-4" style={{ color: "#333" }}>
