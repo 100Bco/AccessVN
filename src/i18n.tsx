@@ -89,12 +89,10 @@ const translations = {
   // Delegation
   delegation_title: { en: "The Access Vietnam Delegation", vi: "Phái đoàn Access Vietnam" },
   delegation_desc: {
-    en: "The delegation will be led by GAACC President & CEO Mark Duval (former President of AmCham China). Delegation members will include business and government leaders representing the City of Austin, the City of Houston and other Central Texas Cities such as Georgetown, Cedar Park, Round Rock, Taylor and Hutto. A total of at least 10-15 delegates (quite possibly more) are expected to join, with that list to be finalized and confirmed by April 30, 2026.",
-    vi: "Phái đoàn được dẫn đầu bởi ông Mark Duval — Chủ tịch & CEO GAACC, nguyên Chủ tịch AmCham China. Thành phần tham gia gồm các nhà lãnh đạo doanh nghiệp và chính quyền đại diện cho City of Austin, City of Houston cùng các đô thị lân cận thuộc vùng trung tâm Texas như Georgetown, Cedar Park, Round Rock, Taylor và Hutto.",
+    en: "The Access Vietnam 2026 delegation brings together a distinguished group of business leaders, government officials, and innovators from Central Texas and beyond.",
+    vi: "Phái đoàn Access Vietnam 2026 quy tụ nhóm các nhà lãnh đạo doanh nghiệp, quan chức chính phủ và các nhà đổi mới tiêu biểu từ Central Texas và các khu vực lân cận.",
   },
   delegation_leader_title: { en: "GAACC President & CEO", vi: "Chủ tịch & CEO GAACC" },
-  delegation_delegates: { en: "Delegates", vi: "Đại biểu" },
-  delegation_deadline: { en: "Planning Deadline", vi: "Hạn chót đăng ký" },
 
   // Central Texas
   ct_label: { en: "Central Texas", vi: "Central Texas" },
