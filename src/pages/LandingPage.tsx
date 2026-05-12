@@ -562,7 +562,7 @@ function GAACCSection() {
 
         <div className="inline-flex items-center gap-6 sm:gap-10 pt-5 sm:pt-6 border-t border-gray-100">
           <div className="text-center">
-            <div className="text-xl sm:text-2xl font-bold tracking-tight" style={{ color: CHARCOAL }}>6,500+</div>
+            <div className="text-xl sm:text-2xl font-bold tracking-tight" style={{ color: CHARCOAL }}>2,000+</div>
             <div className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] mt-1" style={{ color: GRAY }}>{t("gaacc_attendees")}</div>
           </div>
           <div className="h-8 w-px bg-gray-100" />

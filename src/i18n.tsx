@@ -123,7 +123,7 @@ const translations = {
     en: 'The Greater Austin Asian Chamber of Commerce (GAACC) engages with members of the Central Texas business community, with governmental entities, and with nonprofit organizations to help drive local economic growth for businesses with ties to Asia and Asian Americans. GAACC works to develop Austin\'s global business and investment connectivity while promoting regional economic equity for all. To learn more, visit',
     vi: 'GAACC đồng hành cùng cộng đồng doanh nghiệp tại Central Texas, các cơ quan chính phủ và tổ chức phi lợi nhuận nhằm thúc đẩy tăng trưởng kinh tế địa phương, phục vụ các doanh nghiệp có kết nối với châu Á và cộng đồng người Mỹ gốc Á. GAACC không ngừng mở rộng các kết nối kinh doanh và đầu tư quốc tế cho Austin, đồng thời thúc đẩy công bằng kinh tế trong toàn vùng. Tìm hiểu thêm tại',
   },
-  gaacc_attendees: { en: "Attendees in 2025", vi: "Người tham dự năm 2025" },
+  gaacc_attendees: { en: "Members", vi: "Thành viên" },
   gaacc_events: { en: "Events in 2025", vi: "Sự kiện năm 2025" },
 
   // Contact
