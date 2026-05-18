@@ -479,13 +479,10 @@ function DelegationSection() {
     { name: "Fan Chen", role: "Managing Partner, MOSAIC Paradigm Law Group", city: "Houston", sector: "Law Firm" },
     { name: "Hector Quintanar", role: "Managing Partner, Trade Management Solutions", city: "Austin", sector: "International Trade" },
     { name: "Jason Fuller", role: "Managing Director, Global Development Straife", city: "Houston", sector: "Development" },
-    { name: "Jay Choi", role: "Advisor, International Accelerator", city: "Austin", sector: "Incubator" },
-    { name: "MeiMei Li", role: "Private Investor", city: "", sector: "Investor" },
     { name: "Michelle Zhang", role: "Managing Partner, Melsen & Company", city: "", sector: "Finance and Property" },
     { name: "Mick Hawton", role: "Partner and Chief Strategy Officer, Headwater", city: "Austin", sector: "Development" },
     { name: "Minh Tran", role: "Chairman, GAACC. Chairman & CEO EmmyEvan", city: "Austin", sector: "Apparel" },
     { name: "Rima Adil", role: "Vice Chancellor, Houston City College", city: "Houston", sector: "Higher Education" },
-    { name: "Robert Lee", role: "Private Investor", city: "Austin", sector: "Investor" },
     { name: "Sam Chang", role: "Managing Partner, Henry S Miller Brokerage", city: "Houston", sector: "Real Estate Brokerage" },
     { name: "Ethan Tran", role: "Founder, Frontline ER", city: "Houston", sector: "Healthcare" },
   ];

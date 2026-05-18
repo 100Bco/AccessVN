@@ -7,37 +7,29 @@ const RED = "#C41230";
 const CHARCOAL = "#1A1A1A";
 
 const hanoiData = [
+  { org: "AmCham Hanoi & US Embassy in Hanoi", desc: "American Chamber of Commerce in Hanoi and U.S. diplomatic mission; key platforms for U.S.\u2013Vietnam business advocacy, trade, and bilateral relations." },
+  { org: "National Data Association (NDA)", desc: "Launched March 2025; chaired by Minister of Public Security; building NDAChain (national blockchain)." },
+  { org: "National Data Center", desc: "Government-backed incubator for data-driven startups; part of Vietnam\u2019s national digital transformation agenda." },
+  { org: "City of Hanoi", desc: "Governing body of capital city; 8M+ population; housing the central government and key ministries." },
   { org: "OpenCommerce", desc: "86,700+ sellers, 195 countries, $670M+ GMV; $7M raised; backed by VNG and Do Ventures." },
+  { org: "Vietnam National Innovation Center (NIC)", desc: "Gov innovation hub \u2013 Ministry of Finance \u2013 NIC Scale X program \u2013 key facility." },
   { org: "Coolmate", desc: "$150M GMV; $22M+ raised; Series C (2025) led by Vertex Growth Fund; expanding into US market." },
   { org: "MindX", desc: "32+ campuses, 35,000+ graduates; $18.5M raised; places Vietnamese tech talent with global employers." },
   { org: "DLS (E-Commerce)", desc: "$80M annual revenue. Cross-border e-commerce and print-on-demand; #1 on Gearlaunch 2018\u20132019; bootstrapped." },
-  { org: "Phuong Dong Asahi", desc: "Hospital group with plans to operate 10,000 beds across Vietnam, plus high-end retirement homes." },
-  { org: "National Data Association (NDA)", desc: "Launched March 2025; chaired by Minister of Public Security; building NDAChain (national blockchain)." },
-  { org: "National Data Incubator", desc: "Government-backed incubator for data-driven startups; part of Vietnam\u2019s national digital transformation agenda." },
-  { org: "People\u2019s Committee of Hanoi", desc: "Governing body of capital city; 8M+ population; housing the central government and key ministries." },
-  { org: "Vietnam National Innovation Center (NIC)", desc: "Gov innovation hub \u2013 Ministry of Finance \u2013 NIC Scale X program \u2013 key facility." },
-  { org: "Ministry of Science & Technology", desc: "Oversees Vietnam\u2019s S&T policy, startup regulation, and innovation programs; administers the national startup ecosystem support framework." },
-  { org: "ThinkZone Ventures", desc: "Seed to Series A; largest locally-funded fund ($60M); backed by IPA, Phu Thai Holdings, Stavian Group." },
   { org: "MISA", desc: "Leading SME ERP/accounting software; 250,000+ business customers; bootstrapped." },
-  { org: "VinUniversity", desc: "Flagship university \u2013 engineering/science \u2013 industry partnerships." },
-  { org: "AmCham Hanoi", desc: "American Chamber of Commerce in Hanoi; key platform for U.S.\u2013Vietnam business advocacy and networking." },
-  { org: "US Embassy in Hanoi", desc: "Diplomatic mission of the United States; supports trade, investment, and bilateral relations." },
 ];
 
 const hcmData = [
+  { org: "The Sentry", desc: "Co-working space and innovation hub in Ho Chi Minh City." },
   { org: "Do Ventures", desc: "$50M early-stage fund; portfolio includes Coolmate, OpenCommerce, MindX." },
+  { org: "Earth VC", desc: "Global climate and deep tech VC." },
   { org: "Metub", desc: "5,000+ creators; $21.5M raised; acquired by WebTVAsia (2024); JV with Virgin Music Group (2025)." },
   { org: "VinMake", desc: "Fashion manufacturing network; design-to-delivery in 15 days for global brands; seed-stage." },
+  { org: "Mekong Capital", desc: "Growth PE; est. 2001; 41 investments; portfolio includes Mobile World and Phu Nhuan Jewelry." },
   { org: "AVV", desc: "Seed to Series A; 100+ startups, $1.8B portfolio GMV, 3 unicorns; successor to 500 Startups Vietnam." },
-  { org: "Golden Gate Ventures", desc: "Early-stage SEA-focused; 60+ investments." },
   { org: "Fulbright University Vietnam", desc: "Tech education \u2013 startup support \u2013 research commercialization." },
   { org: "BCA / BNI Vietnam", desc: "Network of 10k+ businesses." },
-  { org: "Saigon Hi-Tech Park (SHTP)", desc: "913 hectares \u2013 Intel/Samsung/FPT \u2013 group tour available." },
-  { org: "Asia Business Builders (ABB)", desc: "Growth equity & M&A; 25+ years; cross-border deals connecting Vietnamese companies to strategic buyers in Japan, Europe, and the US." },
-  { org: "Antler Vietnam", desc: "Pre-seed company builder; 21 Vietnam investments in 2024." },
-  { org: "Monk\u2019s Hill Ventures", desc: "Series A; $200M Fund III (2023); 50+ portfolio companies across SEA; Temasek-backed." },
-  { org: "AmCham Ho Chi Minh City", desc: "American Chamber of Commerce in HCMC; largest AmCham chapter in Vietnam; 600+ member companies." },
-  { org: "US Consulate in Ho Chi Minh City", desc: "U.S. diplomatic presence in southern Vietnam; supports commercial and consular services." },
+  { org: "Golden Gate Ventures", desc: "Early-stage SEA-focused; 60+ investments." },
 ];
 
 function ItineraryTable({
