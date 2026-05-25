@@ -23,13 +23,11 @@ const hcmData = [
   { org: "The Sentry", desc: "Co-working space and innovation hub in Ho Chi Minh City." },
   { org: "Do Ventures", desc: "$50M early-stage fund; portfolio includes Coolmate, OpenCommerce, MindX." },
   { org: "Earth VC", desc: "Global climate and deep tech VC." },
-  { org: "Metub", desc: "5,000+ creators; $21.5M raised; acquired by WebTVAsia (2024); JV with Virgin Music Group (2025)." },
   { org: "VinMake", desc: "Fashion manufacturing network; design-to-delivery in 15 days for global brands; seed-stage." },
   { org: "Mekong Capital", desc: "Growth PE; est. 2001; 41 investments; portfolio includes Mobile World and Phu Nhuan Jewelry." },
   { org: "AVV", desc: "Seed to Series A; 100+ startups, $1.8B portfolio GMV, 3 unicorns; successor to 500 Startups Vietnam." },
   { org: "Fulbright University Vietnam", desc: "Tech education \u2013 startup support \u2013 research commercialization." },
   { org: "BCA / BNI Vietnam", desc: "Network of 10k+ businesses." },
-  { org: "Golden Gate Ventures", desc: "Early-stage SEA-focused; 60+ investments." },
 ];
 
 function ItineraryTable({
@@ -162,7 +160,7 @@ function ItineraryContent() {
         />
         <ItineraryTable
           title="Ho Chi Minh City"
-          dateRange="June 10 – June 13, 2026"
+          dateRange="June 11 – June 13, 2026"
           data={hcmData}
         />
       </div>
