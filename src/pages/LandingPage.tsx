@@ -472,19 +472,16 @@ function DelegationSection() {
   const delegates = [
     { name: "Mark Duval", role: "President & CEO, Greater Austin Asian Chamber of Commerce", city: "Austin", sector: "Chamber of Commerce" },
     { name: "Minh Mac", role: "Founder, 100B", city: "Austin", sector: "Investment & Advisory" },
+    { name: "Lezlie Tram", role: "Founder & CEO, LT Commercial Group", city: "Austin", sector: "Development" },
     { name: "Ahmed Moledina", role: "President & CEO, SOAL Technologies", city: "Austin", sector: "Tech" },
     { name: "Barbara Joe", role: "Director, Asian Chamber of Commerce Houston", city: "Houston", sector: "Chamber of Commerce" },
     { name: "David Teo", role: "Chair Elect, GAACC. Founder & CEO, Centauri Capital Group", city: "Austin", sector: "Development" },
-    { name: "Lezlie Tram", role: "Founder & CEO, LT Commercial Group", city: "Austin", sector: "Development" },
-    { name: "Fan Chen", role: "Managing Partner, MOSAIC Paradigm Law Group", city: "Houston", sector: "Law Firm" },
+    { name: "Ethan Tran", role: "Founder, Frontline ER", city: "Houston", sector: "Healthcare" },
     { name: "Hector Quintanar", role: "Managing Partner, Trade Management Solutions", city: "Austin", sector: "International Trade" },
-    { name: "Jason Fuller", role: "Managing Director, Global Development Straife", city: "Houston", sector: "Development" },
-    { name: "Michelle Zhang", role: "Managing Partner, Melsen & Company", city: "", sector: "Finance and Property" },
+    { name: "Jay Choi", role: "Advisor, International Accelerator", city: "Austin", sector: "Incubator" },
     { name: "Mick Hawton", role: "Partner and Chief Strategy Officer, Headwater", city: "Austin", sector: "Development" },
     { name: "Minh Tran", role: "Chairman, GAACC. Chairman & CEO EmmyEvan", city: "Austin", sector: "Apparel" },
-    { name: "Rima Adil", role: "Vice Chancellor, Houston City College", city: "Houston", sector: "Higher Education" },
     { name: "Sam Chang", role: "Managing Partner, Henry S Miller Brokerage", city: "Houston", sector: "Real Estate Brokerage" },
-    { name: "Ethan Tran", role: "Founder, Frontline ER", city: "Houston", sector: "Healthcare" },
   ];
 
   return (
